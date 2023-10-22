@@ -1,0 +1,168 @@
+{
+  "employees": [
+    {
+      "id": "2",
+      "name": "Harry Potter",
+      "username": "BoyWhoLived",
+      "email": "voldemort_killer@gmail.com",
+      "phone": 4402672,
+      "job": "Auror",
+      "team": "Ministry of Magic"
+    },
+    {
+      "id": "3",
+      "name": "Jack Clain",
+      "username": "Jack",
+      "email": "JackClain@gmail.com",
+      "phone": 224423045,
+      "job": "God",
+      "team": "Winchesters"
+    },
+    {
+      "id": "4",
+      "name": "Beatris Prior",
+      "username": "Tris",
+      "email": "trisprior@gmail.com",
+      "phone": 89354033,
+      "job": "Newbie",
+      "team": "Dauntless"
+    },
+    {
+      "id": "5",
+      "name": "Twilight Sparkle",
+      "username": "PrincessOfFriendship",
+      "email": "princess_twilight@gmail.com",
+      "phone": 23455,
+      "job": "Princess of Equestria",
+      "team": "Canterlot"
+    },
+    {
+      "id": "1",
+      "name": "Aria Stark",
+      "username": "Ari",
+      "email": "severe_girl@gmail.com",
+      "phone": "892273",
+      "job": "Vagabond",
+      "team": "Winterfell"
+    },
+    {
+      "id": "7",
+      "name": "Anthony Crowley",
+      "username": "Crowley",
+      "email": "serpent_tempter@gmail.com",
+      "phone": "666",
+      "job": "Bookseller's companion",
+      "team": "A.Z.Fell & CO"
+    },
+    {
+      "id": "44",
+      "name": "Katniss Everdeen",
+      "username": "Mockingjay",
+      "email": "fire_katniss@gmail.com",
+      "phone": "1357653",
+      "job": "Hunter",
+      "team": "District 12"
+    },
+    {
+      "id": "10",
+      "name": "Тим Князев",
+      "username": "Tracer",
+      "email": "whiteDragon@gmail.com",
+      "phone": "987234235",
+      "job": "Лунастр",
+      "team": "Клан Белоголовых"
+    },
+    {
+      "id": "id2",
+      "name": "Дэн Рейнольдс",
+      "username": "dan",
+      "email": "danr@gmail.com",
+      "phone": "4545334",
+      "job": "Солист",
+      "team": "Imagine Dragons"
+    },
+    {
+      "id": "id36",
+      "name": "чел",
+      "username": "вввв",
+      "email": "nn@mail.ru",
+      "phone": "888888",
+      "job": "вапыв",
+      "team": "оапррп"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Спаси кого-нибудь",
+      "body": "Убей Волан-де-Морта",
+      "userId": "2",
+      "deadline": "2023-11-16",
+      "publishedAt": "2019-08-01"
+    },
+    {
+      "id": "3",
+      "title": "Убежать из Красного Замка",
+      "body": "Беги, Арья, беги!",
+      "userId": "1",
+      "deadline": "2023-11-12",
+      "publishedAt": "2021-12-12"
+    },
+    {
+      "id": "5",
+      "title": "Сместить Чака Ширли",
+      "body": "Он плохой Бог, займи его место",
+      "userId": "3",
+      "deadline": "2023-11-12",
+      "publishedAt": "2021-02-02"
+    },
+    {
+      "id": "id6",
+      "title": "Выжить в голодных играх",
+      "userId": "44",
+      "body": "Убей всех, спаси себя",
+      "deadline": "2023-10-27",
+      "publishedAt": "2023-10-22"
+    },
+    {
+      "id": "id8",
+      "title": "Помыть Бентли",
+      "userId": "7",
+      "body": "Тебе поможет только чудо",
+      "deadline": "2023-10-31",
+      "publishedAt": "2023-10-19"
+    },
+    {
+      "id": "id10",
+      "publishedAt": "2023-10-22",
+      "title": "Пройти тест",
+      "body": "Он поможет определить принадлежность фракции",
+      "userId": "4",
+      "deadline": "2023-10-28"
+    },
+    {
+      "id": "id12",
+      "publishedAt": "2023-10-22",
+      "title": "Встреча с принцессой",
+      "body": "Встретиться с принцессой Селестией",
+      "userId": "5",
+      "deadline": "2023-10-25"
+    },
+    {
+      "id": "id22",
+      "publishedAt": "2023-10-22",
+      "title": "Задача10000000000",
+      "body": "sdfs",
+      "userId": "7",
+      "deadline": "2023-10-23"
+    },
+    {
+      "id": "id38",
+      "publishedAt": "2023-10-22",
+      "title": "dfgsf",
+      "body": "sdfgsd",
+      "userId": "2",
+      "deadline": "2023-10-22"
+    }
+  ]
+}
