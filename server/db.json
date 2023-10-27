@@ -80,15 +80,6 @@
       "phone": "4545334",
       "job": "Солист",
       "team": "Imagine Dragons"
-    },
-    {
-      "id": "id36",
-      "name": "чел",
-      "username": "вввв",
-      "email": "nn@mail.ru",
-      "phone": "888888",
-      "job": "вапыв",
-      "team": "оапррп"
     }
   ],
   "tasks": [
@@ -157,12 +148,12 @@
       "deadline": "2023-10-23"
     },
     {
-      "id": "id38",
-      "publishedAt": "2023-10-22",
-      "title": "dfgsf",
-      "body": "sdfgsd",
-      "userId": "2",
-      "deadline": "2023-10-22"
+      "id": "id2",
+      "publishedAt": "2023-10-25",
+      "title": "Название",
+      "body": "вавав",
+      "userId": "5",
+      "deadline": "2023-10-28"
     }
   ]
 }
