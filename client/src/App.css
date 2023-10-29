@@ -40,3 +40,9 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Тоже по гайду */
+main {
+  margin-top: 3rem;
+  height: 75vh;
+}
