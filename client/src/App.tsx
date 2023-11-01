@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import './App.css';
 import { QueryClient, QueryClientProvider, useQuery} from '@tanstack/react-query';
 import Header from "./components/Header";
@@ -9,66 +8,32 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import HomeScreen from './screens/HomeScreen'
 import LoginScreen from "./screens/LoginScreen";
 import SignupScreen from "./screens/SignupScreen";
+import { UploadData } from './data/fetching';
+import { EmployeeData } from './data/employee';
 
-const serverAddress = '../server/db.json';
-//
-// const App = () => {
-//   const [posts, setPosts] = useState('');
-//
-//   useEffect(() => {
-//      fetch(serverAddress)
-//         .then((res) => JSON.stringify(res))
-//         .then((data) => {
-//            console.log(data);
-//            setPosts(data);
-//         })
-//         .catch((err) => {
-//            console.log(err.message);
-//         });
-//   }, []);
-//
-//   return (
-//   <>
-//     Text
-//   </>);
-// };
+function CreateEmployeesList({data} : any ){
+    return data != null ? 
+        data.map(({item}:any) => (
+            <li>
+                <p>
+                    <b>{item.name}:</b>
+                    {' ' + item.job + ' '+ item.team}
+                </p>
+            </li>
+            )): 
+        <>Данные не загружены</>;
+};
 
 function App() {
-
-    const [posts, setPosts] = useState('')
-
-    // Гайдовское использование useEffect()
-    // useEffect(() => {
-    //     (async() => {
-    //         const response = await fetch('https://localhost:5000/', {
-    //             headers: { 'ContentType': 'application/json' },
-    //             credentials: 'include',
-    //         })
-    //
-    //         const data = await response.json()
-    //         setUsername(data.username)
-    //     })()
-    // })
-
-    useEffect(() => {
-            fetch(serverAddress)
-            .then((res) => JSON.stringify(res))
-            .then((data) => {
-                console.log(data);
-                setPosts(data);
-            })
-            .catch((err) => {
-                console.log(err.message);
-            });
-        },
-[]);
+    const employeesList = CreateEmployeesList(UploadData());
 
     return (
         <Router>
             <Header />
                 <main>
                     <Container>
-                        <Route path={'/'} exact component={() => <HomeScreen username={posts}/> }/>
+                        <Route path={'/'} exact component={() => 
+                            <HomeScreen username={'друг'} employees={employeesList}/> }/>
                         <Route path={'/signup'} component={SignupScreen}/>
                         <Route path={'/login'} component={LoginScreen}/>
                     </Container>
