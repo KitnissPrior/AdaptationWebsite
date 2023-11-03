@@ -1,4 +1,5 @@
 import './App.css';
+import { useState, useEffect } from 'react';
 import { QueryClient, QueryClientProvider, useQuery} from '@tanstack/react-query';
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -9,21 +10,8 @@ import HomeScreen from './screens/HomeScreen'
 import LoginScreen from "./screens/LoginScreen";
 import SignupScreen from "./screens/SignupScreen";
 import { UploadData } from './data/fetching';
-import { EmployeeData } from './data/employee';
-
-function CreateEmployeesList({data} : any ){
-    return data != null ? 
-        data.map(({item}:any) => (
-            <li>
-                <p>
-                    <b>{item.name}:</b>
-                    {' ' + item.job + ' '+ item.team}
-                </p>
-            </li>
-            )): 
-        <>Данные не загружены</>;
-};
-
+//import { EmployeeData } from './data/employee';
+/*
 function App() {
     const employeesList = CreateEmployeesList(UploadData());
 
@@ -36,6 +24,72 @@ function App() {
                             <HomeScreen username={'друг'} employees={employeesList}/> }/>
                         <Route path={'/signup'} component={SignupScreen}/>
                         <Route path={'/login'} component={LoginScreen}/>
+                    </Container>
+                </main>
+            <Footer />
+        </Router>
+    );
+}*/
+
+const serverAddress = 'http://localhost:5000/employees';
+
+export type IEmployee = {
+    id: string;
+    name: string;
+    username: string;
+    email: string;
+    phone: number;
+    job: string;
+    team: string;
+    password: number;
+}
+
+function CreateEmployeesList({data} : any){
+
+    console.log(typeof data[0]);
+
+    const listItems = data !== null ? 
+        data.map(({item}: any) => (
+            <li>{item.name}</li>)): 
+        <>Данные не загружены</>;
+    return <ul>{listItems}</ul>;
+};
+
+type EmployeeData = IEmployee[];
+
+function App() {
+    const [data, setData] = useState<EmployeeData | null>(null);
+
+    useEffect(() => {
+        fetch(serverAddress, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        })
+            .then(response => response.json())
+            .then(myJson => {
+                setData(myJson);
+            })
+            .catch(error => {
+                console.error('Error during fetch: ', error);
+            });
+    }, []);
+
+    if (data!== null){
+        data.forEach(element => {
+            console.log(element.name);
+        });
+    }
+
+    //const employeesList = CreateEmployeesList(data);
+
+    return (
+        <Router>
+            <Header />
+                <main>
+                    <Container>
+                        employeesList
                     </Container>
                 </main>
             <Footer />
