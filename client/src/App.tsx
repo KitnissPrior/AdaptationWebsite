@@ -1,5 +1,5 @@
 import './App.css';
-import { useState, useEffect } from 'react';
+import { FC, useState, useEffect } from 'react';
 import { QueryClient, QueryClientProvider, useQuery} from '@tanstack/react-query';
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -43,6 +43,13 @@ export type IEmployee = {
     team: string;
     password: number;
 }
+/*
+const Counter: FC<{ 
+    showReset?: boolean;
+    defaultValue?: number;
+    value?: number;}> = () => {
+
+    }*/
 
 function CreateEmployeesList({data} : any){
 
