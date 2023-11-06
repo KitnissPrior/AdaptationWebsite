@@ -1,104 +1,55 @@
 import './App.css';
-import { FC, useState, useEffect } from 'react';
-import { QueryClient, QueryClientProvider, useQuery} from '@tanstack/react-query';
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import { Container } from 'react-bootstrap';
-// в package.json в dependencies - "react-router-dom": "^5.2.0"
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import HomeScreen from './screens/HomeScreen'
+import { Container } from "react-bootstrap";
+import { useState, useEffect } from 'react';
+import Header from "./components/Header";
+import HomeScreen from "./screens/HomeScreen";
 import LoginScreen from "./screens/LoginScreen";
-import SignupScreen from "./screens/SignupScreen";
-import { UploadData } from './data/fetching';
-//import { EmployeeData } from './data/employee';
-/*
-function App() {
-    const employeesList = CreateEmployeesList(UploadData());
+import Footer from "./components/Footer";
 
-    return (
-        <Router>
-            <Header />
-                <main>
-                    <Container>
-                        <Route path={'/'} exact component={() => 
-                            <HomeScreen username={'друг'} employees={employeesList}/> }/>
-                        <Route path={'/signup'} component={SignupScreen}/>
-                        <Route path={'/login'} component={LoginScreen}/>
-                    </Container>
-                </main>
-            <Footer />
-        </Router>
-    );
-}*/
-
-const serverAddress = 'http://localhost:5000/employees';
-
-export type IEmployee = {
-    id: string;
-    name: string;
-    username: string;
-    email: string;
-    phone: number;
-    job: string;
-    team: string;
-    password: number;
-}
-/*
-const Counter: FC<{ 
-    showReset?: boolean;
-    defaultValue?: number;
-    value?: number;}> = () => {
-
-    }*/
-
-function CreateEmployeesList({data} : any){
-
-    console.log(typeof data[0]);
-
-    const listItems = data !== null ? 
-        data.map(({item}: any) => (
-            <li>{item.name}</li>)): 
-        <>Данные не загружены</>;
-    return <ul>{listItems}</ul>;
-};
-
-type EmployeeData = IEmployee[];
 
 function App() {
-    const [data, setData] = useState<EmployeeData | null>(null);
+    const [employees, setEmployees] = useState(null);
+    const [currentUser, setCurrentUser] = useState(null);
 
     useEffect(() => {
-        fetch(serverAddress, {
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            }
-        })
+        fetch('http://localhost:5000/employees')
             .then(response => response.json())
-            .then(myJson => {
-                setData(myJson);
-            })
-            .catch(error => {
-                console.error('Error during fetch: ', error);
-            });
+            .then(data => setEmployees(data))
+            .catch(error => console.error('Error:', error));
     }, []);
 
-    if (data!== null){
-        data.forEach(element => {
-            console.log(element.name);
-        });
+    const login = (email, password) => {
+        const user = employees.find(
+            (employee) => employee.email === email &&
+                Number(employee.password) === Number(password)
+        );
+
+        if (user) {
+            return user;
+        } else {
+            throw new Error('Invalid username or password');
+        }
     }
 
-    //const employeesList = CreateEmployeesList(data);
+    const handleLogin = (email, password) => {
+        try {
+            const user = login(email, password);
+            setCurrentUser(user)
+        } catch(err) {
+            console.log(err)
+        }
+    }
 
     return (
         <Router>
             <Header />
-                <main>
-                    <Container>
-                        employeesList
-                    </Container>
-                </main>
+            <main>
+                <Container>
+                    <Route path={'/'} exact component={() => <HomeScreen username={currentUser ? currentUser.username : ''}/> }/>
+                    <Route path={'/login'} component={() => <LoginScreen onLogin={handleLogin} /> }/>
+                </Container>
+            </main>
             <Footer />
         </Router>
     );
