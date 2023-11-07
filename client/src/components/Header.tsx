@@ -1,8 +1,6 @@
 import React from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 
-// Делал по какому-то гайду, в dependencies добавил модуль
-// 'react-bootstrap' последней версии
 const Header = () => {
     return (
         <Navbar bg={'dark'} expand={'lg'} collapseOnSelect>
