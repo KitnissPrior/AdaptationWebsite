@@ -3,7 +3,6 @@ import activeUser from './Login';
 import { IEmployee } from '../data/employee';
 
 const HomeScreen = () => {
-    console.log(activeUser);
     return (
         <>
         <Header/>

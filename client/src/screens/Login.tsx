@@ -2,7 +2,6 @@ import { useState, memo } from 'react';
 import { useHistory } from "react-router-dom";
 import FormContainer from "../components/FormContainer";
 import { uploadEmployees } from '../data/fetching';
-import { act } from 'react-dom/test-utils';
 
 let activeUser;
 
@@ -32,6 +31,7 @@ export function LoginScreen() {
         try {
             activeUser = memo(() => login(employees, email, password));
             setCurrentUser(activeUser);
+            console.log(login(employees, email, password).username);
 
         } catch(err) {
             console.log(err)

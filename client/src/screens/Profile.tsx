@@ -5,7 +5,6 @@ import { useHistory } from 'react-router-dom';
 
 const ProfileButton: React.FC = () => {
   const history = useHistory();
-
   const handleButtonClick = () => {
     history.push('/profile');
   };

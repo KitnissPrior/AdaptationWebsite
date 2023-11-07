@@ -1,6 +1,4 @@
 import Header from '../components/Header';
-import activeUser from './Login';
-import Footer from '../components/Footer';
 
 const TasksScreen = () => {
     return (
