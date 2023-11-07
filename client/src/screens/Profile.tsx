@@ -1,5 +1,5 @@
 import Header from '../components/Header';
-import { activeUser } from './LoginScreen';
+import activeUser from './Login';
 import { Container } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 
@@ -7,7 +7,7 @@ const ProfileButton: React.FC = () => {
   const history = useHistory();
 
   const handleButtonClick = () => {
-    history.push('home/myprofile/profile');
+    history.push('/profile');
   };
 
   return (
@@ -23,7 +23,7 @@ const AchievementsButton: React.FC = () => {
   const history = useHistory();
 
   const handleButtonClick = () => {
-    history.push('home/myprofile//achievements');
+    history.push('/achievements');
   };
 
   return (
@@ -39,7 +39,7 @@ const NotesButton: React.FC = () => {
   const history = useHistory();
 
   const handleButtonClick = () => {
-    history.push('home/myprofile/notes');
+    history.push('/notes');
   };
 
   return (
@@ -54,6 +54,7 @@ const NotesButton: React.FC = () => {
 const ProfileScreen = () => {
     return (
         <>
+        <Header/>
             <h1>Мой профиль</h1>
             <main>
                 <Container>

@@ -23,7 +23,6 @@ const HelloScreen = () => {
                 <div>
                     Хочешь начать свое путешествие по udv-тельной галактике?
                 </div>
-                <div></div>
                 <ButtonPageRedirect/>
             </Container>
         </>

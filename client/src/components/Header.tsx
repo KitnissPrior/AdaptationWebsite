@@ -6,9 +6,10 @@ const Header = () => {
             <Container>
                 <Navbar.Collapse id={'basic-navbar-nav'}>
                     <Nav className={'ms-auto'}>
+                        <Nav.Link href={"/home"}>Главная страница </Nav.Link>
                         <Nav.Link href={"/home/myprofile"}>Профиль </Nav.Link>
                         <Nav.Link href={"/home/tasks"}>Задачи </Nav.Link>
-                        <Nav.Link href={"/home/welcomepage"}>Всё обо всём </Nav.Link>
+                        <Nav.Link href={"/home/welcomepage"}>Все обо всем </Nav.Link>
                         <Nav.Link href={"/home/links"}>Полезные ссылки </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>

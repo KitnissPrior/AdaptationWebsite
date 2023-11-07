@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, memo } from 'react';
 import { useHistory } from "react-router-dom";
 import FormContainer from "../components/FormContainer";
 import { uploadEmployees } from '../data/fetching';
@@ -30,9 +30,8 @@ export function LoginScreen() {
 
     const handleLogin = (email, password) => {
         try {
-            const user = login(employees, email, password);
-            setCurrentUser(user);
-            activeUser = user;
+            activeUser = memo(() => login(employees, email, password));
+            setCurrentUser(activeUser);
 
         } catch(err) {
             console.log(err)
@@ -70,4 +69,4 @@ export function LoginScreen() {
     );
 }
 
-export {activeUser}
+export default memo(activeUser)
