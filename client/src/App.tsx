@@ -1,53 +1,38 @@
 import './App.css';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Container } from "react-bootstrap";
-import { useState, useEffect } from 'react';
-import Header from "./components/Header";
-import HomeScreen from "./screens/HomeScreen";
-import LoginScreen from "./screens/LoginScreen";
+import HelloScreen from './screens/Hello';
+import HomeScreen from "./screens/Home";
+import { LoginScreen } from "./screens/Login";
+import ProfileScreen from "./screens/Profile";
+import EditProfileScreen from './screens/EditProfile';
+import WelcomePageScreen from './screens/WelcomePage';
+import TasksScreen from './screens/Tasks';
+import AchievementsScreen from './screens/Achievements';
+import NotesScreen from './screens/Notes';
+import LinksScreen from './screens/Links';
+
 import Footer from "./components/Footer";
 
 
 function App() {
-    const [employees, setEmployees] = useState(null);
-    const [currentUser, setCurrentUser] = useState(null);
-
-    useEffect(() => {
-        fetch('http://localhost:5000/employees')
-            .then(response => response.json())
-            .then(data => setEmployees(data))
-            .catch(error => console.error('Error:', error));
-    }, []);
-
-    const login = (email, password) => {
-        const user = employees.find(
-            (employee) => employee.email === email &&
-                Number(employee.password) === Number(password)
-        );
-
-        if (user) {
-            return user;
-        } else {
-            throw new Error('Invalid username or password');
-        }
-    }
-
-    const handleLogin = (email, password) => {
-        try {
-            const user = login(email, password);
-            setCurrentUser(user)
-        } catch(err) {
-            console.log(err)
-        }
-    }
-
+    
     return (
         <Router>
-            <Header />
             <main>
                 <Container>
-                    <Route path={'/'} exact component={() => <HomeScreen username={currentUser ? currentUser.username : ''}/> }/>
-                    <Route path={'/login'} component={() => <LoginScreen onLogin={handleLogin} /> }/>
+                    <Route path={'/'} exact component={() => <HelloScreen/>} />
+                    <Route path={'/login'} component={() => <LoginScreen/> }/>
+                    <Route path={'/home'} exact component={() => <HomeScreen/>}></Route>
+
+                    <Route path={'/home/myprofile'} component={() => <ProfileScreen/>}/>
+                    <Route path={'/home/myprofile/profile'} component={() => <EditProfileScreen/>}/>
+                    <Route path={'/home/myprofile/achievements'} component={() => <AchievementsScreen/>}/>
+                    <Route path={'/home/myprofile/notes'} component={() => <NotesScreen/>}></Route>
+                    
+                    <Route path={'/home/tasks'} component={() => <TasksScreen/>}></Route>
+                    <Route path={'/home/welcomepage'} component={() => <WelcomePageScreen/>}></Route>
+                    <Route path={'/home/links'} component={() => <LinksScreen/>}></Route>
                 </Container>
             </main>
             <Footer />

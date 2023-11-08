@@ -1,28 +1,21 @@
 import { useState, useEffect } from 'react';
-import { EmployeeData } from './employee';
 
-const serverAddress = 'http://localhost:5000/employees';
+const serverAddress = 'http://localhost:5000';
+const employeesPage = '/employees';
+const tasksPage = '/tasks';
 
-export function UploadData(){
-    const [data, setData] = useState<EmployeeData | null>(null);
+function UploadData(page){
+    const [data, setData] = useState<any[]>([]);
 
     useEffect(() => {
-        fetch(serverAddress, {
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            }
-        })
+        fetch(serverAddress + page)
             .then(response => response.json())
-            .then(myJson => {
-                setData(myJson);
-            })
-            .catch(error => {
-                console.error('Error during fetch: ', error);
-            });
+            .then(data => setData(data))
+            .catch(error => console.error('Error:', error));
     }, []);
-
-    console.log(data);
 
     return data;
 };
+
+export const uploadEmployees = () => UploadData(employeesPage);
+export const uploadTasks = () => UploadData(tasksPage);
