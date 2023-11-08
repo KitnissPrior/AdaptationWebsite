@@ -1,12 +1,11 @@
 import Header from '../components/Header';
-import activeUser from './Login';
 import { Container } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 
 const ProfileButton: React.FC = () => {
   const history = useHistory();
   const handleButtonClick = () => {
-    history.push('/profile');
+    history.push('/home/myprofile/profile');
   };
 
   return (
@@ -22,7 +21,7 @@ const AchievementsButton: React.FC = () => {
   const history = useHistory();
 
   const handleButtonClick = () => {
-    history.push('/achievements');
+    history.push('/home/myprofile/achievements');
   };
 
   return (
@@ -38,7 +37,7 @@ const NotesButton: React.FC = () => {
   const history = useHistory();
 
   const handleButtonClick = () => {
-    history.push('/notes');
+    history.push('/home/myprofile/notes');
   };
 
   return (
