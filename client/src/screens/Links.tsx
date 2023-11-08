@@ -10,7 +10,7 @@ const LinksScreen = () => {
                 <Nav.Link href='https://udv.group/about/news/'>Официальный сайт UDV Group</Nav.Link>
             </div>
             <div>
-                <Nav.Link href='https://t.me/udvdev'>Телеграмм</Nav.Link>
+                <Nav.Link href='https://t.me/udvdev'>Телеграм</Nav.Link>
             </div>
             <div>
                 <Nav.Link href='https://vk.ru/udv_dev'>Группа ВКонтакте</Nav.Link>

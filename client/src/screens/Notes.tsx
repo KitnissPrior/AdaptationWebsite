@@ -1,4 +1,5 @@
 const NotesScreen = () => {
+    console.log("Заметки");
     return (
         <>
             <h1>Мои заметки</h1>

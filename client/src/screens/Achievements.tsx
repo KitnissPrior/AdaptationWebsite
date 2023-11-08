@@ -1,4 +1,5 @@
 const AchievementsScreen = () => {
+    console.log("Достижения");
     return (
         <>
             <h1>Мои достижения</h1>

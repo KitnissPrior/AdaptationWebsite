@@ -14,7 +14,6 @@ function UploadData(page){
             .catch(error => console.error('Error:', error));
     }, []);
 
-    console.log(data);
     return data;
 };
 

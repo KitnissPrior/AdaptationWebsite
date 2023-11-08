@@ -2,8 +2,7 @@ import { useState, memo } from 'react';
 import { useHistory } from "react-router-dom";
 import FormContainer from "../components/FormContainer";
 import { uploadEmployees } from '../data/fetching';
-
-let activeUser;
+import { setUser } from '../data/storage';
 
 export const login = (employees, email, password) => {
     const user = employees!.find(
@@ -19,19 +18,16 @@ export const login = (employees, email, password) => {
 };
 
 export function LoginScreen() {
-    const [currentUser, setCurrentUser] = useState<any>();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const history = useHistory();
 
     const employees = uploadEmployees();
-    //const tasks = uploadTasks();
 
     const handleLogin = (email, password) => {
         try {
-            activeUser = memo(() => login(employees, email, password));
-            setCurrentUser(activeUser);
-            console.log(login(employees, email, password).username);
+            const user = login(employees, email, password);
+            setUser(user);
 
         } catch(err) {
             console.log(err)
@@ -68,5 +64,3 @@ export function LoginScreen() {
         </FormContainer>
     );
 }
-
-export default memo(activeUser)

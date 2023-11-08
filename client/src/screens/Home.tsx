@@ -1,12 +1,13 @@
 import Header from '../components/Header';
-import activeUser from './Login';
-import { IEmployee } from '../data/employee';
+import { getUser } from '../data/storage';
 
 const HomeScreen = () => {
+    const user = getUser();
+
     return (
         <>
         <Header/>
-            <h1>Добро пожаловать, {(activeUser as IEmployee).username}!</h1>
+            <h1>Добро пожаловать, {user.name}!</h1>
         </>
     ) 
 }
