@@ -21,11 +21,12 @@ const TasksList: React.FC = () => {
     const activeUser = getUser();
     const userTasks = tasks.filter((task) => task.userId == activeUser.id);
 
-    const listItems = userTasks.map((task) => 
-    <>
-        <li key={task.id}>{task.title}___<TaskButton/>
-        </li>
-    </>);
+    const listItems = userTasks.map((task) =>
+        <React.Fragment key={task.id}>
+            <li>{task.title}___<TaskButton/>
+            </li>
+        </React.Fragment>);
+
 
     return(<><ol>{listItems}</ol></>);
 };
