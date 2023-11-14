@@ -1,129 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e4d36274-a637-4153-9d15-0462f7e490d6" name="Changes" comment="Navigation improved">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/screens/Links.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/screens/Links.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/screens/Profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/screens/Profile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/screens/Tasks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/screens/Tasks.tsx" afterDir="false" />
+    <list default="true" id="8d847ffb-4c64-436d-8005-a3b676b901df" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="CSS File" />
-        <option value="TypeScript JSX File" />
-        <option value="TypeScript File" />
-      </list>
-    </option>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="main" />
-      </map>
-    </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProjectId" id="2XOptxM2hBKVmKzDuA4eJgbCFze" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;F:\\WebStorm\\AdaptationWebsite\\client\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  }
-}</component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="e4d36274-a637-4153-9d15-0462f7e490d6" name="Changes" comment="" />
-      <created>1698510198493</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1698510198493</updated>
-      <workItem from="1698510201288" duration="3577000" />
-      <workItem from="1698559713772" duration="12289000" />
-      <workItem from="1698584705165" duration="16000" />
-      <workItem from="1698695469642" duration="739000" />
-      <workItem from="1698731868933" duration="10336000" />
-      <workItem from="1698760969681" duration="563000" />
-      <workItem from="1698831671316" duration="1626000" />
-      <workItem from="1699257938008" duration="10636000" />
-      <workItem from="1699338613210" duration="5198000" />
-      <workItem from="1699384255549" duration="127000" />
-      <workItem from="1699384393151" duration="286000" />
-      <workItem from="1699455795282" duration="201000" />
-      <workItem from="1699456022202" duration="6588000" />
-    </task>
-    <task id="LOCAL-00001" summary="authentication page implementation started">
-      <created>1698575689254</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1698575689254</updated>
-    </task>
-    <task id="LOCAL-00002" summary="new modules added">
-      <created>1698575743281</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1698575743281</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Authentication half-implemented">
-      <created>1699267790569</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1699267790569</updated>
-    </task>
-    <task id="LOCAL-00004" summary="new modules added">
-      <created>1699267814380</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1699267814380</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="authentication page implementation started" />
-    <MESSAGE value="Authentication half-implemented" />
-    <MESSAGE value="new modules added" />
-    <MESSAGE value="Navigation improved" />
-    <option name="LAST_COMMIT_MESSAGE" value="Navigation improved" />
   </component>
 </project>
