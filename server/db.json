@@ -138,10 +138,6 @@
   ],
   "adaptationPaths": [
     {
-      "userId": "id2",
-      "id": 5
-    },
-    {
       "tasks": [
         {
           "title": "Пожрать",
@@ -173,6 +169,22 @@
       ],
       "userId": "7",
       "id": 8
+    },
+    {
+      "tasks": [
+        {
+          "title": "Название",
+          "body": "Lorem ipsum",
+          "deadline": "2023-11-16"
+        },
+        {
+          "title": "задача2",
+          "body": "ваыавыва",
+          "deadline": null
+        }
+      ],
+      "userId": "3",
+      "id": 9
     }
   ],
   "tasks": [
