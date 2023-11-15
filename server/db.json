@@ -7,7 +7,7 @@
       "email": "voldemort_killer@gmail.com",
       "phone": 4402672,
       "job": "Data Scientist",
-      "startDate": "2023-11-16",
+      "startDate": "2023-10-30",
       "project": "Проект",
       "team": "Mинистерство Магии",
       "password": 12345,
@@ -112,7 +112,7 @@
       "email": "whiteDragon@gmail.com",
       "phone": "987234235",
       "job": "Тестировщик",
-      "startDate": "2023-11-16",
+      "startDate": "2023-09-01",
       "project": "Астралис",
       "team": "Клан Белоголовых",
       "password": 12345,
@@ -138,31 +138,41 @@
   ],
   "adaptationPaths": [
     {
-      "id": 1,
-      "userId": "2",
+      "userId": "id2",
+      "id": 5
+    },
+    {
       "tasks": [
         {
-          "id": "1",
-          "title": "Найди все крестражи",
-          "body": "Чтобы убить Волан-де-Морта",
-          "deadline": "2023-11-16",
-          "publishedAt": "2019-08-01"
-        },
-        {
-          "id": "id5",
-          "title": "Сходи на зельеварение",
-          "body": "Отсиди одну пару",
-          "deadline": "2023-11-25",
-          "publishedAt": "2023-08-01"
-        },
-        {
-          "id": "id4",
-          "title": "Навести Хагрида",
-          "body": "Покорми Арагога (собой)",
-          "deadline": "2023-12-01",
-          "publishedAt": "2023-08-01"
+          "title": "Пожрать",
+          "body": "Вкусно пожрать",
+          "deadline": "2023-11-16"
         }
-      ]
+      ],
+      "userId": "1",
+      "id": 6
+    },
+    {
+      "tasks": [
+        {
+          "title": "Поесть",
+          "body": "Много поесть",
+          "deadline": "2023-11-16"
+        }
+      ],
+      "userId": "2",
+      "id": 7
+    },
+    {
+      "tasks": [
+        {
+          "title": "Сходить в \"Ритц\"",
+          "body": "Попить чаю",
+          "deadline": null
+        }
+      ],
+      "userId": "7",
+      "id": 8
     }
   ],
   "tasks": [
