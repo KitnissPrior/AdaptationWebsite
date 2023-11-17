@@ -2,83 +2,123 @@
   "employees": [
     {
       "id": "2",
-      "name": "Harry Potter",
+      "name": "Гарри Джеймс Поттер",
       "username": "BoyWhoLived",
       "email": "voldemort_killer@gmail.com",
       "phone": 4402672,
-      "job": "Auror",
-      "team": "Ministry of Magic",
-      "password": 12345
+      "job": "Data Scientist",
+      "startDate": "2023-10-30",
+      "project": "Проект",
+      "team": "Mинистерство Магии",
+      "password": 12345,
+      "achievements": [],
+      "tasksCount": 4,
+      "tasksDone": 2
     },
     {
       "id": "3",
-      "name": "Jack Clain",
+      "name": "Джек Клайн",
       "username": "Jack",
       "email": "JackClain@gmail.com",
       "phone": 224423045,
-      "job": "God",
-      "team": "Winchesters",
-      "password": 12345
+      "job": "Аналитик",
+      "startDate": "2023-11-16",
+      "project": "Охота на монстров",
+      "team": "Винчестеры",
+      "password": 12345,
+      "achievements": [],
+      "tasksCount": 4,
+      "tasksDone": 4
     },
     {
       "id": "4",
-      "name": "Beatris Prior",
+      "name": "Беатрис Прайор",
       "username": "Tris",
       "email": "trisprior@gmail.com",
       "phone": 89354033,
-      "job": "Newbie",
-      "team": "Dauntless",
-      "password": 12345
+      "job": "Фронтендер",
+      "startDate": "2023-11-16",
+      "project": "Спасение Чикаго",
+      "team": "Бесстрашные",
+      "password": 12345,
+      "achievements": [],
+      "tasksCount": 0,
+      "tasksDone": 0
     },
     {
       "id": "5",
-      "name": "Twilight Sparkle",
+      "name": "Сумеречная Искорка",
       "username": "PrincessOfFriendship",
       "email": "princess_twilight@gmail.com",
       "phone": 23455,
-      "job": "Princess of Equestria",
-      "team": "Canterlot",
-      "password": 12345
+      "job": "Тимлид",
+      "startDate": "2023-11-16",
+      "project": "Проект",
+      "team": "Пони",
+      "password": 12345,
+      "achievements": [],
+      "tasksCount": 4,
+      "tasksDone": 3
     },
     {
       "id": "1",
-      "name": "Aria Stark",
+      "name": "Арья Старк",
       "username": "Ari",
       "email": "severe_girl@gmail.com",
       "phone": "892273",
-      "job": "Vagabond",
-      "team": "Winterfell",
-      "password": 12345
+      "job": "Бэкендер",
+      "startDate": "2023-11-16",
+      "project": "Убить врагов",
+      "team": "Винтерфелл",
+      "password": 12345,
+      "achievements": [],
+      "tasksCount": 4,
+      "tasksDone": 2
     },
     {
       "id": "7",
-      "name": "Anthony Crowley",
+      "name": "Энтони Дж Кроули",
       "username": "Crowley",
       "email": "serpent_tempter@gmail.com",
       "phone": "666",
-      "job": "Bookseller's companion",
+      "job": "Разработчик игр",
+      "startDate": "2023-11-16",
+      "project": "Save the Earth",
       "team": "A.Z.Fell & CO",
-      "password": 12345
+      "password": 12345,
+      "achievements": [],
+      "tasksCount": 4,
+      "tasksDone": 2
     },
     {
       "id": "44",
-      "name": "Katniss Everdeen",
+      "name": "Китнисс Эвердин",
       "username": "Mockingjay",
       "email": "fire_katniss@gmail.com",
       "phone": "1357653",
-      "job": "Hunter",
-      "team": "District 12",
-      "password": 12345
+      "job": "Дизайнер",
+      "startDate": "2023-11-16",
+      "project": "Hunger Games",
+      "team": "Дистрикт 12",
+      "password": 12345,
+      "achievements": [],
+      "tasksCount": 4,
+      "tasksDone": 2
     },
     {
       "id": "10",
-      "name": "Тим Князев",
+      "name": "Князев Тимофей Валерьевич",
       "username": "Tracer",
       "email": "whiteDragon@gmail.com",
       "phone": "987234235",
-      "job": "Лунастр",
+      "job": "Тестировщик",
+      "startDate": "2023-09-01",
+      "project": "Астралис",
       "team": "Клан Белоголовых",
-      "password": 12345
+      "password": 12345,
+      "achievements": [],
+      "tasksCount": 4,
+      "tasksDone": 2
     },
     {
       "id": "id2",
@@ -86,9 +126,80 @@
       "username": "dan",
       "email": "danr@gmail.com",
       "phone": "4545334",
-      "job": "Солист",
+      "job": "Тимлид",
+      "startDate": "2023-11-16",
+      "project": "Песни",
       "team": "Imagine Dragons",
-      "password": 12345
+      "password": 12345,
+      "achievements": [],
+      "tasksCount": 4,
+      "tasksDone": 2
+    }
+  ],
+  "adaptationPaths": [
+    {
+      "tasks": [
+        {
+          "title": "Пожрать",
+          "body": "Вкусно пожрать",
+          "deadline": "2023-11-16"
+        },
+        {
+          "title": "Поспать",
+          "body": "Поспать. Или выпить кофе",
+          "deadline": "1999-12-12"
+        },
+        {
+          "title": "Посетить лекцию Обабвкова",
+          "body": "РТФ - чемпион! РТФ - чемпион! РТФ - чемпион! РТФ - чемпион! РТФ - чемпион!",
+          "deadline": "1999-12-13"
+        },
+        {
+          "title": "Поиграть",
+          "body": "Отойди от турников и посиди за компом 20 раз.",
+          "deadline": "1999-12-11"
+        }
+      ],
+      "userId": "1",
+      "id": 6
+    },
+    {
+      "tasks": [
+        {
+          "title": "Поесть",
+          "body": "Много поесть",
+          "deadline": "2023-11-16"
+        }
+      ],
+      "userId": "2",
+      "id": 7
+    },
+    {
+      "tasks": [
+        {
+          "title": "Сходить в \"Ритц\"",
+          "body": "Попить чаю",
+          "deadline": null
+        }
+      ],
+      "userId": "7",
+      "id": 8
+    },
+    {
+      "tasks": [
+        {
+          "title": "Название",
+          "body": "Lorem ipsum",
+          "deadline": "2023-11-16"
+        },
+        {
+          "title": "задача2",
+          "body": "ваыавыва",
+          "deadline": null
+        }
+      ],
+      "userId": "3",
+      "id": 9
     }
   ],
   "tasks": [
