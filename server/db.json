@@ -17,14 +17,14 @@
     },
     {
       "id": "3",
-      "name": "Джек Клайн",
+      "name": "Иванов Иван Иванович",
       "username": "Jack",
       "email": "JackClain@gmail.com",
       "phone": 224423045,
       "job": "Аналитик",
       "startDate": "2023-11-16",
       "project": "Охота на монстров",
-      "team": "Винчестеры",
+      "team": "Команда1",
       "password": 12345,
       "achievements": [],
       "tasksCount": 4,
@@ -32,14 +32,14 @@
     },
     {
       "id": "4",
-      "name": "Беатрис Прайор",
-      "username": "Tris",
-      "email": "trisprior@gmail.com",
+      "name": "Городецкий Антон Сергеевич",
+      "username": "antonGor",
+      "email": "anton@gmail.com",
       "phone": 89354033,
       "job": "Фронтендер",
       "startDate": "2023-11-16",
-      "project": "Спасение Чикаго",
-      "team": "Бесстрашные",
+      "project": "Долой вампиров",
+      "team": "Ночной Дозор",
       "password": 12345,
       "achievements": [],
       "tasksCount": 0,
@@ -47,14 +47,14 @@
     },
     {
       "id": "5",
-      "name": "Сумеречная Искорка",
-      "username": "PrincessOfFriendship",
-      "email": "princess_twilight@gmail.com",
-      "phone": 23455,
+      "name": "Святова Селестина Тимуровна",
+      "username": "moonPrincess",
+      "email": "moon_princess@gmail.com",
+      "phone": "891223455",
       "job": "Тимлид",
-      "startDate": "2023-11-16",
+      "startDate": "2023-11-08",
       "project": "Проект",
-      "team": "Пони",
+      "team": "Команда2",
       "password": 12345,
       "achievements": [],
       "tasksCount": 4,
@@ -77,7 +77,7 @@
     },
     {
       "id": "7",
-      "name": "Энтони Дж Кроули",
+      "name": "Энтони Джей Кроули",
       "username": "Crowley",
       "email": "serpent_tempter@gmail.com",
       "phone": "666",
@@ -122,14 +122,14 @@
     },
     {
       "id": "id2",
-      "name": "Дэн Рейнольдс",
-      "username": "dan",
-      "email": "danr@gmail.com",
+      "name": "Васильев Александр Георгиевич",
+      "username": "vassAl",
+      "email": "mymail@gmail.com",
       "phone": "4545334",
       "job": "Тимлид",
       "startDate": "2023-11-16",
       "project": "Песни",
-      "team": "Imagine Dragons",
+      "team": "Сплин",
       "password": 12345,
       "achievements": [],
       "tasksCount": 4,
@@ -200,6 +200,22 @@
       ],
       "userId": "3",
       "id": 9
+    },
+    {
+      "tasks": [
+        {
+          "title": "Погулять",
+          "body": "Много погулять",
+          "deadline": "2023-12-03"
+        },
+        {
+          "title": "Сходить на работу",
+          "body": "Можно пешком",
+          "deadline": "2023-12-03"
+        }
+      ],
+      "userId": "4",
+      "id": 10
     }
   ],
   "tasks": [
