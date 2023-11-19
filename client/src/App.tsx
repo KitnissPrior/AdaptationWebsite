@@ -28,7 +28,6 @@ function App() {
                     <Route path={'/home/myprofile'} exact component={() => <ProfileScreen/>}/>
                     <Route path={'/home/myprofile/profile'} component={() => <EditProfileScreen/>}/>
                     <Route path={'/home/myprofile/achievements'} component={() => <AchievementsScreen/>}/>
-                    <Route path={'/home/myprofile/notes'} component={() => <NotesScreen/>}/>
 
                     <Route path={'/home/tasks'} component={() => <TasksScreen/>}/>
                     <Route path={'/home/welcomepage'} component={() => <WelcomePageScreen/>}/>
