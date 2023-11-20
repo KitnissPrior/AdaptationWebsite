@@ -14,6 +14,7 @@ const TaskButton: React.FC = () => {
     const [buttonText, setButtonText] = useState('Отправить на проверку');
 
     const handleClick = () => {
+        console.log('Вы нажали на кнопку!')
         setButtonText('Готово');
     };
 
@@ -27,7 +28,6 @@ const TasksList: React.FC = () => {
         const activeUser = getUser();
         const userPath = uploadPaths().find(path => path.userId == activeUser.id);
         const userTasks = userPath?.tasks;
-        console.log(userTasks);
 
         return (
             <Collapse defaultActiveKey={[]} onChange={onChange}>
@@ -35,17 +35,20 @@ const TasksList: React.FC = () => {
                     <Collapse.Panel header={task["title"]} key={index + 1}>
                         <p>{task['body']}</p>
                         <p>{task['deadline']}</p>
+                        <TaskButton/>
                     </Collapse.Panel>
                 )}
             </Collapse>
         );
     }
     catch {
-        console.log("Эта херня щас не заработала, но щас заработает, опа")
+        console.log("Empty data got caught! Trying again...")
     }
 };
 
 const TasksScreen = () => {
+    // через style в тэге Container реализован вертикальный слайдер
+    // для списка задач TasksList
     return (
         <>
         <Header/>
