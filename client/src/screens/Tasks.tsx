@@ -4,11 +4,30 @@ import { getUser } from '../data/storage';
 import React, { useState } from 'react';
 import { Collapse } from "antd";
 import { Container } from 'react-bootstrap';
+import Minigame from "./Minigame";
+import {useHistory} from "react-router-dom";
+import MinigameScreen from "./Minigame";
 
 
 const onChange = (key: string | string[]) => {
     console.log(key);
 };
+
+const MinigameButton: React.FC = () => {
+    const history = useHistory();
+
+    const handleButtonClick = () => {
+      history.push('/home/tasks/minigame')
+    };
+
+    return (
+        <div>
+            <button onClick={handleButtonClick}>
+                Мини-игра
+            </button>
+        </div>
+    );
+}
 
 const TaskButton: React.FC = () => {
     const [buttonText, setButtonText] = useState('Отправить на проверку');
@@ -28,6 +47,7 @@ const TasksList: React.FC = () => {
         const activeUser = getUser();
         const userPath = uploadPaths().find(path => path.userId == activeUser.id);
         const userTasks = userPath?.tasks;
+        console.log(userTasks);
 
         return (
             <Collapse defaultActiveKey={[]} onChange={onChange}>
@@ -55,6 +75,7 @@ const TasksScreen = () => {
             <h1>Мои задачи</h1>
             <Container style={{ maxHeight: '400px', overflowY: 'auto' }}>
                 <TasksList/>
+                <MinigameButton/>
             </Container>
         </>
     ) 

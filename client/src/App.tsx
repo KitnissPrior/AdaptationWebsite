@@ -11,8 +11,8 @@ import TasksScreen from './screens/Tasks';
 import AchievementsScreen from './screens/Achievements';
 import NotesScreen from './screens/Notes';
 import LinksScreen from './screens/Links';
-
 import Footer from "./components/Footer";
+import MinigameScreen from "./screens/Minigame";
 
 
 function App() {
@@ -29,7 +29,8 @@ function App() {
                     <Route path={'/home/myprofile/profile'} component={() => <EditProfileScreen/>}/>
                     <Route path={'/home/myprofile/achievements'} component={() => <AchievementsScreen/>}/>
 
-                    <Route path={'/home/tasks'} component={() => <TasksScreen/>}/>
+                    <Route path={'/home/tasks'} exact component={() => <TasksScreen/>}/>
+                    <Route path={'/home/tasks/minigame'} component={() => <MinigameScreen/>}/>
                     <Route path={'/home/welcomepage'} component={() => <WelcomePageScreen/>}/>
                     <Route path={'/home/links'} component={() => <LinksScreen/>}/>
                 </Container>
