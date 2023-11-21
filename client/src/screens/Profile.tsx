@@ -11,7 +11,7 @@ const ProfileButton: React.FC = () => {
   return (
     <div>
       <button onClick={handleButtonClick}>
-      Профиль
+      Мои данные
     </button>
     </div>
   );
@@ -58,7 +58,6 @@ const ProfileScreen = () => {
                 <Container>
                     <ProfileButton/>
                     <AchievementsButton/>
-                    <NotesButton/>
                 </Container>
             </main>
         </>
