@@ -10,7 +10,6 @@ const Header = () => {
                         <Nav.Link href={"/home/myprofile"}>Профиль </Nav.Link>
                         <Nav.Link href={"/home/tasks"}>Задачи </Nav.Link>
                         <Nav.Link href={"/home/welcomepage"}>Все обо всем </Nav.Link>
-                        <Nav.Link href={"/home/links"}>Полезные ссылки </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

@@ -33,8 +33,11 @@ const TaskButton: React.FC = () => {
     const [buttonText, setButtonText] = useState('Отправить на проверку');
 
     const handleClick = () => {
-        console.log('Вы нажали на кнопку!')
-        setButtonText('Готово');
+        if(buttonText === 'Отправить на проверку')
+            setButtonText('На проверке');
+        else {
+            setButtonText('Готово');
+        }
     };
 
     return (
@@ -47,7 +50,6 @@ const TasksList: React.FC = () => {
         const activeUser = getUser();
         const userPath = uploadPaths().find(path => path.userId == activeUser.id);
         const userTasks = userPath?.tasks;
-        console.log(userTasks);
 
         return (
             <Collapse defaultActiveKey={[]} onChange={onChange}>
@@ -63,6 +65,7 @@ const TasksList: React.FC = () => {
     }
     catch {
         console.log("Empty data got caught! Trying again...")
+        return <><h3>Задач пока нет!</h3></>
     }
 };
 
@@ -72,7 +75,7 @@ const TasksScreen = () => {
     return (
         <>
         <Header/>
-            <h1>Мои задачи</h1>
+            <h1>Задачи на весь период</h1>
             <Container style={{ maxHeight: '400px', overflowY: 'auto' }}>
                 <TasksList/>
                 <MinigameButton/>

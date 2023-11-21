@@ -62,8 +62,8 @@
     },
     {
       "id": "1",
-      "name": "Арья Старк",
-      "username": "Ari",
+      "name": "Аксенова Елена Константиновна",
+      "username": "akselka",
       "email": "severe_girl@gmail.com",
       "phone": "892273",
       "job": "Бэкендер",
@@ -92,7 +92,7 @@
     },
     {
       "id": "44",
-      "name": "Китнисс Эвердин",
+      "name": "Долгих Екатерина Анатольевна",
       "username": "Mockingjay",
       "email": "fire_katniss@gmail.com",
       "phone": "1357653",
@@ -328,6 +328,16 @@
     }
   ],
   "questions": [
+    {
+      "question": "Как зовут твоего куратора?",
+      "answers": {
+        "one": "Петр Петров",
+        "two": "Анна Астафьева",
+        "three": "Иван Иванов",
+        "four": "не знаю"
+      },
+      "correctAnswer": "Анна Астафьева"
+    },
     {
       "question": "Ты кто?",
       "answers": {

@@ -78,12 +78,6 @@ const EditProfileScreen = () => {
                     <input className="info-input" type="text" name="email"
                            value={user.email} onChange={handleInputChange}/>
                 </label>
-                <label>
-                    Краткая информация:
-                    <textarea className="description-textarea" name="description"
-                              placeholder="Расскажите о себе" value={form.description}
-                              onChange={handleInputChange} maxlength="255"/>
-                </label>
             </div>
             <button className="save-button" type="submit">Сохранить</button>
         </form>

@@ -9,7 +9,6 @@ import EditProfileScreen from './screens/EditProfile';
 import WelcomePageScreen from './screens/WelcomePage';
 import TasksScreen from './screens/Tasks';
 import AchievementsScreen from './screens/Achievements';
-import NotesScreen from './screens/Notes';
 import LinksScreen from './screens/Links';
 import Footer from "./components/Footer";
 import MinigameScreen from "./screens/Minigame";
@@ -18,6 +17,7 @@ import MinigameScreen from "./screens/Minigame";
 function App() {
     
     return (
+        <>
         <Router>
             <main>
                 <Container>
@@ -32,11 +32,11 @@ function App() {
                     <Route path={'/home/tasks'} exact component={() => <TasksScreen/>}/>
                     <Route path={'/home/tasks/minigame'} component={() => <MinigameScreen/>}/>
                     <Route path={'/home/welcomepage'} component={() => <WelcomePageScreen/>}/>
-                    <Route path={'/home/links'} component={() => <LinksScreen/>}/>
+                    <Route path={'/home/welcomepage/links'} component={() => <LinksScreen/>}/>
                 </Container>
             </main>
-            <Footer />
         </Router>
+        </>
     );
 }
 
