@@ -1,14 +1,13 @@
 import { uploadPaths } from '../data/fetching';
 import Header from '../components/Header';
 import { getUser } from '../data/storage';
-import React, { useState } from 'react';
+import React, {useCallback, useState} from 'react';
 import { Collapse } from "antd";
 import { Container } from 'react-bootstrap';
-import Minigame from "./Minigame";
 import {useHistory} from "react-router-dom";
-import MinigameScreen from "./Minigame";
 
-
+// При открытии/закрытии блока задачи выводит в консоли массив,
+// куда выходят открытые на данный момент блоки задач
 const onChange = (key: string | string[]) => {
     console.log(key);
 };
@@ -16,9 +15,9 @@ const onChange = (key: string | string[]) => {
 const MinigameButton: React.FC = () => {
     const history = useHistory();
 
-    const handleButtonClick = () => {
+    const handleButtonClick = useCallback(() => {
       history.push('/home/tasks/minigame')
-    };
+    }, [history]);
 
     return (
         <div>
@@ -29,7 +28,7 @@ const MinigameButton: React.FC = () => {
     );
 }
 
-const TaskButton: React.FC = () => {
+const TaskButton = React.memo((props) => {
     const [buttonText, setButtonText] = useState('Отправить на проверку');
 
     const handleClick = () => {
@@ -43,7 +42,7 @@ const TaskButton: React.FC = () => {
     return (
         <button onClick={handleClick}>{buttonText}</button>
     );
-};
+});
 
 const TasksList: React.FC = () => {
     try {
@@ -64,8 +63,11 @@ const TasksList: React.FC = () => {
         );
     }
     catch {
-        console.log("Empty data got caught! Trying again...")
-        return <><h3>Задач пока нет!</h3></>
+        return (
+            <div>
+                <h3>Задач пока нет!</h3>
+            </div>
+        );
     }
 };
 
@@ -78,8 +80,8 @@ const TasksScreen = () => {
             <h1>Задачи на весь период</h1>
             <Container style={{ maxHeight: '400px', overflowY: 'auto' }}>
                 <TasksList/>
-                <MinigameButton/>
             </Container>
+            <MinigameButton/>
         </>
     ) 
 };
