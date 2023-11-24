@@ -329,34 +329,90 @@
   ],
   "questions": [
     {
+      "id": 1,
       "question": "Как зовут твоего куратора?",
-      "answers": {
-        "one": "Петр Петров",
-        "two": "Анна Астафьева",
-        "three": "Иван Иванов",
-        "four": "не знаю"
-      },
+      "answers": [
+        {
+          "id": 1,
+          "title": "Иван Иванов",
+          "isCorrect": false
+        },
+        {
+          "id": 2,
+          "title": "Анна Астафьева",
+          "isCorrect": true
+        },
+        {
+          "id": 3,
+          "title": "Петр Петров",
+          "isCorrect": false
+        },
+        {
+          "id": 4,
+          "title": "Не знаю",
+          "isCorrect": false
+        }
+      ],
       "correctAnswer": "Анна Астафьева"
     },
     {
+      "id": 2,
       "question": "Ты кто?",
-      "answers": {
-        "one": "Абобус",
-        "two": "Калус Дратус",
-        "three": "Балбес 126",
-        "four": "Dr. Мусоровоз"
-      },
+      "answers": [
+        {
+          "id": 1,
+          "title": "Абобус",
+          "isCorrect": false
+        },
+        {
+          "id": 2,
+          "title": "Калус Дратус",
+          "isCorrect": false
+        },
+        {
+          "id": 3,
+          "title": "Балбес 126",
+          "isCorrect": true
+        },
+        {
+          "id": 4,
+          "title": "Dr. Мусоровоз",
+          "isCorrect": false
+        }
+      ],
       "correctAnswer": "Балбес 126"
     },
     {
+      "id": 3,
       "question": "Представь, ты стал мухомором. Твои действия?",
-      "answers": {
-        "one": "А?",
-        "two": "Крутяк )",
-        "three": "Аче всмысле",
-        "four": "Райан Гослинг"
-      },
+      "answers": [
+        {
+          "id": 1,
+          "title": "А?",
+          "isCorrect": false
+        },
+        {
+          "id": 2,
+          "title": "Аче всмысле",
+          "isCorrect": false
+        },
+        {
+          "id": 3,
+          "title": "Крутяк",
+          "isCorrect": false
+        },
+        {
+          "id": 4,
+          "title": "Райан Гослинг",
+          "isCorrect": true
+        }
+      ],
       "correctAnswer": "Райан Гослинг"
+    },
+    {
+      "id": "id2",
+      "question": "В чем смысл жизни",
+      "correctAnswer": "Ни в чем"
     }
   ]
 }
