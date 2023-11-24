@@ -1,56 +1,47 @@
-// На доработку пойдет ещё
-// Я с ума уже схожу с этого
-
-// Лист на будущее:
-// 1) Проверку на правильность
-// 2) Улучшить код
-// 3) Пофиксить баги, если найдутся
-
-import React, { FC, ButtonHTMLAttributes, useState } from 'react';
+import { useState } from 'react';
 import { uploadQuestions } from "../data/fetching";
 import Header from "../components/Header";
 import { Container } from 'react-bootstrap';
 import { Button } from 'antd';
 
 const Game = () => {
-    // Не уверен, насколько рабочая строчка ниже, но пускай пока будет
     const [selectedAnswer, setSelectedAnswer] = useState('');
     const [answerStatus, setAnswerStatus] = useState('');
 
-    //это чтобы убирать блок с вопросами, когда сотрудник уже ответил на вопрос
+    // Это чтобы убирать блок с вопросами, когда сотрудник уже ответил на вопрос
     const [isQuestionVisible, setQuestionVisible] = useState(true);
 
     const questions = uploadQuestions()[0];
+    console.log(questions);
 
     const handleCheckAnswerButtonClick = () => {
-        
-        if(selectedAnswer == questions.correctAnswer)
+        if(selectedAnswer == questions?.correctAnswer)
             setAnswerStatus('Правильно! Получи 1 u-coin');
-        else 
-            setAnswerStatus(`Неверно. Правильный ответ: ${questions.correctAnswer}`);
+        else
+            setAnswerStatus(`Неверно. Правильный ответ: ${questions?.correctAnswer}`);
 
         //setQuestionVisible(false);
     };
 
 
     return (
-        <> 
-        {isQuestionVisible? 
-            <>
-            <p>{questions?.question}</p>
-                <Container>
-                {Object.keys(questions?.answers || {}).map((key) => (
-                    <div key={key}>
-                        <input type="radio" value={questions?.answers[key]} onChange={e => {
-                            setSelectedAnswer(e.target.value)}} name="answer" />
-                        {questions?.answers[key]}
-                    </div>                
-                )) }
-                </Container>
-            <Button onClick={handleCheckAnswerButtonClick}>Проверить ответ</Button>
-            <div>{answerStatus}</div>
-            </> 
-        : <h3>Вопросы закончились. Приходи в другой раз!</h3>}
+        <>
+            {isQuestionVisible?
+                <>
+                    <p>{questions?.question}</p>
+                        <Container>
+                            {Object.keys(questions?.answers || {}).map((key) => (
+                                <div key={key}>
+                                    <input type="radio" value={questions?.answers[key]} onChange={e => {
+                                        setSelectedAnswer(e.target.value)}} name="answer" />
+                                    {questions?.answers[key]}
+                                </div>
+                            ))}
+                        </Container>
+                    <Button onClick={handleCheckAnswerButtonClick}>Проверить ответ</Button>
+                    <div>{answerStatus}</div>
+                </>
+            : <h3>Вопросы закончились. Приходи в другой раз!</h3>}
         </>
     );
 };
