@@ -229,104 +229,6 @@
       "id": 12
     }
   ],
-  "tasks": [
-    {
-      "id": "1",
-      "title": "Найди все крестражи",
-      "body": "Чтобы убить Волан-де-Морта",
-      "userId": "2",
-      "deadline": "2023-11-16",
-      "publishedAt": "2019-08-01"
-    },
-    {
-      "id": "3",
-      "title": "Убежать из Красного Замка",
-      "body": "Беги, Арья, беги!",
-      "userId": "1",
-      "deadline": "2023-11-12",
-      "publishedAt": "2021-12-12"
-    },
-    {
-      "id": "5",
-      "title": "Сместить Чака Ширли",
-      "body": "Он плохой Бог, займи его место",
-      "userId": "3",
-      "deadline": "2023-11-12",
-      "publishedAt": "2021-02-02"
-    },
-    {
-      "id": "id5",
-      "title": "Сходи на зельеварение",
-      "body": "Отсиди одну пару",
-      "userId": "2",
-      "deadline": "2023-11-25",
-      "publishedAt": "2023-08-01"
-    },
-    {
-      "id": "id4",
-      "title": "Навести Хагрида",
-      "body": "Покорми Арагога (собой)",
-      "userId": "2",
-      "deadline": "2023-12-01",
-      "publishedAt": "2023-08-01"
-    },
-    {
-      "id": "id6",
-      "title": "Выжить в голодных играх",
-      "userId": "44",
-      "body": "Убей всех, спаси себя",
-      "deadline": "2023-10-27",
-      "publishedAt": "2023-10-22"
-    },
-    {
-      "id": "id8",
-      "title": "Помыть Бентли",
-      "userId": "7",
-      "body": "Тебе поможет только чудо",
-      "deadline": "2023-10-31",
-      "publishedAt": "2023-10-19"
-    },
-    {
-      "id": "id10",
-      "publishedAt": "2023-10-22",
-      "title": "Пройти тест",
-      "body": "Он поможет определить принадлежность фракции",
-      "userId": "4",
-      "deadline": "2023-10-28"
-    },
-    {
-      "id": "id12",
-      "publishedAt": "2023-10-22",
-      "title": "Встреча с принцессой",
-      "body": "Встретиться с принцессой Селестией",
-      "userId": "5",
-      "deadline": "2023-10-25"
-    },
-    {
-      "id": "id22",
-      "publishedAt": "2023-10-22",
-      "title": "Задача10000000000",
-      "body": "sdfs",
-      "userId": "7",
-      "deadline": "2023-10-23"
-    },
-    {
-      "id": "id2",
-      "publishedAt": "2023-10-25",
-      "title": "Название",
-      "body": "вавав",
-      "userId": "5",
-      "deadline": "2023-10-28"
-    },
-    {
-      "id": "id4",
-      "publishedAt": "2023-10-27",
-      "title": "Название",
-      "body": "описание",
-      "userId": "5",
-      "deadline": "2023-10-29"
-    }
-  ],
   "questions": [
     {
       "id": 1,
@@ -335,84 +237,106 @@
         {
           "id": 1,
           "title": "Иван Иванов",
-          "isCorrect": false
+          "isCorrect": ""
         },
         {
           "id": 2,
           "title": "Анна Астафьева",
-          "isCorrect": true
+          "isCorrect": "true"
         },
         {
           "id": 3,
           "title": "Петр Петров",
-          "isCorrect": false
+          "isCorrect": ""
         },
         {
           "id": 4,
           "title": "Не знаю",
-          "isCorrect": false
+          "isCorrect": ""
         }
       ],
       "correctAnswer": "Анна Астафьева"
     },
     {
       "id": 2,
-      "question": "Ты кто?",
+      "question": "Твоя профессия?",
       "answers": [
         {
           "id": 1,
-          "title": "Абобус",
-          "isCorrect": false
+          "title": "Тиктокер",
+          "isCorrect": ""
         },
         {
           "id": 2,
-          "title": "Калус Дратус",
-          "isCorrect": false
+          "title": "Бенедикт Киберскотч",
+          "isCorrect": ""
         },
         {
           "id": 3,
-          "title": "Балбес 126",
-          "isCorrect": true
+          "title": "Король Галактики",
+          "isCorrect": ""
         },
         {
           "id": 4,
-          "title": "Dr. Мусоровоз",
-          "isCorrect": false
+          "title": "Радист",
+          "isCorrect": "true"
         }
       ],
-      "correctAnswer": "Балбес 126"
+      "correctAnswer": "Радист"
     },
     {
       "id": 3,
-      "question": "Представь, ты стал мухомором. Твои действия?",
+      "question": "В каком кабинете сидит директор компании?",
       "answers": [
         {
           "id": 1,
           "title": "А?",
-          "isCorrect": false
+          "isCorrect": ""
         },
         {
           "id": 2,
-          "title": "Аче всмысле",
-          "isCorrect": false
+          "title": "24",
+          "isCorrect": ""
         },
         {
           "id": 3,
-          "title": "Крутяк",
-          "isCorrect": false
+          "title": "42",
+          "isCorrect": ""
         },
         {
           "id": 4,
-          "title": "Райан Гослинг",
-          "isCorrect": true
+          "title": "25",
+          "isCorrect": "true"
         }
       ],
-      "correctAnswer": "Райан Гослинг"
+      "correctAnswer": "25"
     },
     {
       "id": "id2",
       "question": "В чем смысл жизни",
-      "correctAnswer": "Ни в чем"
+      "answers": [
+        {
+          "id": 1,
+          "title": "В работе в компании UDV Group",
+          "isCorrect": "true"
+        },
+        {
+          "id": 2,
+          "title": "В еде",
+          "isCorrect": ""
+        },
+        {
+          "id": 3,
+          "title": "В программировании",
+          "isCorrect": ""
+        },
+        {
+          "id": 4,
+          "title": "В сериалах",
+          "isCorrect": ""
+        }
+      ],
+      "correctAnswer": "В работе в компании UDV Group"
     }
   ]
 }
