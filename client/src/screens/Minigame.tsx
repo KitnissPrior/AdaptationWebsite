@@ -11,9 +11,11 @@ const Game = () => {
     // Это чтобы убирать блок с вопросами, когда сотрудник уже ответил на вопрос
     const [isQuestionVisible, setQuestionVisible] = useState(true);
 
-    const questions = uploadQuestions()[0];
-    console.log(questions);
+    const questions = uploadQuestions().find(quest => quest.id == 1);
+    const answers = questions?.answers;
+    console.log(answers);
 
+    // Подвзяать каким-то образом isCorrect из БД
     const handleCheckAnswerButtonClick = () => {
         if(selectedAnswer == questions?.correctAnswer)
             setAnswerStatus('Правильно! Получи 1 u-coin');
@@ -30,13 +32,13 @@ const Game = () => {
                 <>
                     <p>{questions?.question}</p>
                         <Container>
-                            {Object.keys(questions?.answers || {}).map((key) => (
-                                <div key={key}>
-                                    <input type="radio" value={questions?.answers[key]} onChange={e => {
+                            {answers && answers.map((option) =>
+                                <div key={option['id']}>
+                                    <input type="radio" value={option['title']} onChange={e => {
                                         setSelectedAnswer(e.target.value)}} name="answer" />
-                                    {questions?.answers[key]}
+                                    {option['title']}
                                 </div>
-                            ))}
+                            )}
                         </Container>
                     <Button onClick={handleCheckAnswerButtonClick}>Проверить ответ</Button>
                     <div>{answerStatus}</div>

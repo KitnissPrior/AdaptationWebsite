@@ -52,7 +52,7 @@ const TasksList: React.FC = () => {
 
         return (
             <Collapse defaultActiveKey={[]} onChange={onChange}>
-                {userTasks.map((task, index) =>
+                {userTasks && userTasks.map((task, index) =>
                     <Collapse.Panel header={task["title"]} key={index + 1}>
                         <p>{task['body']}</p>
                         <p>{task['deadline']}</p>
