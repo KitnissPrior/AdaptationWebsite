@@ -15,6 +15,6 @@
     "antd": "^5.11.1",
     "concurrently": "^8.2.2",
     "json-server": "^0.17.4",
-    "react-admin": "^4.15.0"
+    "react-admin": "^4.16.1"
   }
 }
