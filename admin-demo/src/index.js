@@ -3,6 +3,18 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+/*
+const express = require('express');
+const app = express();
+const PORT = 8080;
+require('dotenv').config();
+const connectionString = process.env.CONNECTION_STRING;
+const pgp = require("pg-promise")()
+const db = pgp(connectionString);
+
+app.listen(PORT, ()=>{
+  console.log("Сервер запущен");
+})*/
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
