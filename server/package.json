@@ -14,7 +14,11 @@
   "dependencies": {
     "antd": "^5.11.1",
     "concurrently": "^8.2.2",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
     "json-server": "^0.17.4",
+    "nodemon": "^3.0.1",
+    "pg": "^8.11.3",
     "react-admin": "^4.16.1"
   }
 }
