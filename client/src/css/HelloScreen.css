@@ -5,10 +5,10 @@ html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, address, img, ol, ul, li, f
 }
 
 body {
-    background-image: url(../images/backgroundHello.png);
+    /* background-image: url(../images/backgroundHello.png);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: center center; */
 }
 
 .helloTitle {
@@ -35,7 +35,7 @@ body {
     margin: 0 0 77px;
     padding: 0;
 
-    background-image: url(../images/logoUDVgroup_white.png);
+    background-image: url("../images/logoUDVgroup_white.png");
     background-size: contain;
     background-repeat: no-repeat;
 }
