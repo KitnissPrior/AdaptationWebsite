@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import FormContainer from "../components/FormContainer";
 import { uploadEmployees } from '../data/fetching';
 import { setUser } from '../data/storage';
+import '../css/Login.css';
 
 export const login = (employees, email, password) => {
     const user = employees!.find(
@@ -42,25 +43,27 @@ export function LoginScreen() {
     };
 
     return (
+        <div className='loginContainer'>
+            <div className='logoLogin'></div>
         <FormContainer>
-            <h1>UDV Group</h1>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label>
-                        Электронная почта:
-                        <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <label className='labelLogin'>
+                        Логин:
+                        <input className='inputLogin' placeholder='///' type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
                     </label>
                 </div>
                 <div>
-                    <label>
+                    <label className='labelLogin'>
                         Пароль:
-                        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                        <input className='inputLogin' placeholder='///' type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                     </label>
                 </div>
                 <div>
-                    <button type="submit">Войти</button>
+                    <button className='buttonLogin' type="submit">Войти</button>
                 </div>
             </form>
         </FormContainer>
+        </div>
     );
 }
