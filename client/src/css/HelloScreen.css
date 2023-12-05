@@ -1,0 +1,75 @@
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, address, img, ol, ul, li, form, label, article, aside, footer, header, menu, nav, section, time, button, input {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+body {
+    /* background-image: url(../images/backgroundHello.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; */
+}
+
+.helloTitle {
+    margin: 0 0 50px;
+    padding: 0;
+    font-size: 96px;
+    text-align: left;
+    line-height: 1.2;
+}
+
+.helloContainer {
+    position: absolute;
+    top: auto;
+    left: 9%;
+    display: block;
+    width: 546px;
+    height: 398px;
+}
+
+.logoHello {
+    display: block;
+    width: 230px;
+    height: 46px;
+    margin: 0 0 77px;
+    padding: 0;
+
+    background-image: url("../images/logoUDVgroup_white.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.subtitleHello {
+    display: block;
+    width: 100%;
+    margin: 0 0 50px;
+    padding: 0;
+    text-align: left;
+    font-size: 34px;
+}
+
+.helloButton {
+    position: absolute;
+    left: 0;
+
+    display: block;
+    width: 183px;
+    height: 60px;
+
+    background-color: #00D29D;
+    border-radius: 20px;
+
+    font-size: 24px;
+    line-height: 1;
+
+    color: black;
+
+    transition: 0.2s linear;
+}
+
+.helloButton:hover {
+    background-color: #fff;
+    border: none;
+    color: #00D29D;
+}

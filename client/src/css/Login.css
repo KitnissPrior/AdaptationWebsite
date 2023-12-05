@@ -1,0 +1,74 @@
+body {
+    /* background-image: url("../images/LoginBackground.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; */
+}
+
+.logoLogin {
+    display: block;
+    width: 240px;
+    height: 48px;
+    margin: 0 auto 85px;
+    padding: 0;
+
+    background-image: url(../images/logoUDVgroup_white.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.labelLogin {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    font-size: 20px;
+}
+
+.inputLogin {
+    width: 100%;
+    margin-top: 4px;
+    margin-bottom: 17px;
+    padding: 8px;
+
+    background-color: #000;
+    border: 1px solid #868686;
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    transition: 0.2s linear;
+}
+
+.inputLogin:hover {
+    box-shadow: 0 0 30px 0 rgb(53, 225, 182, 45%);
+    cursor: pointer;
+}
+
+.inputLogin:focus {
+    outline: 1px solid #B1FFEB;
+}
+
+.buttonLogin {
+    display: block;
+    width: 104px;
+    height: 50px;
+    margin: 17px auto;
+    padding: 8px 16px;
+
+    background-color: #00D29D;
+    border-radius: 20px;
+
+    font-size: 20px;
+    line-height: 1;
+
+    color: black;
+
+    transition: 0.2s linear;
+}
+
+.buttonLogin:hover {
+    background-color: #fff;
+    border: none;
+    color: #00D29D;
+}

@@ -1,5 +1,6 @@
 import { useHistory } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
+import '../css/HelloScreen.css';
 
 const ButtonPageRedirect: React.FC = () => {
     const history = useHistory();
@@ -9,7 +10,7 @@ const ButtonPageRedirect: React.FC = () => {
     };
   
     return (
-      <button onClick={handleButtonClick}>
+      <button onClick={handleButtonClick} className='helloButton'>
         Погнали!
       </button>
     );
@@ -17,15 +18,16 @@ const ButtonPageRedirect: React.FC = () => {
 
 const HelloScreen = () => {
     return (
-        <>
-            <h1>Привет!</h1>
-            <Container>
-                <div>
-                    Хочешь начать свое путешествие по udv-тельной галактике?
-                </div>
-                <ButtonPageRedirect/>
-            </Container>
-        </>
+        <div className='helloContainer'>
+          <div className='logoHello'></div>
+          <h1 className="helloTitle">Привет!</h1>
+          <Container>
+            <div className='subtitleHello'>
+              Хочешь начать свое путешествие по udv-тельной галактике?
+            </div>
+            <ButtonPageRedirect/>
+          </Container>
+        </div>
     )
 }
 
