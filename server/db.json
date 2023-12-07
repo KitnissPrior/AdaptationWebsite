@@ -166,8 +166,8 @@
     {
       "tasks": [
         {
-          "title": "Поесть",
-          "body": "Много поесть",
+          "title": "Составить тест-кейсы",
+          "body": "Отправить ссылку на документ с текст-кейсами в тг куратора",
           "deadline": "2023-11-16"
         }
       ],
@@ -188,13 +188,13 @@
     {
       "tasks": [
         {
-          "title": "Название",
+          "title": "Задача1",
           "body": "Lorem ipsum",
           "deadline": "2023-11-16"
         },
         {
-          "title": "задача2",
-          "body": "ваыавыва",
+          "title": "Задача2",
+          "body": "Сверстать главную страницу",
           "deadline": null
         }
       ],
@@ -204,8 +204,8 @@
     {
       "tasks": [
         {
-          "title": "Погулять",
-          "body": "Много погулять",
+          "title": "Сделать макет главного меню",
+          "body": "Макет должен быть кликабельный",
           "deadline": "2023-12-03"
         },
         {
@@ -220,8 +220,8 @@
     {
       "tasks": [
         {
-          "title": "вава",
-          "body": "ыва",
+          "title": "Написать отчет",
+          "body": "Объем работы 2-4 страницы",
           "deadline": "2023-11-26"
         }
       ],
@@ -236,23 +236,19 @@
       "answers": [
         {
           "id": 1,
-          "title": "Иван Иванов",
-          "isCorrect": ""
+          "title": "Иван Иванов"
         },
         {
           "id": 2,
-          "title": "Анна Астафьева",
-          "isCorrect": "true"
+          "title": "Доктор Кто"
         },
         {
           "id": 3,
-          "title": "Петр Петров",
-          "isCorrect": ""
+          "title": "Юлия Юрошева"
         },
         {
           "id": 4,
-          "title": "Не знаю",
-          "isCorrect": ""
+          "title": "Анна Астафьева"
         }
       ],
       "correctAnswer": "Анна Астафьева"
@@ -263,26 +259,22 @@
       "answers": [
         {
           "id": 1,
-          "title": "Тиктокер",
-          "isCorrect": ""
+          "title": "Тиктокер"
         },
         {
           "id": 2,
-          "title": "Бенедикт Киберскотч",
-          "isCorrect": ""
+          "title": "Бургеркинг Киберскотч"
         },
         {
           "id": 3,
-          "title": "Король Галактики",
-          "isCorrect": ""
+          "title": "Король Галактики"
         },
         {
           "id": 4,
-          "title": "Радист",
-          "isCorrect": "true"
+          "title": "Радист"
         }
       ],
-      "correctAnswer": "Радист"
+      "correctAnswer": "Бургеркинг Киберскотч"
     },
     {
       "id": 3,
@@ -290,26 +282,22 @@
       "answers": [
         {
           "id": 1,
-          "title": "А?",
-          "isCorrect": ""
+          "title": "А?"
         },
         {
           "id": 2,
-          "title": "24",
-          "isCorrect": ""
+          "title": "24"
         },
         {
           "id": 3,
-          "title": "42",
-          "isCorrect": ""
+          "title": "42"
         },
         {
           "id": 4,
-          "title": "25",
-          "isCorrect": "true"
+          "title": "25"
         }
       ],
-      "correctAnswer": "25"
+      "correctAnswer": "42"
     },
     {
       "id": "id2",
@@ -317,23 +305,19 @@
       "answers": [
         {
           "id": 1,
-          "title": "В работе в компании UDV Group",
-          "isCorrect": "true"
+          "title": "В работе в компании UDV Group"
         },
         {
           "id": 2,
-          "title": "В еде",
-          "isCorrect": ""
+          "title": "В еде"
         },
         {
           "id": 3,
-          "title": "В программировании",
-          "isCorrect": ""
+          "title": "В программировании"
         },
         {
           "id": 4,
-          "title": "В сериалах",
-          "isCorrect": ""
+          "title": "В сериалах"
         }
       ],
       "correctAnswer": "В работе в компании UDV Group"

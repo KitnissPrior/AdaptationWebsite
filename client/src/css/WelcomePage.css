@@ -1,0 +1,16 @@
+.info-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: baseline;
+}
+
+.info-item {
+    width: 360px;
+    height: auto;
+
+    margin-top: 50px;
+    border: 1px solid #00D29D;
+    border-radius: 1em;
+}

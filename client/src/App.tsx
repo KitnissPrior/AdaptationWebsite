@@ -22,17 +22,17 @@ function App() {
             <main>
                 <Container>
                     <Route path={'/'} exact component={() => <HelloScreen/>} />
-                    <Route path={'/login'} component={() => <LoginScreen/> }/>
-                    <Route path={'/home'} exact component={() => <HomeScreen/>}/>
+                        <Route path={'/login'} component={() => <LoginScreen/> }/>
+                        <Route path={'/home'} exact component={() => <HomeScreen/>}/>
 
-                    <Route path={'/home/myprofile'} exact component={() => <ProfileScreen/>}/>
-                    <Route path={'/home/myprofile/profile'} component={() => <EditProfileScreen/>}/>
-                    <Route path={'/home/myprofile/achievements'} component={() => <AchievementsScreen/>}/>
+                        <Route path={'/home/myprofile'} exact component={() => <ProfileScreen/>}/>
+                            <Route path={'/home/myprofile/profile'} component={() => <EditProfileScreen/>}/>
+                            <Route path={'/home/myprofile/achievements'} component={() => <AchievementsScreen/>}/>
 
-                    <Route path={'/home/tasks'} exact component={() => <TasksScreen/>}/>
-                    <Route path={'/home/tasks/minigame'} component={() => <MinigameScreen/>}/>
-                    <Route path={'/home/welcomepage'} component={() => <WelcomePageScreen/>}/>
-                    <Route path={'/home/welcomepage/links'} component={() => <LinksScreen/>}/>
+                        <Route path={'/home/tasks'} exact component={() => <TasksScreen/>}/>
+                            <Route path={'/home/tasks/minigame'} component={() => <MinigameScreen/>}/>
+                        <Route path={'/home/welcomepage'} exact component={() => <WelcomePageScreen/>}/>
+                            <Route path={'/home/welcomepage/links'} component={() => <LinksScreen/>}/>
                 </Container>
             </main>
         </Router>
