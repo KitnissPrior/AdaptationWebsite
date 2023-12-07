@@ -1,8 +1,17 @@
-body {
-    /* background-image: url("../images/LoginBackground.png");
+body .helloLoginContainer{
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    padding: 110px 0 0;
+    background-image: url("../images/LoginBackground.png");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center; */
+    background-position: center center;
+}
+
+.loginContainer {
+    width: 264px;
+    margin: auto;
 }
 
 .logoLogin {

@@ -4,12 +4,13 @@ const Header = () => {
     return (
         <Navbar bg={'dark'} expand={'lg'} collapseOnSelect>
             <Container>
-                <Navbar.Collapse id={'basic-navbar-nav'}>
+                <Navbar.Collapse id={'basic-navbar-nav'} className='headerMenu'>
+                    <div className='homeLogo'></div>
                     <Nav className={'ms-auto'}>
-                        <Nav.Link href={"/home"}>Главная страница </Nav.Link>
-                        <Nav.Link href={"/home/myprofile"}>Профиль </Nav.Link>
-                        <Nav.Link href={"/home/tasks"}>Задачи </Nav.Link>
-                        <Nav.Link href={"/home/welcomepage"}>Все обо всем </Nav.Link>
+                        <Nav.Link className='headerMenuItem' href={"/home"}>Главная страница </Nav.Link>
+                        <Nav.Link className='headerMenuItem' href={"/home/myprofile"}>Профиль </Nav.Link>
+                        <Nav.Link className='headerMenuItem' href={"/home/tasks"}>Задачи </Nav.Link>
+                        <Nav.Link className='headerMenuItem' href={"/home/welcomepage"}>Все обо всем </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

@@ -1,6 +1,7 @@
 import Header from '../components/Header';
 import { Container } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
+import '../css/Profile.css';
 
 const ProfileButton: React.FC = () => {
   const history = useHistory();
@@ -51,7 +52,7 @@ const NotesButton: React.FC = () => {
 
 const ProfileScreen = () => {
     return (
-        <>
+        <body className='profilleBodyContainer'>
         <Header/>
             <h1>Мой профиль</h1>
             <main>
@@ -60,7 +61,7 @@ const ProfileScreen = () => {
                     <AchievementsButton/>
                 </Container>
             </main>
-        </>
+        </body>
     ) 
 }
 

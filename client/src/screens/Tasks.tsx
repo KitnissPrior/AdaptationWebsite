@@ -5,6 +5,7 @@ import React, {useCallback, useState} from 'react';
 import { Collapse } from "antd";
 import { Container } from 'react-bootstrap';
 import {useHistory} from "react-router-dom";
+import '../css/Tasks.css';
 
 // При открытии/закрытии блока задачи выводит в консоли массив,
 // куда выходят открытые на данный момент блоки задач

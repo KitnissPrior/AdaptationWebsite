@@ -43,27 +43,29 @@ export function LoginScreen() {
     };
 
     return (
-        <div className='loginContainer'>
-            <div className='logoLogin'></div>
-        <FormContainer>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label className='labelLogin'>
-                        Логин:
-                        <input className='inputLogin' placeholder='///' type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
-                    </label>
-                </div>
-                <div>
-                    <label className='labelLogin'>
-                        Пароль:
-                        <input className='inputLogin' placeholder='///' type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                    </label>
-                </div>
-                <div>
-                    <button className='buttonLogin' type="submit">Войти</button>
-                </div>
-            </form>
-        </FormContainer>
-        </div>
+        <body className='helloLoginContainer'>
+            <div className='loginContainer'>
+                <div className='logoLogin'></div>
+                    <FormContainer>
+                        <form onSubmit={handleSubmit}>
+                            <div>
+                                <label className='labelLogin'>
+                                    Логин:
+                                    <input className='inputLogin' placeholder='///' type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
+                                </label>
+                            </div>
+                            <div>
+                                <label className='labelLogin'>
+                                    Пароль:
+                                    <input className='inputLogin' placeholder='///' type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                                </label>
+                            </div>
+                            <div>
+                                <button className='buttonLogin' type="submit">Войти</button>
+                            </div>
+                        </form>
+                    </FormContainer>
+            </div>
+        </body>
     );
 }

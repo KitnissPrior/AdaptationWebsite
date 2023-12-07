@@ -18,6 +18,7 @@ const ButtonPageRedirect: React.FC = () => {
 
 const HelloScreen = () => {
     return (
+      <body className='helloBodyContainer'>
         <div className='helloContainer'>
           <div className='logoHello'></div>
           <h1 className="helloTitle">Привет!</h1>
@@ -28,6 +29,7 @@ const HelloScreen = () => {
             <ButtonPageRedirect/>
           </Container>
         </div>
+      </body>
     )
 }
 
