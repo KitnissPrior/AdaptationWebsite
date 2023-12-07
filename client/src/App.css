@@ -1,7 +1,5 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
@@ -43,6 +41,4 @@
 
 /* Тоже по гайду */
 main {
-  margin-top: 3rem;
-  height: 75vh;
 }

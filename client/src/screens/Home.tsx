@@ -1,14 +1,20 @@
 import Header from '../components/Header';
 import { getUser } from '../data/storage';
+import '../css/Home.css';
 
 const HomeScreen = () => {
     const user = getUser();
 
     return (
-        <>
-        <Header/>
-            <h1>Добро пожаловать, {user.name}!</h1>
-        </>
+        <body className='homeBodyContainer'>
+            <>
+            <Header/>
+            <div className='homeTitles'>
+                <h1 className='homeTitle'>Добро пожаловать,</h1>
+                <h1 className='homeTitle2'>{user.name}! </h1>
+            </div>
+            </>
+        </body>
     ) 
 }
 
