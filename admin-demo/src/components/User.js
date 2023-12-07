@@ -9,12 +9,12 @@ export const UserList = () => {
     return (
         <List title="Сотрудники">
             <UdvDatagrid rowClick="edit">
-              <TextField source="Name" label="ФИО"/>
-              <TextField source="Job" label="Должность"/>
-              <TextField source="Team" label="Команда"/>
+              <TextField source="name" label="ФИО"/>
+              <TextField source="job" label="Должность"/>
+              <TextField source="team" label="Команда"/>
               <FunctionField render={user => (
-                user.tasksCount > 0 ? `${user.TasksDone / user.TasksCount*100}%`:'0%')} label="Прогресс"/>
-              <EmailField source="Email" label="Почта"/>
+                user.tasksCount > 0 ? `${user.tasksDone / user.tasksCount*100}%`:'0%')} label="Прогресс"/>
+              <EmailField source="email" label="Почта"/>
               <EditButton label=""/>
             </UdvDatagrid>
         </List>

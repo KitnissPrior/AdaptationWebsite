@@ -15,9 +15,7 @@ const getCurrentDate = () => {
 const newTaskDefaultValues = () => (
   { id: nextId(),
     publishedAt: getCurrentDate(), 
-    isInProgress: true, 
-    isSent: false, 
-    isDone: false 
+    status: 0,
   });
 
 export const PathCards = () => (

@@ -5,7 +5,7 @@ const LinksScreen = () => {
     return (
         <>
         <Header/>
-            <h1>Полезные ссылки</h1>
+            <h1>Коммуникации</h1>
             <div>
                 <Nav.Link href='https://udv.group/about/news/' target="_blank" rel="noopener noreferrer">Официальный сайт UDV Group</Nav.Link>
             </div>
