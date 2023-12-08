@@ -63,31 +63,27 @@ const TasksList: React.FC = () => {
         });
 
         return (
-            <>
-                <div>
-                    <Collapse defaultActiveKey={[]} onChange={onChange}>
-                        {todayAndTomorrowTasks && todayAndTomorrowTasks.map((task, index) =>
-                            <Collapse.Panel header={task["title"]} key={index + 1}>
-                                <p>{task['body']}</p>
-                                <p>{task['deadline']}</p>
-                                <TaskButton/>
-                            </Collapse.Panel>
-                        )}
-                    </Collapse>
-                </div>
+            <div>
+                <Collapse defaultActiveKey={[]} onChange={onChange}>
+                    {todayAndTomorrowTasks && todayAndTomorrowTasks.map((task, index) =>
+                        <Collapse.Panel header={task["title"]} key={index + 1}>
+                            <p>{task['body']}</p>
+                            <p>{task['deadline']}</p>
+                            <TaskButton/>
+                        </Collapse.Panel>
+                    )}
+                </Collapse>
 
-                <div>
-                    <Collapse defaultActiveKey={[]} onChange={onChange}>
-                        {userTasks && userTasks.map((task, index) =>
-                            <Collapse.Panel header={task["title"]} key={index + 1}>
-                                <p>{task['body']}</p>
-                                <p>{task['deadline']}</p>
-                                <TaskButton/>
-                            </Collapse.Panel>
-                        )}
-                    </Collapse>
-                </div>
-            </>
+                <Collapse defaultActiveKey={[]} onChange={onChange}>
+                    {userTasks && userTasks.map((task, index) =>
+                        <Collapse.Panel header={task["title"]} key={index + 1}>
+                            <p>{task['body']}</p>
+                            <p>{task['deadline']}</p>
+                            <TaskButton/>
+                        </Collapse.Panel>
+                    )}
+                </Collapse>
+            </div>
         );
     }
     catch {
