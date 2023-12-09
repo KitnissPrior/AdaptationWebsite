@@ -36,7 +36,10 @@ export const Columns = [
         title: 'Статус',
         dataIndex: 'status',
         key: 'status',
-        render: (value) => (<span>{TASK_STATUS[value]}</span>),
+        render: (value) => {
+          if (value === null) return TASK_STATUS[0];
+          //const status = value? TASK_STATUS[value] : TASK_STATUS[0]
+          return (<span>{TASK_STATUS[value] }</span>)},
         width: '20%',
       }
 ];

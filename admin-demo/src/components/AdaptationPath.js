@@ -61,7 +61,7 @@ export const CreatePath = () => (
               validate={[maxLength(255,'Максимальная длина описания 255 символов')]}/>
             <DateInput source="deadline" label='Срок сдачи' 
               validate={[ minValue(getCurrentDate(),'Дедлайн должен быть не раньше текущей даты')]}/>
-            <BooleanInput source="canEmployeeAccept" lable="Может ли сотрудник сам принять задачу"/>
+            <BooleanInput source="canEmployeeAccept" label="Сотрудник может принять задачу самостоятельно"/>
           </SimpleFormIterator>
         </ArrayInput>
       </SimpleForm>
@@ -121,7 +121,7 @@ export const EditPath = () => {
               <SimpleFormIterator defaultValues={newTaskDefaultValues}>
                 <TextInput source="title" label='Название' 
                   validate={[required(), maxLength(127,'Максимальная длина названия 127 символов')]}/>
-                <TextInput source="body" label='Описание' 
+                <TextInput source="body" label='Описание'
                   validate={[maxLength(255,'Максимальная длина описания 255 символов')]}/>
                 <DateInput source="deadline" label='Срок сдачи'/>
                 <BooleanInput source="canEmployeeAccept" label="Сотрудник может принять задачу самостоятельно"/>
@@ -162,7 +162,7 @@ export const EditPath = () => {
             </Labeled>
           </div>
         </div>
-        <div style={{ marginLeft: '10%' }}>
+        <div style={{ marginLeft: '10%', float:'right' }}>
           <div style={{ float:'right' }}>
             <Button type="primary" onClick={showModal}>Редактировать задачи</Button>
           </div>

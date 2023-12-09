@@ -204,10 +204,24 @@
         {
           "id": 1,
           "title": "Составить диаграмму",
-          "body": "Отправить ссылку на документ с текст-кейсами в тг куратора",
+          "body": "Отправить в тг куратору",
           "deadline": "2023-11-16",
           "status": 3,
+          "canEmployeeAccept": true
+        },
+        {
+          "title": "попить кофе",
+          "body": "только не горячий!!!!",
+          "deadline": null,
+          "status": null,
           "canEmployeeAccept": false
+        },
+        {
+          "title": "съесть сэндвич",
+          "body": "только не из жизньмарта!!!!!!!",
+          "deadline": "2024-01-05",
+          "status": null,
+          "canEmployeeAccept": true
         }
       ],
       "userId": "2",
