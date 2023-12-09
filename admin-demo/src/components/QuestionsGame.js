@@ -1,14 +1,11 @@
 import { useState } from 'react';
-import { List, TextField, EmailField, FunctionField, EditButton, Create, Edit, SimpleForm, 
-    TextInput, required,  RadioButtonGroupInput, useRecordContext, ReferenceInput, useGetList,
-    ArrayInput, SimpleFormIterator, maxLength, SaveButton, useNotify, useRedirect, useEditContext } from 'react-admin';
+import { List, TextField, FunctionField, EditButton, Create, Edit, SimpleForm, 
+    TextInput, required,  RadioButtonGroupInput, ArrayInput, SimpleFormIterator, 
+    maxLength, SaveButton, useNotify } from 'react-admin';
 import { UdvDatagrid } from '../datagrids/UdvDatagrid';
-//import { Form, Input, InputNumber, Popconfirm, Table, Typography, Checkbox } from 'antd';
 import { Button, Modal } from 'antd';
+import { Box } from '@mui/material';
 import nextId from "react-id-generator";
-import PostEdit from './EditQuestionModal';
-//import { FavoriteBorder, Favorite } from '@mui/icons-material';
-//import { Radio, FormControlLabel } from '@material-ui/core';
 
 const newIdValues = () => ({ id: nextId()});
 const newQuestionDefaultValues = () => ({ id: nextId()});
@@ -30,10 +27,8 @@ export const EditQuestion = () => {
 
     const PostSaveButton = () => {
         const notify = useNotify();
-        const redirect = useRedirect();
         const onSuccess = data => {
             notify(`Post "${data.title}" saved!`);
-            //redirect('/posts');
             setIsModalOpen(false);
         };
         return (
@@ -57,20 +52,20 @@ export const EditQuestion = () => {
         <Edit title="Изменить вопрос">
             <SimpleForm>
                 <TextInput multiline source="question" label="Вопрос"/>
-                <FunctionField render={record =>{ 
-                    return <RadioButtonGroupInput 
-                        row = {false} 
-                        label="Ответы*"
-                        source = "correctAnswer"
-                        choices={record.answers.map(answer => ({id: answer.id, label: answer.title}))}
-                        optionText="label"
-                        optionValue="label"
-                    />
-                }}/>
+                <Box display="flex" width={'100%'}>
+                    <FunctionField style={{ width: '40%'}} render={record =>{ 
+                        return <RadioButtonGroupInput
+                            row = {false} 
+                            label="Ответы*"
+                            source = "correctAnswer"
+                            choices={record.answers.map(answer => ({id: answer.id, label: answer.title}))}
+                            optionText="label"
+                            optionValue="label"
+                        />
+                    }}/>
+                    <Button style={{ marginTop: '15%', marginLeft: '-15%' }} type="primary" onClick={showModal}>Редактировать ответы</Button>
+                </Box>
                 <div>*Выделите правильный ответ</div>
-                <Button type="primary" onClick={showModal}>
-                    Редактировать ответы
-                </Button>
                 <Edit title=" " redirect={false}>
                 <Modal title="Редактирование ответов" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}
                     okText="Ок"
@@ -84,7 +79,6 @@ export const EditQuestion = () => {
                     <PostSaveButton/>
                 </Modal>
                 </Edit>
-                
             </SimpleForm>
         </Edit>
     )
