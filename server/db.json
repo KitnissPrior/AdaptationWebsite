@@ -140,39 +140,60 @@
     {
       "tasks": [
         {
-          "title": "Поесть",
-          "body": "Вкусно поесть",
-          "deadline": "2023-11-16"
+          "id": 1,
+          "title": "Создать базу данных",
+          "body": "Использовать PostgreSQL",
+          "deadline": "2023-11-16",
+          "status": 3,
+          "canEmployeeAccept": true
         },
         {
-          "title": "Поспать",
-          "body": "Поспать. Или выпить кофе",
-          "deadline": "1999-12-12"
+          "id": 2,
+          "title": "Выложить БД на хостинг",
+          "body": "как можно скорее",
+          "deadline": "2023-12-22",
+          "status": 3,
+          "canEmployeeAccept": false
         },
         {
-          "title": "Поспать полностью",
-          "body": "Вкусно поесть",
-          "deadline": "2023-12-10"
+          "id": 3,
+          "title": "Подписать документы у куратора",
+          "body": "Номер кабинета 44",
+          "deadline": "2023-12-10",
+          "status": 2,
+          "canEmployeeAccept": true
         },
         {
-          "title": "Поспать немного",
-          "body": "Поспать. Или выпить кофе",
-          "deadline": "2023-12-08"
+          "id": 4,
+          "title": "Съездить в отпуск",
+          "body": "Отдохни, работяга",
+          "deadline": "2024-01-05",
+          "status": 1,
+          "canEmployeeAccept": false
         },
         {
-          "title": "Поспать больше",
-          "body": "Поспать. Или выпить кофе",
-          "deadline": "2023-12-09"
+          "id": 5,
+          "title": "Написать отчет",
+          "body": "Не больше двух страниц",
+          "deadline": "2023-12-09",
+          "status": 0,
+          "canEmployeeAccept": false
         },
         {
+          "id": 6,
           "title": "Посетить лекцию Обабкова",
           "body": "РТФ - чемпион! РТФ - чемпион! РТФ - чемпион! РТФ - чемпион! РТФ - чемпион!",
-          "deadline": "1999-12-13"
+          "deadline": "2023-12-09",
+          "status": 0,
+          "canEmployeeAccept": false
         },
         {
-          "title": "Поиграть",
-          "body": "Отойди от турников и посиди за компом 20 раз.",
-          "deadline": "1999-12-11"
+          "id": 7,
+          "title": "Написать API",
+          "body": "описание",
+          "deadline": "2023-12-17",
+          "status": 0,
+          "canEmployeeAccept": true
         }
       ],
       "userId": "1",
@@ -181,9 +202,12 @@
     {
       "tasks": [
         {
-          "title": "Составить тест-кейсы",
+          "id": 1,
+          "title": "Составить диаграмму",
           "body": "Отправить ссылку на документ с текст-кейсами в тг куратора",
-          "deadline": "2023-11-16"
+          "deadline": "2023-11-16",
+          "status": 3,
+          "canEmployeeAccept": false
         }
       ],
       "userId": "2",
@@ -192,9 +216,12 @@
     {
       "tasks": [
         {
+          "id": 1,
           "title": "Сходить в \"Ритц\"",
           "body": "Попить чаю",
-          "deadline": null
+          "deadline": null,
+          "status": 0,
+          "canEmployeeAccept": true
         }
       ],
       "userId": "7",
@@ -203,14 +230,20 @@
     {
       "tasks": [
         {
+          "id": 1,
           "title": "Задача1",
           "body": "Lorem ipsum",
-          "deadline": "2023-11-16"
+          "deadline": "2023-11-16",
+          "status": 1,
+          "canEmployeeAccept": false
         },
         {
+          "id": 2,
           "title": "Задача2",
           "body": "Сверстать главную страницу",
-          "deadline": null
+          "deadline": null,
+          "status": 0,
+          "canEmployeeAccept": false
         }
       ],
       "userId": "3",
@@ -219,14 +252,20 @@
     {
       "tasks": [
         {
+          "id": 1,
           "title": "Сделать макет главного меню",
           "body": "Макет должен быть кликабельный",
-          "deadline": "2023-12-03"
+          "deadline": "2023-12-03",
+          "status": 3,
+          "canEmployeeAccept": false
         },
         {
+          "id": 2,
           "title": "Сходить на работу",
           "body": "Можно пешком",
-          "deadline": "2023-12-03"
+          "deadline": "2023-12-03",
+          "status": 2,
+          "canEmployeeAccept": false
         }
       ],
       "userId": "4",
@@ -235,9 +274,12 @@
     {
       "tasks": [
         {
+          "id": 1,
           "title": "Написать отчет",
           "body": "Объем работы 2-4 страницы",
-          "deadline": "2023-11-26"
+          "deadline": "2023-11-26",
+          "status": 1,
+          "canEmployeeAccept": false
         }
       ],
       "userId": "5",
@@ -263,12 +305,9 @@
         },
         {
           "title": "Человек"
-        },
-        {
-          "title": "Мой господин"
         }
       ],
-      "correctAnswer": "Юлия Юрошева"
+      "correctAnswer": "Анна Астафьева"
     },
     {
       "id": 2,
