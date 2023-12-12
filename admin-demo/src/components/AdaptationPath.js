@@ -3,11 +3,14 @@ import { Card, Col, Row, Table , Modal, Button} from 'antd';
 import { TextField, SimpleForm, Create, Edit, List, required, Labeled, DateField,
   ReferenceField, Datagrid, EditButton, TextInput, DateInput, minValue, maxLength,
   ReferenceInput, AutocompleteInput, SimpleFormIterator, ArrayInput, 
-  FunctionField, SaveButton, BooleanInput, useNotify, useRefresh, useDataProvider} from 'react-admin';
-import { Box } from '@mui/material';
+  FunctionField, SaveButton, BooleanInput, useNotify, FormDataConsumer, WithListContext,
+  useRedirect } from 'react-admin';
+import { Box, Grid  } from '@mui/material';
 import nextId from "react-id-generator";
 import { Columns } from './TasksTable';
 import { TASK_STATUS } from './TasksTable';
+import { useForm } from 'react-hook-form';
+import '../App.css';
 
 const getCurrentDate = () => {
     const date = new Date();
@@ -22,7 +25,7 @@ const newTaskDefaultValues = () => (
     canEmployeeAccept: false,
   });
 
-export const PathCards = () => (
+/*export const PathCards = () => (
     <List title="Адаптационные траектории">
       <Datagrid>
       <Col span={8}>
@@ -42,7 +45,68 @@ export const PathCards = () => (
         <EditButton label="" sx={{ width: 1/3}}/>
         </Datagrid >
     </List>
+    <Card  className="my-card" 
+                    onClick={()=>console.log(item.tasks)} key={item.id} 
+                    title={
+                    <ReferenceField record={item} source="userId" label="Сотрудник" reference="employees" link={false}>
+                      <TextField source="name"/>
+                    </ReferenceField>} 
+                      bordered={true}>
+                      <ReferenceField record={item} source="userId" label="Сотрудник" reference="employees" link={false}>
+                        <TextField source="job"/>
+                      </ReferenceField>
+                      <ReferenceField record={item} source="userId" label="Сотрудник" reference="employees" link={false}>
+                        <div>{'На адаптации с '}
+                          <DateField source="startDate"/>
+                        </div>
+                      </ReferenceField>
+                      <EditButton record={item} label="Открыть" sx={{ height: 1/6}}/>
+                    </Card>
+  );*/
+
+const CustomCard = ({ record }) => {
+  const redirect = useRedirect();
+
+  const handleCardClick = () => {
+    redirect(`/adaptationPaths/${record.id}`);
+  };
+
+  return (
+    <Card  className="my-card" 
+        onClick={handleCardClick} key={record.id} 
+        title={
+          <ReferenceField record={record} source="userId" label="Сотрудник" reference="employees" link={false}>
+            <TextField source="name"/>
+          </ReferenceField>} 
+        bordered={true}>
+      <ReferenceField record={record} source="userId" label="Сотрудник" reference="employees" link={false}>
+        <TextField source="job"/>
+      </ReferenceField>
+      <ReferenceField record={record} source="userId" label="Сотрудник" reference="employees" link={false}>
+      <div>{'Начало адаптационного периода:'}</div>
+      <DateField source="startDate"/>
+      </ReferenceField>
+    </Card>
   );
+}
+
+export const PathCards = () => {
+  
+  
+  return (
+    <List title="Адаптационные траектории" sortable={false}>
+      <WithListContext render={({ data }) => (
+            <Grid container spacing={10} sx={{ padding: 10 }}>
+                {data?.map(item => (
+                  <Col span={8}>
+                  <CustomCard record={item}/>
+                  </Col>
+                ))}
+            </Grid>
+        )} />
+  </List>
+  );
+}
 
 export const CreatePath = () => (
   <Create title="Создать траекторию">
@@ -72,9 +136,13 @@ export const CreatePath = () => (
 
 export const EditPath = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  //const { register, handleSubmit, setValue, getValues } = useForm();
+  //const values = getValues();
 
   const ChangeTaskStatusButton = ({ record }) => {
-    const dataProvider = useDataProvider();
+    //console.log(record);
+
+    /*const dataProvider = useDataProvider();
     const notify = useNotify();
     const refresh = useRefresh();
     const newStatus = Object.keys(TASK_STATUS).length - 1 >= record.status? record.status: record.status + 1;
@@ -88,7 +156,8 @@ export const EditPath = () => {
         .catch(error => notify('Error: field not updated', 'warning'));
     };
    
-    return <Button label={TASK_STATUS[newStatus]} onClick={handleClick} />;
+    return <Button label={TASK_STATUS[newStatus]} onClick={handleClick} />;*/
+    return <Button label="Принять задачу">Принять задачу</Button>
    };
 
   const PostSaveButton = () => {
@@ -117,17 +186,43 @@ export const EditPath = () => {
         <Modal width={'60%'} title="Редактирование задач" open={isModalOpen} onOk={handleModalClose} onCancel={handleModalClose}
           okText="Ок"
           cancelText="Закрыть">
-            <ArrayInput source="tasks" label="Задачи">
-              <SimpleFormIterator defaultValues={newTaskDefaultValues}>
-                <TextInput source="title" label='Название' 
+            <ArrayInput source="tasks" label=" ">
+              <SimpleFormIterator defaultValues={newTaskDefaultValues} getItemLabel={index => `${index + 1}.`}>
+                <FormDataConsumer>
+                        {({
+                            formData, // The whole form data
+                            scopedFormData, // The data for this item of the ArrayInput
+                            getSource, // A function to get the valid source inside an ArrayInput
+                            ...rest
+                        }) =>
+                              <p>{TASK_STATUS[scopedFormData.status]}</p>
+                          
+                        }
+                    </FormDataConsumer>
+                
+                <TextInput source="title" label='Название' fullWidth
                   validate={[required(), maxLength(127,'Максимальная длина названия 127 символов')]}/>
-                <TextInput source="body" label='Описание'
+                <TextInput source="body" label='Описание' fullWidth
                   validate={[maxLength(255,'Максимальная длина описания 255 символов')]}/>
                 <DateInput source="deadline" label='Срок сдачи'/>
-                <BooleanInput source="canEmployeeAccept" label="Сотрудник может принять задачу самостоятельно"/>
+                <BooleanInput source="canEmployeeAccept" label="Сотрудник может принять задачу самостоятельно"/> 
+              {/* 
+              <FunctionField render={record => <TextField source="status"/>}/>
+              <FunctionField source="id" render={record => {
+                  
+                  const currentId = values.id;
+                  console.log(currentId);
+                  if (!record.canEmployeeAccept) 
+                    return (
+                    <>
+                    <ChangeTaskStatusButton record={record}/>
+                    <Button>Отправить на доработку</Button>
+                    </>)
+                }}/>
+              */}
+                
               </SimpleFormIterator>
-            </ArrayInput>
-            {/*<ChangeTaskStatusButton/>*/}
+            </ArrayInput>  
           <PostSaveButton/>
         </Modal>
       </Edit>
