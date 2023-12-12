@@ -1,22 +1,60 @@
+.editProfilleBodyContainer {
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 60px 0 0;
+    background-image: url(../images/editProfileBackground.png);
+    background-color: black;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; 
+}
+
+.editProfileContainer {
+    max-width: 1280px;
+    margin: auto;
+}
+
+.editProfileHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
+.editProfileTitle {
+    font-size: 64px;
+    line-height: 1;
+    font-weight: 500;
+}
+
+.editProfileSubtitle {
+    margin-top: 6px;
+    text-align: end;
+    font-size: 24px;
+    color: #9D9D9D;
+    font-weight: 400;
+}
+
 .info-input {
-    width: 100%;
+    width: 450px;
     padding: 10px;
     margin: 10px 0;
-    border: 2px solid;
+    border: 1px solid #868686;
     border-radius: 4px;
     display: flex;
+    background: none;
 }
 
 .input-row {
     display: flex;
     justify-content: space-between;
+    text-align: left;
     align-items: baseline; /* добавлено для центрирования элементов по вертикали */
     margin-bottom: 15px;
 }
 
-.input-row label {
-    width: 50%;
-    padding-right: 100px;
+.editProfileForm {
+    width: 1000px;
+    margin-top: 76px;
 }
 
 .description-label {
@@ -38,13 +76,21 @@
 .save-button {
     width: 100%;
     padding: 10px;
-    margin: 10px 0;
+    margin-top: 10px;
     border: none;
-    background-color: #4CAF50;
+    background-color: #00D29D;
     color: white;
     cursor: pointer;
 }
 
 .save-button:hover {
-    background-color: #45a049;
+    background: none;
+    border: 1px solid #00D29D;
+    color: #00D29D;
+}
+
+.save-button:focus {
+    background: none;
+    outline: 1px solid #00D29D;
+    color: #00D29D;
 }

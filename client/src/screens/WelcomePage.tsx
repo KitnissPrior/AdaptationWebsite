@@ -4,10 +4,20 @@ import "../css/WelcomePage.css"
 
 const WelcomePageScreen = () => {
     return (
-        <>
-            <Header/>
-            <h1>Все обо всем</h1>
-            <p>//welcome page</p>
+        <div className="welcomeBodyContainer">
+            <div className='tasksContainer'>
+                <div className="tasksHeader">
+                    <div className='logoLink'>
+                        {/* сделайте тут ссылку на главное меню */}
+                    </div>
+                    <div>
+                        <h1 className='tasksTitle'>Все обо всем</h1>
+                        <h2 className='tasksSubtitle'>// welcome page</h2>
+                    </div>
+                </div>
+            <div className='hidden'>
+                <Header/>
+            </div>
             <div className='info-container'>
                 <div className='info-item'>
                     <ul>
@@ -73,7 +83,8 @@ const WelcomePageScreen = () => {
                     </ul>
                 </div>
             </div>
-        </>
+        </div>
+    </div>
     )
 }
 
