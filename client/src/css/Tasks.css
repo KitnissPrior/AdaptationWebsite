@@ -1,0 +1,10 @@
+.TasksBodyContainer {
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 60px 0 0;
+    background-image: url(../images/TasksBackground.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; 
+}

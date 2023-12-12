@@ -4,11 +4,13 @@ html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, address, img, ol, ul, li, f
     border: 0;
 }
 
-body {
-    /* background-image: url(../images/backgroundHello.png);
+body .helloBodyContainer {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../images/backgroundHello.png);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center; */
+    background-position: center center; 
 }
 
 .helloTitle {
@@ -21,11 +23,11 @@ body {
 
 .helloContainer {
     position: absolute;
-    top: auto;
+    top: 100px;
     left: 9%;
-    display: block;
+    display: flex;
+    flex-direction: column;
     width: 546px;
-    height: 398px;
 }
 
 .logoHello {
@@ -33,7 +35,6 @@ body {
     width: 230px;
     height: 46px;
     margin: 0 0 77px;
-    padding: 0;
 
     background-image: url("../images/logoUDVgroup_white.png");
     background-size: contain;

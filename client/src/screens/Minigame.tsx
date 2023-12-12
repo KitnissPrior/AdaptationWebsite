@@ -4,6 +4,10 @@ import Header from "../components/Header";
 import { Container } from 'react-bootstrap';
 import { Button } from 'antd';
 
+function randomNumberBetween(min: number, max: number): number {
+    return Math.random() * (max - min) + min;
+   }
+   
 const Game = () => {
     const [selectedAnswer, setSelectedAnswer] = useState('');
     const [answerStatus, setAnswerStatus] = useState('');

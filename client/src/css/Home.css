@@ -1,0 +1,27 @@
+.homeBodyContainer {
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 60px 0 0;
+    background-image: url(../images/HomeBackground.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; 
+}
+
+.homeTitles {
+    max-width: 1280px;
+    margin: auto;
+    margin-top: 230px;
+    text-align: left;
+}
+
+.homeTitle {
+    font-size: 54px;
+    font-weight: 500;
+}
+
+.homeTitle2 {
+    font-size: 54px;
+    font-weight: 500;
+}
