@@ -39,11 +39,10 @@ const EditProfileScreen = () => {
         <div className="editProfilleBodyContainer">
             <div className="editProfileContainer">
                 <div className="editProfileHeader">
-                    <div className='logoLink'>
-                        {/* сделайте тут ссылку на главное меню */}
-                    </div>
+                    <a className='homeLogo' href={'/home'}/>
+                    <a className='back-button' href={'/home/myprofile'}/>
                     <div>
-                        <h1 className='editProfileTitle'>Мои данные</h1>
+                        <h1 className='editProfileTitle'>Изменить данные</h1>
                         <h2 className='editProfileSubtitle'>// кто я такой</h2>
                     </div>
                 </div>

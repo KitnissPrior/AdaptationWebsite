@@ -3,6 +3,7 @@ import { uploadQuestions } from "../data/fetching";
 import Header from "../components/Header";
 import { Container } from 'react-bootstrap';
 import { Button } from 'antd';
+import '../css/Minigame.css'
 
 function randomNumberBetween(min: number, max: number): number {
     return Math.random() * (max - min) + min;
@@ -54,11 +55,11 @@ const Game = () => {
 
 const MinigameScreen = () => {
     return (
-        <>
-            <Header/>
+        <div>
             <h1>Мини-игра</h1>
+            <p>Как играть?</p>
             <Game/>
-        </>
+        </div>
     );
 };
 

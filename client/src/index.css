@@ -102,3 +102,21 @@ button:focus-visible {
   color: rgba(255, 255, 255, 0.80);
   border-bottom: 2px solid rgba(255, 255, 255, 0.80);
 }
+
+.back-button {
+  position: center;
+  width: 5%;
+  /*margin: top right bottom left*/
+  margin: 0 auto 46px 125px;
+  cursor: pointer;
+
+
+  background-image: url('./images/profile-back-idle.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.back-button:hover{
+  background-image: url('./images/profile-back-hover.svg');
+}
