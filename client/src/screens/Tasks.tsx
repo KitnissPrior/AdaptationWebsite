@@ -1,13 +1,11 @@
 import { uploadPaths } from '../data/fetching';
 import { getUser } from '../data/storage';
-import React, {useCallback, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import { Collapse } from "antd";
 import { Container } from 'react-bootstrap';
 import {useHistory} from "react-router-dom";
-import '../css/Tasks.css';
-import SlidingPane from "react-sliding-pane";
-import "react-sliding-pane/dist/react-sliding-pane.css";
 import MinigameScreen from "./Minigame";
+import '../css/Tasks.css';
 
 
 // При открытии/закрытии блока задачи выводит в консоли массив,
@@ -15,22 +13,6 @@ import MinigameScreen from "./Minigame";
 const onChange = (key: string | string[]) => {
     console.log(key);
 };
-
-const MinigameButton: React.FC = () => {
-    const history = useHistory();
-
-    const handleButtonClick = useCallback(() => {
-      history.push('/home/tasks/minigame')
-    }, [history]);
-
-    return (
-        <div>
-            <button onClick={handleButtonClick}>
-                Мини-игра
-            </button>
-        </div>
-    );
-}
 
 const TaskButton = React.memo((props) => {
     const [buttonText, setButtonText] = useState('Отправить на проверку');
@@ -101,9 +83,25 @@ const TasksList: React.FC = () => {
 const TasksScreen = () => {
     const [isPaneOpen, setIsPaneOpen] = useState(false);
 
-    const closePane = () => {
-        setIsPaneOpen(false);
+    const togglePane = () => {
+        setIsPaneOpen(!isPaneOpen);
     }
+
+    // Попытка ресайза панели в зависимости от масштаба страницы бразуера
+    useEffect(() => {
+        const handleResize = () => {
+            const pane = document.querySelector('.pane-body');
+            const scale = window.devicePixelRatio;
+            pane.style.width = (100 / scale) + '%';
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        // Удалить обработчик события при размонтировании компонента
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     return (
         <div className='tasksBodyContainer'>
@@ -117,20 +115,14 @@ const TasksScreen = () => {
                     </div>
                 </div>
 
-                <button onClick={() => setIsPaneOpen(true)}/>
-                <SlidingPane
-                    className='game-body'
-                    overlayClassName="some-custom-overlay-class"
-                    isOpen={isPaneOpen}
-                    title="Hey, it is optional pane title.  I can be React component too."
-                    subtitle="Optional subtitle."
-                    onRequestClose={() => setIsPaneOpen(false)}
-                    from="left">
+                <div className={`pane-body ${isPaneOpen ? 'open' : ''}`}>
                     <div>
                         <MinigameScreen/>
-                        <button onClick={closePane}>Close Pane</button>
                     </div>
-                </SlidingPane>
+                    <button className='pane-button' onClick={togglePane}>
+                        Мини-игра
+                    </button>
+                </div>
 
                 <Container style={{ maxHeight: '400px', overflowY: 'auto' }}>
                     <TasksList/>
