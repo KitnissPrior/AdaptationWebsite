@@ -1,11 +1,14 @@
 import { uploadPaths } from '../data/fetching';
-import Header from '../components/Header';
 import { getUser } from '../data/storage';
 import React, {useCallback, useState} from 'react';
 import { Collapse } from "antd";
 import { Container } from 'react-bootstrap';
 import {useHistory} from "react-router-dom";
 import '../css/Tasks.css';
+import SlidingPane from "react-sliding-pane";
+import "react-sliding-pane/dist/react-sliding-pane.css";
+import MinigameScreen from "./Minigame";
+
 
 // При открытии/закрытии блока задачи выводит в консоли массив,
 // куда выходят открытые на данный момент блоки задач
@@ -96,8 +99,12 @@ const TasksList: React.FC = () => {
 };
 
 const TasksScreen = () => {
-    // через style в тэге Container реализован вертикальный слайдер
-    // для списка задач TasksList
+    const [isPaneOpen, setIsPaneOpen] = useState(false);
+
+    const closePane = () => {
+        setIsPaneOpen(false);
+    }
+
     return (
         <div className='tasksBodyContainer'>
             <div className='tasksContainer'>
@@ -109,13 +116,25 @@ const TasksScreen = () => {
                         <h2 className='tasksSubtitle'>// удачи!</h2>
                     </div>
                 </div>
-            <div className='hidden'>
-                <Header/>
-            </div>
-            <Container style={{ maxHeight: '400px', overflowY: 'auto' }}>
-                <TasksList/>
-            </Container>
-            <MinigameButton/>
+
+                <button onClick={() => setIsPaneOpen(true)}/>
+                <SlidingPane
+                    className='game-body'
+                    overlayClassName="some-custom-overlay-class"
+                    isOpen={isPaneOpen}
+                    title="Hey, it is optional pane title.  I can be React component too."
+                    subtitle="Optional subtitle."
+                    onRequestClose={() => setIsPaneOpen(false)}
+                    from="left">
+                    <div>
+                        <MinigameScreen/>
+                        <button onClick={closePane}>Close Pane</button>
+                    </div>
+                </SlidingPane>
+
+                <Container style={{ maxHeight: '400px', overflowY: 'auto' }}>
+                    <TasksList/>
+                </Container>
             </div>
         </div>
     ) 

@@ -1,0 +1,11 @@
+.game-body {
+    background-color: #24002C !important;
+}
+
+.game-body .slide-pane__header {
+    display: none;
+}
+
+.game-body .slide-pane__close {
+    order: -1;
+}
