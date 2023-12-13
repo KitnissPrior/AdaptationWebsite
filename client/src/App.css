@@ -43,19 +43,3 @@
 .read-the-docs {
   color: #888;
 }
-
-.back-button {
-  position:relative;
-  width: 60px;
-  height: 36px;
-  top: 8px;
-  right: 100px;
-
-  background-image: url('./images/profile-back-idle.svg');
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-.back-button:hover {
-  background-image: url('./images/profile-back-hover.svg');
-}

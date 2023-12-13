@@ -1,4 +1,4 @@
-.profilleBodyContainer {
+.profileBodyContainer {
     width: 100vw;
     height: 100vh;
     box-sizing: border-box;
@@ -20,6 +20,11 @@
     margin: auto;
 }
 
+.profile-container {
+    max-width: 1280px;
+    margin: auto;
+}
+
 .logoLink {
     display: block;
     width: 240px;
@@ -29,6 +34,11 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
+}
+
+.profileHeader {
+    display: flex;
+    justify-content: space-between;
 }
 
 .profileTitle {
@@ -46,11 +56,16 @@
 }
 
 .profileMain {
+    display: inline-flex;
+    justify-content: space-between;
     margin-top: 104px;
+    max-width: 1280px;
+    position: relative;
+    left: 25%
 }
 
 .profileButton {
-    width: 100%;
+    width: 250%;
     margin-bottom: 31px;
     font-size: 20px;
     background: none;
