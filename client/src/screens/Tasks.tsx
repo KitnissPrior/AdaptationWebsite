@@ -99,14 +99,26 @@ const TasksScreen = () => {
     // через style в тэге Container реализован вертикальный слайдер
     // для списка задач TasksList
     return (
-        <>
-        <Header/>
-            <h1>Задачи на весь период</h1>
+        <div className='tasksBodyContainer'>
+            <div className='tasksContainer'>
+                <div className="tasksHeader">
+                    <div className='logoLink'>
+                        {/* сделайте тут ссылку на главное меню */}
+                    </div>
+                    <div>
+                        <h1 className='tasksTitle'>Задачи</h1>
+                        <h2 className='tasksSubtitle'>// удачи!</h2>
+                    </div>
+                </div>
+            <div className='hidden'>
+                <Header/>
+            </div>
             <Container style={{ maxHeight: '400px', overflowY: 'auto' }}>
                 <TasksList/>
             </Container>
             <MinigameButton/>
-        </>
+            </div>
+        </div>
     ) 
 };
 

@@ -11,7 +11,7 @@ const ProfileButton: React.FC = () => {
 
   return (
     <div>
-      <button onClick={handleButtonClick}>
+      <button onClick={handleButtonClick} className='profileButton'>
       Мои данные
     </button>
     </div>
@@ -27,7 +27,7 @@ const AchievementsButton: React.FC = () => {
 
   return (
     <div>
-      <button onClick={handleButtonClick}>
+      <button onClick={handleButtonClick} className='profileButton'>
         Достижения
       </button>
     </div>
@@ -53,14 +53,25 @@ const NotesButton: React.FC = () => {
 const ProfileScreen = () => {
     return (
         <body className='profilleBodyContainer'>
-        <Header/>
-            <h1>Мой профиль</h1>
-            <main>
-                <Container>
-                    <ProfileButton/>
-                    <AchievementsButton/>
-                </Container>
-            </main>
+          <div className='hidden'>
+            <Header/>
+          </div>
+          <div className='profileContainer'>
+            <div className='logoLink'>
+              {/* сделайте тут ссылку на главное меню */}
+            </div>
+            <div>
+              <h1 className='profileTitle'>Мой профиль</h1>
+              <h2 className='profileSubtitle'>// я - молодец :&#41;</h2>
+
+              <main className='profileMain'>
+                  <Container>
+                      <ProfileButton/>
+                      <AchievementsButton/>
+                  </Container>
+              </main>
+            </div>
+          </div>
         </body>
     ) 
 }
