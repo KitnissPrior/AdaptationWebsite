@@ -103,6 +103,7 @@ const TasksScreen = () => {
             <div className='tasksContainer'>
                 <div className="tasksHeader">
                     <a className='homeLogo' href={'/home'}/>
+                    <a className='back-button' href={'/home'}/>
                     <div>
                         <h1 className='tasksTitle'>Задачи</h1>
                         <h2 className='tasksSubtitle'>// удачи!</h2>
