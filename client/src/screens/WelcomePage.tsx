@@ -7,9 +7,7 @@ const WelcomePageScreen = () => {
         <div className="welcomeBodyContainer">
             <div className='tasksContainer'>
                 <div className="tasksHeader">
-                    <div className='logoLink'>
-                        {/* сделайте тут ссылку на главное меню */}
-                    </div>
+                    <a className='homeLogo' href={'/home'}/>
                     <div>
                         <h1 className='tasksTitle'>Все обо всем</h1>
                         <h2 className='tasksSubtitle'>// welcome page</h2>

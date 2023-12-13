@@ -57,9 +57,7 @@ const ProfileScreen = () => {
             <Header/>
           </div>
           <div className='profileContainer'>
-            <div className='logoLink'>
-              {/* сделайте тут ссылку на главное меню */}
-            </div>
+              <a className='homeLogo' href={'/home'}/>
             <div>
               <h1 className='profileTitle'>Мой профиль</h1>
               <h2 className='profileSubtitle'>// я - молодец :&#41;</h2>

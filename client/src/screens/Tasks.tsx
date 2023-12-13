@@ -102,9 +102,7 @@ const TasksScreen = () => {
         <div className='tasksBodyContainer'>
             <div className='tasksContainer'>
                 <div className="tasksHeader">
-                    <div className='logoLink'>
-                        {/* сделайте тут ссылку на главное меню */}
-                    </div>
+                    <a className='homeLogo' href={'/home'}/>
                     <div>
                         <h1 className='tasksTitle'>Задачи</h1>
                         <h2 className='tasksSubtitle'>// удачи!</h2>
