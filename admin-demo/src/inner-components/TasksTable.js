@@ -24,11 +24,12 @@ export const Columns = [
         key: 'deadline',
         render: (value) => {
           if (value === null) return 'Не определен';
-          const dateObj = new Date(value);
-          const day = dateObj.getDate();
-          const month = dateObj.getMonth() + 1; // месяцы в JavaScript начинаются с 0
-          const year = dateObj.getFullYear();
-          return `${day}.${month}.${year}`;
+          const formattedDate = new Date(value).toLocaleDateString('ru-RU', {
+            day: '2-digit',
+            month: '2-digit',
+            year: 'numeric'
+           });
+          return `${formattedDate}`;
         },
         width: '20%',
       },

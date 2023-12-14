@@ -2,14 +2,14 @@
   "employees": [
     {
       "id": "2",
-      "name": "Гарри Джеймс Поттер",
-      "username": "BoyWhoLived",
-      "email": "voldemort_killer@gmail.com",
+      "name": "Гусев Леонид Алексеевич",
+      "username": "lene4ka",
+      "email": "leonid@gmail.com",
       "phone": 4402672,
       "job": "Data Scientist",
       "startDate": "2023-10-30",
       "project": "Проект",
-      "team": "Mинистерство Магии",
+      "team": "Исследовательский центр",
       "password": 12345,
       "achievements": [],
       "tasksCount": 4,
@@ -17,14 +17,14 @@
     },
     {
       "id": "3",
-      "name": "Иванов Иван Иванович",
-      "username": "Jack",
-      "email": "JackClain@gmail.com",
+      "name": "Шапков Матвей Сергеевич",
+      "username": "matvei",
+      "email": "motva@gmail.com",
       "phone": 224423045,
       "job": "Аналитик",
       "startDate": "2023-11-16",
-      "project": "Охота на монстров",
-      "team": "Команда1",
+      "project": "Игра про зомби",
+      "team": "eplat4m",
       "password": 12345,
       "achievements": [],
       "tasksCount": 4,
@@ -32,14 +32,14 @@
     },
     {
       "id": "4",
-      "name": "Городецкий Антон Сергеевич",
-      "username": "antonGor",
-      "email": "anton@gmail.com",
+      "name": "Дубров Сергей Александрович",
+      "username": "sergei",
+      "email": "dubrov@gmail.com",
       "phone": 89354033,
       "job": "Фронтендер",
       "startDate": "2023-11-16",
-      "project": "Долой вампиров",
-      "team": "Ночной Дозор",
+      "project": "Сайт для адаптации",
+      "team": "eplat4m",
       "password": 12345,
       "achievements": [],
       "tasksCount": 0,
@@ -54,7 +54,7 @@
       "job": "Тимлид",
       "startDate": "2023-11-08",
       "project": "Проект",
-      "team": "Команда2",
+      "team": "SOAR",
       "password": 12345,
       "achievements": [],
       "tasksCount": 4,
@@ -68,8 +68,8 @@
       "phone": "892273",
       "job": "Бэкендер",
       "startDate": "2023-11-16",
-      "project": "Убить врагов",
-      "team": "Винтерфелл",
+      "project": "Сайт для адаптации",
+      "team": "eplat4m",
       "password": 12345,
       "achievements": [],
       "tasksCount": 4,
@@ -77,14 +77,14 @@
     },
     {
       "id": "7",
-      "name": "Энтони Джей Кроули",
-      "username": "Crowley",
-      "email": "serpent_tempter@gmail.com",
-      "phone": "666",
+      "name": "Городецкий Антон Сергеевич",
+      "username": "antonGor",
+      "email": "anton@gmail.com",
+      "phone": "298435",
       "job": "Разработчик игр",
       "startDate": "2023-11-16",
-      "project": "Save the Earth",
-      "team": "A.Z.Fell & CO",
+      "project": "Игра про зомби",
+      "team": "SOAR",
       "password": 12345,
       "achievements": [],
       "tasksCount": 4,
@@ -92,14 +92,14 @@
     },
     {
       "id": "44",
-      "name": "Долгих Екатерина Анатольевна",
+      "name": "Жаркова Надежда Андреевна",
       "username": "Mockingjay",
       "email": "fire_katniss@gmail.com",
       "phone": "1357653",
       "job": "Дизайнер",
       "startDate": "2023-11-16",
-      "project": "Hunger Games",
-      "team": "Дистрикт 12",
+      "project": "Сайт для адаптации",
+      "team": "Исследовательский центр",
       "password": 12345,
       "achievements": [],
       "tasksCount": 4,
@@ -113,8 +113,8 @@
       "phone": "987234235",
       "job": "Тестировщик",
       "startDate": "2023-09-01",
-      "project": "Астралис",
-      "team": "Клан Белоголовых",
+      "project": "Игра про зомби",
+      "team": "SOAR",
       "password": 12345,
       "achievements": [],
       "tasksCount": 4,
@@ -128,8 +128,8 @@
       "phone": "4545334",
       "job": "Тимлид",
       "startDate": "2023-11-16",
-      "project": "Песни",
-      "team": "Сплин",
+      "project": "Музыка",
+      "team": "Датапк",
       "password": 12345,
       "achievements": [],
       "tasksCount": 4,
@@ -210,17 +210,17 @@
           "canEmployeeAccept": true
         },
         {
-          "title": "попить кофе",
-          "body": "только не горячий!!!!",
+          "title": "Написать отчет",
+          "body": "Объем 40 страниц, 14 кегль Times New Roman",
           "deadline": null,
-          "status": null,
+          "status": 1,
           "canEmployeeAccept": false
         },
         {
-          "title": "съесть сэндвич",
-          "body": "только не из жизньмарта!!!!!!!",
+          "title": "Прогноз по росту цен",
+          "body": "Составить прогноз по росту цен на товары",
           "deadline": "2024-01-05",
-          "status": null,
+          "status": 0,
           "canEmployeeAccept": true
         }
       ],
@@ -298,6 +298,24 @@
       ],
       "userId": "5",
       "id": 12
+    },
+    {
+      "tasks": [
+        {
+          "title": "Сделать иконки",
+          "body": "Для сотрудника и админа",
+          "deadline": "2023-12-19",
+          "canEmployeeAccept": false
+        },
+        {
+          "title": "Подключить стили к админке",
+          "body": "Хотя бы для одного раздела",
+          "deadline": "2023-12-19",
+          "canEmployeeAccept": false
+        }
+      ],
+      "userId": "44",
+      "id": 13
     }
   ],
   "questions": [
@@ -370,7 +388,7 @@
           "title": "what is love? baby, don't hurt me..."
         }
       ],
-      "correctAnswer": "А?"
+      "correctAnswer": "what is love? baby, don't hurt me..."
     },
     {
       "id": "id2",
@@ -434,7 +452,20 @@
         }
       ],
       "question": "Ты кто",
-      "correctAnswer": "Демоненок"
+      "correctAnswer": "Райан Гослинг"
+    },
+    {
+      "id": "id6",
+      "answers": [
+        {
+          "title": "Ответ1"
+        },
+        {
+          "title": "Ответ2"
+        }
+      ],
+      "question": "Вопрос",
+      "correctAnswer": "Ответ2"
     }
   ]
 }
