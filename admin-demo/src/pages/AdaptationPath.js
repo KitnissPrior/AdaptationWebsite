@@ -2,13 +2,14 @@ import React, {useState} from 'react';
 import { Card, Col, Row, Table , Modal, Button} from 'antd';
 import { TextField, SimpleForm, Create, Edit, List, required, Labeled, DateField,
   ReferenceField, Datagrid, EditButton, TextInput, DateInput, minValue, maxLength,
-  ReferenceInput, AutocompleteInput, SimpleFormIterator, ArrayInput, 
+  ReferenceInput, AutocompleteInput, SimpleFormIterator, ArrayInput, ListActions,
   FunctionField, SaveButton, BooleanInput, useNotify, FormDataConsumer, WithListContext,
   useRedirect } from 'react-admin';
 import { Box, Grid  } from '@mui/material';
+import { MyCreateButton } from '../inner-components/MyCreateButton';
 import nextId from "react-id-generator";
-import { Columns } from './TasksTable';
-import { TASK_STATUS } from './TasksTable';
+import { Columns } from '../inner-components/TasksTable';
+import { TASK_STATUS } from '../inner-components/TasksTable';
 import { useForm } from 'react-hook-form';
 import '../App.css';
 
@@ -24,45 +25,6 @@ const newTaskDefaultValues = () => (
     status: 0,
     canEmployeeAccept: false,
   });
-
-/*export const PathCards = () => (
-    <List title="Адаптационные траектории">
-      <Datagrid>
-      <Col span={8}>
-        <Card title={<ReferenceField source="userId"
-          label="Сотрудник" reference="employees" link={false}/>} 
-          bordered={true}>
-          <ReferenceField source="userId" label="Сотрудник" reference="employees" link={false}>
-            <TextField source="job"/>
-          </ReferenceField>
-          <ReferenceField source="userId" label="Сотрудник" reference="employees" link={false}>
-            <div>{'На адаптации с '}
-              <DateField source="startDate"/>
-            </div>
-          </ReferenceField>
-        </Card>
-        </Col>
-        <EditButton label="" sx={{ width: 1/3}}/>
-        </Datagrid >
-    </List>
-    <Card  className="my-card" 
-                    onClick={()=>console.log(item.tasks)} key={item.id} 
-                    title={
-                    <ReferenceField record={item} source="userId" label="Сотрудник" reference="employees" link={false}>
-                      <TextField source="name"/>
-                    </ReferenceField>} 
-                      bordered={true}>
-                      <ReferenceField record={item} source="userId" label="Сотрудник" reference="employees" link={false}>
-                        <TextField source="job"/>
-                      </ReferenceField>
-                      <ReferenceField record={item} source="userId" label="Сотрудник" reference="employees" link={false}>
-                        <div>{'На адаптации с '}
-                          <DateField source="startDate"/>
-                        </div>
-                      </ReferenceField>
-                      <EditButton record={item} label="Открыть" sx={{ height: 1/6}}/>
-                    </Card>
-  );*/
 
 const CustomCard = ({ record }) => {
   const redirect = useRedirect();
@@ -91,10 +53,12 @@ const CustomCard = ({ record }) => {
 }
 
 export const PathCards = () => {
-  
-  
   return (
-    <List title="Адаптационные траектории" sortable={false}>
+    <>
+    <List actions={false} title="Адаптационные траектории" sortable={false}>
+      <ListActions>
+        <MyCreateButton />
+      </ListActions>
       <WithListContext render={({ data }) => (
             <Grid container spacing={10} sx={{ padding: 10 }}>
                 {data?.map(item => (
@@ -105,6 +69,8 @@ export const PathCards = () => {
             </Grid>
         )} />
   </List>
+    </>
+    
   );
 }
 

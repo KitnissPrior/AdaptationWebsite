@@ -88,7 +88,7 @@ const TasksScreen = () => {
     }
 
     // Попытка ресайза панели в зависимости от масштаба страницы бразуера
-    useEffect(() => {
+    /*useEffect(() => {
         const handleResize = () => {
             const pane = document.querySelector('.pane-body');
             const scale = window.devicePixelRatio;
@@ -101,7 +101,7 @@ const TasksScreen = () => {
         return () => {
             window.removeEventListener('resize', handleResize);
         };
-    }, []);
+    }, []);*/
 
     return (
         <div className='tasksBodyContainer'>
