@@ -51,21 +51,23 @@ export const EditQuestion = () => {
     return (
         <Edit title="Изменить вопрос">
             <SimpleForm>
-                <TextInput multiline source="question" label="Вопрос"/>
-                <Box display="flex" width={'100%'}>
+                <div style={{fontSize: 16}}>Вопрос:</div>
+                <TextInput multiline source="question" label=" "/>
+                <div style={{fontSize: 16}}>Ответы:</div>
+                <Box display="flex" width={'100%'}>                
                     <FunctionField style={{ width: '40%'}} render={record =>{ 
                         return <RadioButtonGroupInput
                             row = {false} 
-                            label="Ответы*"
+                            label=" "
                             source = "correctAnswer"
                             choices={record.answers.map(answer => ({id: answer.id, label: answer.title}))}
                             optionText="label"
                             optionValue="label"
                         />
                     }}/>
-                    <Button style={{ marginTop: '15%', marginLeft: '-15%' }} type="primary" onClick={showModal}>Редактировать ответы</Button>
                 </Box>
-                <div>*Выделите правильный ответ</div>
+                <div style={{fontSize: 14}}>*Выделите правильный ответ</div>
+                <Button type="primary" onClick={showModal} style={{marginTop: "10px"}}>Редактировать ответы</Button>
                 <Edit title=" " redirect={false}>
                 <Modal title="Редактирование ответов" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}
                     okText="Ок"

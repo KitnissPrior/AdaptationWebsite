@@ -2,8 +2,13 @@
   "employees": [
     {
       "id": "2",
-      "name": "Гусев Леонид Алексеевич",
+      "surname": "Гусев",
+      "name": "Леонид",
+      "patronymic": "Алексеевич",
       "username": "lene4ka",
+      "birthDate": "2003-08-24",
+      "telegram": "@mega_teamlead",
+      "office": "22",
       "email": "leonid@gmail.com",
       "phone": 4402672,
       "job": "Data Scientist",
@@ -17,7 +22,12 @@
     },
     {
       "id": "3",
-      "name": "Шапков Матвей Сергеевич",
+      "surname": "Шапков",
+      "name": "Матвей",
+      "patronymic": "Сергеевич",
+      "birthDate": "2001-05-01",
+      "telegram": "@gosling_m",
+      "office": "21",
       "username": "matvei",
       "email": "motva@gmail.com",
       "phone": 224423045,
@@ -32,7 +42,12 @@
     },
     {
       "id": "4",
-      "name": "Дубров Сергей Александрович",
+      "surname": "Дубров",
+      "name": "Сергей",
+      "patronymic": "Александрович",
+      "birthDate": "1993-11-11",
+      "telegram": "@serg_92",
+      "office": "34",
       "username": "sergei",
       "email": "dubrov@gmail.com",
       "phone": 89354033,
@@ -47,7 +62,12 @@
     },
     {
       "id": "5",
-      "name": "Святова Селестина Тимуровна",
+      "surname": "Святова",
+      "name": "Селестина",
+      "patronymic": "Тимуровна",
+      "birthDate": "1988-08-06",
+      "telegram": "@celestina",
+      "office": "1004",
       "username": "moonPrincess",
       "email": "moon_princess@gmail.com",
       "phone": "891223455",
@@ -62,7 +82,12 @@
     },
     {
       "id": "1",
-      "name": "Аксенова Елена Константиновна",
+      "surname": "Аксенова",
+      "name": "Елена",
+      "patronymic": "Константиновна",
+      "birthDate": "2003-03-21",
+      "telegram": "@aziraphale_fell",
+      "office": "504",
       "username": "akselka",
       "email": "severe_girl@gmail.com",
       "phone": "892273",
@@ -77,7 +102,12 @@
     },
     {
       "id": "7",
-      "name": "Городецкий Антон Сергеевич",
+      "surname": "Городецкий",
+      "name": "Антон",
+      "patronymic": "Сергеевич",
+      "birthDate": "1997-09-14",
+      "telegram": "@night_watch283",
+      "office": "99",
       "username": "antonGor",
       "email": "anton@gmail.com",
       "phone": "298435",
@@ -92,7 +122,12 @@
     },
     {
       "id": "44",
-      "name": "Жаркова Надежда Андреевна",
+      "surname": "Жаркова",
+      "name": "Надежда",
+      "patronymic": "Андреевна",
+      "birthDate": "2003-04-14",
+      "telegram": "@nadezhda_7732",
+      "office": "44",
       "username": "Mockingjay",
       "email": "fire_katniss@gmail.com",
       "phone": "1357653",
@@ -107,7 +142,12 @@
     },
     {
       "id": "10",
-      "name": "Князев Тимофей Валерьевич",
+      "surname": "Князев",
+      "name": "Тимофей",
+      "patronymic": "Валерьевич",
+      "birthDate": "2000-10-12",
+      "telegram": "@tracer",
+      "office": "1",
       "username": "Tracer",
       "email": "whiteDragon@gmail.com",
       "phone": "987234235",
@@ -122,7 +162,12 @@
     },
     {
       "id": "id2",
-      "name": "Васильев Александр Георгиевич",
+      "surname": "Васильев",
+      "name": "Александр",
+      "patronymic": "Георгиевич",
+      "birthDate": "1965-09-09",
+      "telegram": "@vassAl_383",
+      "office": "12",
       "username": "vassAl",
       "email": "mymail@gmail.com",
       "phone": "4545334",
@@ -134,6 +179,18 @@
       "achievements": [],
       "tasksCount": 4,
       "tasksDone": 2
+    },
+    {
+      "id": "id6",
+      "name": "Вадим",
+      "username": "vadim",
+      "job": "Devops",
+      "team": "Датапк",
+      "project": "Сайт для адаптации",
+      "email": "vadim@gmail.com",
+      "startDate": "2023-10-13",
+      "surname": "Самойлов",
+      "phone": "89128344865"
     }
   ],
   "adaptationPaths": [
@@ -316,6 +373,24 @@
       ],
       "userId": "44",
       "id": 13
+    },
+    {
+      "tasks": [
+        {
+          "title": "Составить тест-кейсы",
+          "body": "штук 5-10",
+          "deadline": "2023-12-23",
+          "canEmployeeAccept": false
+        },
+        {
+          "title": "Написать автотесты",
+          "body": "Процент покрытия кода минимум 70%",
+          "deadline": null,
+          "canEmployeeAccept": false
+        }
+      ],
+      "userId": "10",
+      "id": 14
     }
   ],
   "questions": [
@@ -342,76 +417,27 @@
       "correctAnswer": "Анна Астафьева"
     },
     {
-      "id": 2,
-      "question": "Твоя профессия?",
-      "answers": [
-        {
-          "id": 1,
-          "title": "Фронтендер"
-        },
-        {
-          "id": 2,
-          "title": "Бергамот Чеддерчиз"
-        },
-        {
-          "id": 3,
-          "title": "Тестировщик"
-        },
-        {
-          "id": 4,
-          "title": "Радист"
-        }
-      ],
-      "correctAnswer": "Тестировщик"
-    },
-    {
-      "id": 3,
-      "question": "В каком кабинете сидит директор компании?",
-      "answers": [
-        {
-          "id": 1,
-          "title": "А?"
-        },
-        {
-          "id": 2,
-          "title": "нет"
-        },
-        {
-          "id": 3,
-          "title": "42"
-        },
-        {
-          "id": 4,
-          "title": "25"
-        },
-        {
-          "title": "what is love? baby, don't hurt me..."
-        }
-      ],
-      "correctAnswer": "what is love? baby, don't hurt me..."
-    },
-    {
       "id": "id2",
-      "question": "В чем смысл жизни",
+      "question": "Что такое u-coins?",
       "answers": [
         {
           "id": 1,
-          "title": "В работе в компании UDV Group"
-        },
-        {
-          "id": 2,
-          "title": "В еде"
-        },
-        {
-          "id": 3,
-          "title": "В программировании"
+          "title": "Монетки для людей с именем на \"Ю\""
         },
         {
           "id": 4,
-          "title": "В сериалах"
+          "title": "Деньги из какой-то видеоигры"
+        },
+        {
+          "id": 2,
+          "title": "Корпоративная валюта компании, которую можно обменивать на классный мерч"
+        },
+        {
+          "id": 3,
+          "title": "Не знаю"
         }
       ],
-      "correctAnswer": "В работе в компании UDV Group"
+      "correctAnswer": "Корпоративная валюта компании, которую можно обменивать на классный мерч"
     },
     {
       "id": "id4",
@@ -429,43 +455,27 @@
           "title": "да хз"
         }
       ],
-      "question": "Кто круче, Росомаха или Дэдпул?",
+      "question": "Обучает ли компания UDV Group своих сотрудников?",
       "correctAnswer": "Илья Николаевич Обабков"
     },
     {
       "id": "id8",
       "answers": [
         {
-          "title": "хз"
+          "title": "С повидлом"
         },
         {
-          "title": "Райан Гослинг"
+          "title": "С творогом"
         },
         {
-          "title": "Демоненок"
+          "title": "Корпоративный транспорт, занятия по английскому, компенсация занятий спортом"
         },
         {
-          "title": "ы"
-        },
-        {
-          "title": "никто"
+          "title": "Бесплатные онигири из жизньмарта"
         }
       ],
-      "question": "Ты кто",
-      "correctAnswer": "Райан Гослинг"
-    },
-    {
-      "id": "id6",
-      "answers": [
-        {
-          "title": "Ответ1"
-        },
-        {
-          "title": "Ответ2"
-        }
-      ],
-      "question": "Вопрос",
-      "correctAnswer": "Ответ2"
+      "question": "Какие плюшки предоставляет своим сотрудникам UDV Group?",
+      "correctAnswer": "Корпоративный транспорт, занятия по английскому, компенсация занятий спортом"
     }
   ]
 }

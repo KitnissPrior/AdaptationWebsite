@@ -1,0 +1,25 @@
+.my-card {
+    width: 55vh; 
+    height: 35vh;
+    transition: border 0.3s ease;
+  }
+  
+.my-card:hover {
+    border-radius: 1%;
+    background-color: rgba(171, 236, 219, 0.13);
+    border-color: rgba(10, 83, 63, 0.962); 
+    border-radius: 4px;
+   }
+
+   .card-container{
+    display: grid;
+    /*justify-content: space-between;*/
+    padding-left: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+   }
+
+   .card-container > * {
+    margin-top: 10px;
+    margin-bottom: 10px;
+   }

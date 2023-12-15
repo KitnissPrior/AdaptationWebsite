@@ -12,10 +12,10 @@ import { Columns } from '../inner-components/TasksTable';
 import { TASK_STATUS } from '../inner-components/TasksTable';
 import { useForm } from 'react-hook-form';
 import '../App.css';
+import '../css/Adaptation.css';
 
 const getCurrentDate = () => {
     const date = new Date();
-    console.log(date);
     return `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`;
 };
 
@@ -34,11 +34,14 @@ const CustomCard = ({ record }) => {
   };
 
   return (
-    <Card  className="my-card" 
+    <Card className="my-card" 
         onClick={handleCardClick} key={record.id} 
         title={
           <ReferenceField record={record} source="userId" label="Сотрудник" reference="employees" link={false}>
-            <TextField source="name"/>
+            <FunctionField render={user => (
+                    `${user.surname} ${user.name} ${user.patronymic? user.patronymic: ''}`
+                )}
+                />
           </ReferenceField>} 
         bordered={true}>
       <ReferenceField record={record} source="userId" label="Сотрудник" reference="employees" link={false}>
@@ -57,10 +60,10 @@ export const PathCards = () => {
     <>
     <List actions={false} title="Адаптационные траектории" sortable={false}>
       <ListActions>
-        <MyCreateButton />
+        <MyCreateButton title="Добавить траекторию"/>
       </ListActions>
       <WithListContext render={({ data }) => (
-            <Grid container spacing={10} sx={{ padding: 10 }}>
+            <Grid container className="card-container">
                 {data?.map(item => (
                   <Col span={8}>
                   <CustomCard record={item}/>
@@ -192,13 +195,16 @@ export const EditPath = () => {
           <PostSaveButton/>
         </Modal>
       </Edit>
-      <Box display="flex">
+      <Box display="flex" width={'100%'}>
         <div>
-          <div>
+          <div style={{float: "left"}}>
             <Labeled title="ФИО сотрудника">
-            <ReferenceField source="userId" reference="employees" label="ФИО">
-                <TextField source="name"/>
-            </ReferenceField>
+            <ReferenceField source="userId" label="Сотрудник" reference="employees" link={false}>
+              <FunctionField render={user => (
+                    `${user.surname} ${user.name} ${user.patronymic? user.patronymic: ''}`
+                )}
+                />
+              </ReferenceField>
             </Labeled>
           </div>
           <div>
@@ -228,7 +234,7 @@ export const EditPath = () => {
             <Button type="primary" onClick={showModal}>Редактировать задачи</Button>
           </div>
           <h3 style={{ textAlign: 'center' }}>Список задач</h3>
-          <FunctionField render={record => {
+          <FunctionField style={{ float:'right' }} render={record => {
             return <div><Table dataSource={record.tasks} columns={Columns} pagination={false}/></div>
             }} />
           
