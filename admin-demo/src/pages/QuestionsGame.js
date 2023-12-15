@@ -1,22 +1,33 @@
 import { useState } from 'react';
 import { List, TextField, FunctionField, EditButton, Create, Edit, SimpleForm, 
     TextInput, required,  RadioButtonGroupInput, ArrayInput, SimpleFormIterator, 
-    maxLength, SaveButton, useNotify } from 'react-admin';
+    maxLength, SaveButton, useNotify, useRedirect } from 'react-admin';
 import { UdvDatagrid } from '../datagrids/UdvDatagrid';
 import { Button, Modal } from 'antd';
 import { Box } from '@mui/material';
+import { UdvSaveToolBar } from '../inner-components/Buttons';
+import { UdvEditButton } from '../inner-components/Buttons';
+import { UdvEditIcon } from '../inner-components/Icons';
+import { UdvCyan, UdvDarkCyan } from '../css/Colors';
 import nextId from "react-id-generator";
+import '../css/Common.css';
 
 const newIdValues = () => ({ id: nextId()});
 const newQuestionDefaultValues = () => ({ id: nextId()});
 
 export const QuestionsList = () => {
+    const redirect = useRedirect();
+
+  const handleCreateClick = () => {
+    redirect(`/questions/create`);
+  };
     return (
-        <List title="Вопросы для викторины">
+        <List actions={false} title="Вопросы для викторины" pagination={false}>
+            <Button className='create-question-button' onClick={handleCreateClick}>Добавить вопрос</Button>
             <UdvDatagrid rowClick="edit">
               <TextField source="question" label="Вопрос"/>
               <TextField source="correctAnswer" label="Правильный ответ"/>
-              <EditButton label=""/>
+              <EditButton label="" icon={<UdvEditIcon/>}/>
             </UdvDatagrid>
         </List>
     )
@@ -32,7 +43,14 @@ export const EditQuestion = () => {
             setIsModalOpen(false);
         };
         return (
-            <SaveButton type="button" label="Сохранить" redirect={false}/>
+            <SaveButton type="button" label="Сохранить" redirect={false} icon={<></>}
+                sx={{
+                    color: UdvDarkCyan, 
+                    backgroundColor: 'white', 
+                    borderColor: UdvDarkCyan, 
+                    border: '3px',
+                    textTransform: 'none', 
+                    fontFamily: 'Golos, Helvetica, Arial, sans-serif',}} />
         );
     };
 
@@ -50,22 +68,31 @@ export const EditQuestion = () => {
 
     return (
         <Edit title="Изменить вопрос">
-            <SimpleForm>
-                <TextInput multiline source="question" label="Вопрос"/>
-                <Box display="flex" width={'100%'}>
+            <SimpleForm toolbar={<UdvSaveToolBar/>}>
+                <div style={{fontSize: 16}}>Вопрос:</div>
+                <TextInput multiline source="question" label=" "/>
+                <div style={{fontSize: 16}}>Ответы:</div>
+                <Box display="flex" width={'100%'}>                
                     <FunctionField style={{ width: '40%'}} render={record =>{ 
                         return <RadioButtonGroupInput
                             row = {false} 
-                            label="Ответы*"
+                            label=" "
                             source = "correctAnswer"
                             choices={record.answers.map(answer => ({id: answer.id, label: answer.title}))}
                             optionText="label"
                             optionValue="label"
                         />
                     }}/>
-                    <Button style={{ marginTop: '15%', marginLeft: '-15%' }} type="primary" onClick={showModal}>Редактировать ответы</Button>
                 </Box>
-                <div>*Выделите правильный ответ</div>
+                <div style={{fontSize: 14}}>*Выделите правильный ответ</div>
+                <Button type="primary" onClick={showModal}
+                    style={{
+                        color: UdvDarkCyan, 
+                        backgroundColor: 'white', 
+                        borderColor: UdvDarkCyan,
+                        marginTop: "10px"
+                    }}
+                    >Редактировать ответы</Button>
                 <Edit title=" " redirect={false}>
                 <Modal title="Редактирование ответов" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}
                     okText="Ок"
@@ -87,7 +114,7 @@ export const EditQuestion = () => {
 export const CreateQuestion = () => {
     return (
         <Create title='Добавить вопрос'>
-            <SimpleForm defaultValues={newIdValues}>
+            <SimpleForm defaultValues={newIdValues} toolbar={<UdvSaveToolBar/>}>
                 <TextInput source="question" label="Вопрос" multiline validate={[required()]}/>
                 <ArrayInput source="answers" label="Ответы">
                     <SimpleFormIterator defaultValues={newQuestionDefaultValues}>
