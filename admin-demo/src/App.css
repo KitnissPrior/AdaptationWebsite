@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: rgb(0, 210, 157);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -25,7 +25,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: rgb(108, 199, 176);
 }
 
 @keyframes App-logo-spin {
@@ -35,4 +35,12 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.menu-item {
+  color: rgb(255,255,255); /* Цвет элемента при его активности */
+}
+
+.menu-item.active {
+  color: rgb(27, 25, 25); /* Цвет элемента при его неактивности */
 }

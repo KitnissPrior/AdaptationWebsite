@@ -1,16 +1,20 @@
 import { List, TextField, EmailField, FunctionField, EditButton, Create, Edit, SimpleForm, 
-    TextInput, required, number, email, DateInput, ListActions, DateField } from 'react-admin';
+    TextInput, required, number, email, DateInput, DateField, useRedirect, Button } from 'react-admin';
 import { UdvDatagrid } from '../datagrids/UdvDatagrid';
-import { MyCreateButton } from '../inner-components/MyCreateButton';
+import { MyCreateButton } from '../inner-components/Buttons';
 import { Box } from '@mui/material';
 import nextId from "react-id-generator";
+import { TopBarUsersActions } from '../inner-components/ToolBarUsers';
+import { UdvSaveToolBar } from '../inner-components/Buttons';
+import { UdvEditIcon } from '../inner-components/Icons';
 
 const newUserDefaultValues = () => ({ id: nextId() });
 
 export const UserList = () => {
     return (
         <>
-        <List title="Сотрудники">
+        <List title="Сотрудники" actions={false} pagination={false}>
+            <TopBarUsersActions/>
             <UdvDatagrid rowClick="edit">
               <FunctionField label="ФИО" render={user => (
                     `${user.surname} ${user.name} ${user.patronymic? user.patronymic: ''}`
@@ -22,7 +26,7 @@ export const UserList = () => {
               <FunctionField render={user => (
                 user.tasksCount > 0 ? `${user.tasksDone / user.tasksCount*100}%`:'0%')} label="Прогресс"
                 sortable={false}/>
-              <EditButton label=""/>
+              <EditButton label="" icon={<UdvEditIcon/>}/>
             </UdvDatagrid>
         </List> 
         </>
@@ -32,7 +36,7 @@ export const UserList = () => {
 export const EditUser = () => {
     return (
         <Edit title="Редактировать данные сотрудника">
-            <SimpleForm>
+            <SimpleForm toolbar={<UdvSaveToolBar/>}> 
                 <div>Личные данные</div>
                 <Box display="flex" width={'100%'} style={{gap: "10px"}}> 
                     <TextInput source="surname" label="Фамилия" validate={[required()]}/>
@@ -64,7 +68,7 @@ export const EditUser = () => {
 export const CreateUser = () => {
     return (
         <Create title='Добавить сотрудника'>
-            <SimpleForm defaultValues={newUserDefaultValues}>
+            <SimpleForm defaultValues={newUserDefaultValues} toolbar={<UdvSaveToolBar/>}>
             <div>Личные данные</div>
                 <Box display="flex" width={'100%'} style={{gap: "10px"}}> 
                     <TextInput source="surname" label="Фамилия" validate={[required()]}/>

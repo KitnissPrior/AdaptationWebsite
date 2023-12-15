@@ -202,7 +202,7 @@
           "body": "Использовать PostgreSQL",
           "deadline": "2023-11-16",
           "status": 3,
-          "canEmployeeAccept": true
+          "canEmployeeAccept": false
         },
         {
           "id": 2,
@@ -223,7 +223,7 @@
         {
           "id": 4,
           "title": "Съездить в отпуск",
-          "body": "Отдохни, работяга",
+          "body": "На 2 недели минимум",
           "deadline": "2024-01-05",
           "status": 1,
           "canEmployeeAccept": false
@@ -231,7 +231,7 @@
         {
           "id": 5,
           "title": "Написать отчет",
-          "body": "Не больше двух страниц",
+          "body": "Не больше двух-трех страниц",
           "deadline": "2023-12-09",
           "status": 0,
           "canEmployeeAccept": false
@@ -242,12 +242,12 @@
           "body": "РТФ - чемпион! РТФ - чемпион! РТФ - чемпион! РТФ - чемпион! РТФ - чемпион!",
           "deadline": "2023-12-09",
           "status": 0,
-          "canEmployeeAccept": false
+          "canEmployeeAccept": true
         },
         {
           "id": 7,
           "title": "Написать API",
-          "body": "описание",
+          "body": "С комментариями в коде",
           "deadline": "2023-12-17",
           "status": 0,
           "canEmployeeAccept": true
@@ -278,7 +278,7 @@
           "body": "Составить прогноз по росту цен на товары",
           "deadline": "2024-01-05",
           "status": 0,
-          "canEmployeeAccept": true
+          "canEmployeeAccept": false
         }
       ],
       "userId": "2",
@@ -391,6 +391,18 @@
       ],
       "userId": "10",
       "id": 14
+    },
+    {
+      "tasks": [
+        {
+          "title": "Сходить в \"Ритц\"",
+          "body": null,
+          "deadline": "2023-12-30",
+          "canEmployeeAccept": false
+        }
+      ],
+      "userId": "id6",
+      "id": 15
     }
   ],
   "questions": [
@@ -411,10 +423,11 @@
           "title": "Анна Астафьева"
         },
         {
+          "id": 2,
           "title": "Человек"
         }
       ],
-      "correctAnswer": "Анна Астафьева"
+      "correctAnswer": "Человек"
     },
     {
       "id": "id2",
@@ -443,34 +456,34 @@
       "id": "id4",
       "answers": [
         {
-          "title": "Росомаха"
+          "id": 1,
+          "title": "Да"
         },
         {
-          "title": "Райан Гослинг"
-        },
-        {
-          "title": "Илья Николаевич Обабков"
-        },
-        {
-          "title": "да хз"
+          "id": 2,
+          "title": "Нет"
         }
       ],
       "question": "Обучает ли компания UDV Group своих сотрудников?",
-      "correctAnswer": "Илья Николаевич Обабков"
+      "correctAnswer": "Да"
     },
     {
       "id": "id8",
       "answers": [
         {
+          "id": 1,
           "title": "С повидлом"
         },
         {
+          "id": 2,
           "title": "С творогом"
         },
         {
+          "id": 3,
           "title": "Корпоративный транспорт, занятия по английскому, компенсация занятий спортом"
         },
         {
+          "id": 4,
           "title": "Бесплатные онигири из жизньмарта"
         }
       ],
