@@ -1,0 +1,47 @@
+/* Селекторы чисто для выдвигающейся панели */
+
+.pane-body {
+    position: absolute;
+    overflow: hidden;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-image: url("../images/minigame-pane.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.75s ease-out; /* анимация открытия и закрытия */
+    transform: translateX(-112%); /* скрывает панель */
+    z-index: 1; /* элементы общей страницы не будут заезжать на эту панель */
+    -webkit-transform: translateZ(1);
+}
+
+@media (max-width: 1200px) {
+    .pane-body {
+        width: 1200px;
+    }
+}
+
+.pane-body.open {
+    transform: translateX(-20%); /* открывает панель */
+}
+
+.pane-body .pane-button {
+    display: flex;
+    position: absolute;
+    border: none;
+    outline: none;
+    overflow: hidden;
+    cursor: pointer;
+    font-size: 20px;
+
+    background: url("../images/pane-arrow.png") no-repeat 125px center;
+    transform: rotate(270deg);
+
+    width: 9%;
+    left: 93.5%;
+    bottom: 46.5%;
+}
+
+/* Дальше должны идти селекторы чисто для мини-игры */
+

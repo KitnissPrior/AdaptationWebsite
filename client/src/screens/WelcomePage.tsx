@@ -1,13 +1,20 @@
 import { Nav } from "react-bootstrap"
 import Header from "../components/Header"
 import "../css/WelcomePage.css"
+import React from "react";
 
 const WelcomePageScreen = () => {
     return (
-        <>
-            <Header/>
-            <h1>Все обо всем</h1>
-            <p>//welcome page</p>
+        <div className="welcomeBodyContainer">
+            <div className='tasksContainer'>
+                <div className="tasksHeader">
+                    <a className='homeLogo' href={'/home'}/>
+                    <a className='back-button' href={'/home'}/>
+                    <div>
+                        <h1 className='tasksTitle'>Все обо всем</h1>
+                        <h2 className='tasksSubtitle'>// welcome page</h2>
+                    </div>
+                </div>
             <div className='info-container'>
                 <div className='info-item'>
                     <ul>
@@ -73,7 +80,8 @@ const WelcomePageScreen = () => {
                     </ul>
                 </div>
             </div>
-        </>
+        </div>
+    </div>
     )
 }
 

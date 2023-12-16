@@ -1,33 +1,18 @@
 import { uploadPaths } from '../data/fetching';
-import Header from '../components/Header';
 import { getUser } from '../data/storage';
-import React, {useCallback, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import { Collapse } from "antd";
 import { Container } from 'react-bootstrap';
 import {useHistory} from "react-router-dom";
+import MinigameScreen from "./Minigame";
 import '../css/Tasks.css';
+
 
 // При открытии/закрытии блока задачи выводит в консоли массив,
 // куда выходят открытые на данный момент блоки задач
 const onChange = (key: string | string[]) => {
     console.log(key);
 };
-
-const MinigameButton: React.FC = () => {
-    const history = useHistory();
-
-    const handleButtonClick = useCallback(() => {
-      history.push('/home/tasks/minigame')
-    }, [history]);
-
-    return (
-        <div>
-            <button onClick={handleButtonClick}>
-                Мини-игра
-            </button>
-        </div>
-    );
-}
 
 const TaskButton = React.memo((props) => {
     const [buttonText, setButtonText] = useState('Отправить на проверку');
@@ -96,17 +81,54 @@ const TasksList: React.FC = () => {
 };
 
 const TasksScreen = () => {
-    // через style в тэге Container реализован вертикальный слайдер
-    // для списка задач TasksList
+    const [isPaneOpen, setIsPaneOpen] = useState(false);
+
+    const togglePane = () => {
+        setIsPaneOpen(!isPaneOpen);
+    }
+
+    // Попытка ресайза панели в зависимости от масштаба страницы бразуера
+    /*useEffect(() => {
+        const handleResize = () => {
+            const pane = document.querySelector('.pane-body');
+            const scale = window.devicePixelRatio;
+            pane.style.width = (100 / scale) + '%';
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        // Удалить обработчик события при размонтировании компонента
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);*/
+
     return (
-        <>
-        <Header/>
-            <h1>Задачи на весь период</h1>
-            <Container style={{ maxHeight: '400px', overflowY: 'auto' }}>
-                <TasksList/>
-            </Container>
-            <MinigameButton/>
-        </>
+        <div className='tasksBodyContainer'>
+            <div className='tasksContainer'>
+                <div className="tasksHeader">
+                    <a className='homeLogo' href={'/home'}/>
+                    <a className='back-button' href={'/home'}/>
+                    <div>
+                        <h1 className='tasksTitle'>Задачи</h1>
+                        <h2 className='tasksSubtitle'>// удачи!</h2>
+                    </div>
+                </div>
+
+                <div className={`pane-body ${isPaneOpen ? 'open' : ''}`}>
+                    <div>
+                        <MinigameScreen/>
+                    </div>
+                    <button className='pane-button' onClick={togglePane}>
+                        Мини-игра
+                    </button>
+                </div>
+
+                <Container style={{ maxHeight: '400px', overflowY: 'auto' }}>
+                    <TasksList/>
+                </Container>
+            </div>
+        </div>
     ) 
 };
 

@@ -1,4 +1,4 @@
-.profilleBodyContainer {
+.profileBodyContainer {
     width: 100vw;
     height: 100vh;
     box-sizing: border-box;
@@ -7,4 +7,72 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center; 
+}
+
+.hidden {
+    display: none;
+}
+
+.profileContainer {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1280px;
+    margin: auto;
+}
+
+.profile-container {
+    max-width: 1280px;
+    margin: auto;
+}
+
+.logoLink {
+    display: block;
+    width: 240px;
+    height: 48px;
+  
+    background-image: url('../images/logoUDVgroup_white.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.profileHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
+.profileTitle {
+    font-size: 64px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+.profileSubtitle {
+    margin-top: 6px;
+    text-align: end;
+    font-size: 24px;
+    color: #9D9D9D;
+    font-weight: 400;
+}
+
+.profileMain {
+    display: inline-flex;
+    justify-content: space-between;
+    margin-top: 104px;
+    max-width: 1280px;
+    position: relative;
+    left: 25%
+}
+
+.profileButton {
+    width: 250%;
+    margin-bottom: 31px;
+    font-size: 20px;
+    background: none;
+    border: 1px solid #fff;
+}
+
+.profileButton:hover {
+    border: 1px solid #00D29D;
+    color: #00D29D;
 }

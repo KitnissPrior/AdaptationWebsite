@@ -1,11 +1,13 @@
 import { styled } from '@mui/system';
 import { Datagrid } from 'react-admin';
+import { UdvCyan } from '../css/Colors';
 
-export const UdvDatagrid = styled(Datagrid)({
-  /*'.RaDatagrid-rowEven': {
-    backgroundColor: 'lavender',
-  },*/
+export const UdvDatagrid = styled(Datagrid)({  
   '.RaDatagrid-headerCell': {
-    backgroundColor: '#e8eaf6',
+    backgroundColor: 'white',
+    fontWeight: 'bold',
   },
+  '.RaDatagrid-icon': { color: UdvCyan }
 });
+
+
