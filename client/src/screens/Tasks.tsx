@@ -8,12 +8,6 @@ import MinigameScreen from "./Minigame";
 import '../css/Tasks.css';
 
 
-// При открытии/закрытии блока задачи выводит в консоли массив,
-// куда выходят открытые на данный момент блоки задач
-const onChange = (key: string | string[]) => {
-    console.log(key);
-};
-
 const TaskButton = React.memo((props) => {
     const [buttonText, setButtonText] = useState('Отправить на проверку');
 
@@ -26,12 +20,15 @@ const TaskButton = React.memo((props) => {
     };
 
     return (
-        <button onClick={handleClick}>{buttonText}</button>
+        <button className="send-task-button" onClick={handleClick}>{buttonText}</button>
     );
 });
 
 const TasksList: React.FC = () => {
     try {
+        const [openPanel1, setOpenPanel1] = useState([]);
+        const [openPanel2, setOpenPanel2] = useState([]);
+
         const activeUser = getUser();
         const userPath = uploadPaths().find(path => path.userId == activeUser.id);
         const userTasks = userPath?.tasks;
@@ -47,34 +44,112 @@ const TasksList: React.FC = () => {
                 taskDeadline.getDate() === tomorrow.getDate();
         });
 
-        return (
-            <div>
-                <Collapse defaultActiveKey={[]} onChange={onChange}>
-                    {todayAndTomorrowTasks && todayAndTomorrowTasks.map((task, index) =>
-                        <Collapse.Panel header={task["title"]} key={index + 1}>
-                            <p>{task['body']}</p>
-                            <p>{task['deadline']}</p>
-                            <TaskButton/>
-                        </Collapse.Panel>
-                    )}
-                </Collapse>
+        const getDeadlineDay = (deadline) => {
+            const dateDeadline = new Date(deadline);
 
-                <Collapse defaultActiveKey={[]} onChange={onChange}>
-                    {userTasks && userTasks.map((task, index) =>
-                        <Collapse.Panel header={task["title"]} key={index + 1}>
-                            <p>{task['body']}</p>
-                            <p>{task['deadline']}</p>
-                            <TaskButton/>
-                        </Collapse.Panel>
-                    )}
-                </Collapse>
+            if (dateDeadline.getDate() === today.getDate()) {
+                return (
+                    <div className="dl-today">
+                        Дедлайн: Сегодня
+                    </div>
+                );
+            }
+            else if (dateDeadline.getDate() === tomorrow.getDate()) {
+                return (
+                  <div className="dl-tomorrow">
+                      Дедлайн: Завтра
+                  </div>
+                );
+            }
+            else if ((dateDeadline.getDate() < today.getDate())
+                && (dateDeadline.getDate() < tomorrow.getDate())) {
+                return (
+                    <div className="dl-late">
+                        Дедлайн: Просроченно
+                    </div>
+                );
+            }
+            else if (dateDeadline.getDate() == null) {
+                return (
+                    <div className="dl-null">
+                        Дедлайн: Не указано
+                    </div>
+                );
+            }
+            else {
+                return (
+                    <div className="dl-later">
+                        Дедлайн: {deadline}
+                    </div>
+                );
+            }
+        };
+
+        const drawTasksHeader = (task, key: string = '') => {
+            if (key == 'PERIOD') {
+                return (
+                    <div className="task-collapse-header">
+                        <div>{task["title"]}</div>
+                        <div> Дедлайн: {task['deadline']}</div>
+                    </div>
+                );
+            } else {
+                return (
+                    <div className="task-collapse-header">
+                        <div>{task["title"]}</div>
+                        {getDeadlineDay(task['deadline'])}
+                    </div>
+                );
+            }
+        };
+
+        const drawTasksBody = (task) => {
+            return (
+                <div className="task-collapse-body">
+                    <p className="task-description-header">Описание: </p>
+                    <p className="task-description">
+                        {task['body']}
+                    </p>
+                </div>
+            );
+        };
+
+        return (
+            <div className="tasks-set">
+                <div className="tasks-set-body">
+                    <h1 className="box-title">Задачи на день</h1>
+                    <Collapse className="collapse-items" defaultActiveKey={openPanel1} onChange={(key) => setOpenPanel1(key)}
+                              expandIconPosition="right">
+                        {todayAndTomorrowTasks && todayAndTomorrowTasks.map((task, id) =>
+                            <Collapse.Panel header={drawTasksHeader(task)} key={id + 1}>
+                                <div>{drawTasksBody(task)}</div>
+                                <TaskButton/>
+                            </Collapse.Panel>
+                        )}
+                    </Collapse>
+                </div>
+
+                <div className="tasks-set-body">
+                    <h1 className="box-title">Задачи на весь период</h1>
+                    <div className="collapse-items">
+                        <Collapse className="collapse-items" defaultActiveKey={openPanel2} onChange={(key) => setOpenPanel2(key)}
+                                  expandIconPosition="right">
+                            {userTasks && userTasks.map((task, id) =>
+                                <Collapse.Panel header={drawTasksHeader(task, 'PERIOD')} key={id + 1}>
+                                    <div>{drawTasksBody(task)}</div>
+                                    <TaskButton/>
+                                </Collapse.Panel>
+                            )}
+                        </Collapse>
+                    </div>
+                </div>
             </div>
         );
     }
     catch {
         return (
             <div>
-                <h3>Задач пока нет!</h3>
+                <h2 className="no-tasks-title">Задач пока нет!</h2>
             </div>
         );
     }
@@ -85,23 +160,7 @@ const TasksScreen = () => {
 
     const togglePane = () => {
         setIsPaneOpen(!isPaneOpen);
-    }
-
-    // Попытка ресайза панели в зависимости от масштаба страницы бразуера
-    /*useEffect(() => {
-        const handleResize = () => {
-            const pane = document.querySelector('.pane-body');
-            const scale = window.devicePixelRatio;
-            pane.style.width = (100 / scale) + '%';
-        };
-
-        window.addEventListener('resize', handleResize);
-
-        // Удалить обработчик события при размонтировании компонента
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);*/
+    };
 
     return (
         <div className='tasksBodyContainer'>
@@ -124,12 +183,12 @@ const TasksScreen = () => {
                     </button>
                 </div>
 
-                <Container style={{ maxHeight: '400px', overflowY: 'auto' }}>
+                <Container>
                     <TasksList/>
                 </Container>
             </div>
         </div>
-    ) 
+    );
 };
 
 export default TasksScreen

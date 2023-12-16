@@ -48,7 +48,7 @@
       "birthDate": "1993-11-11",
       "telegram": "@serg_92",
       "office": "34",
-      "username": "sergei",
+      "username": "s3nsible",
       "email": "dubrov@gmail.com",
       "phone": 89354033,
       "job": "Фронтендер",
@@ -335,6 +335,22 @@
           "title": "Сходить на работу",
           "body": "Можно пешком",
           "deadline": "2023-12-03",
+          "status": 2,
+          "canEmployeeAccept": false
+        },
+        {
+          "id": 3,
+          "title": "Купить стрелялку",
+          "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "deadline": "2023-12-16",
+          "status": 2,
+          "canEmployeeAccept": false
+        },
+        {
+          "id": 4,
+          "title": "Протестировать пиццу",
+          "body": "Не знаю, что это должно значить",
+          "deadline": "2023-12-17",
           "status": 2,
           "canEmployeeAccept": false
         }
