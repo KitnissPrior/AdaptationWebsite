@@ -5,9 +5,9 @@ import { uploadEmployees } from '../data/fetching';
 import { setUser } from '../data/storage';
 import '../css/Login.css';
 
-export const login = (employees, email, password) => {
+export const login = (employees, username, password) => {
     const user = employees!.find(
-        (employee) => employee.email === email &&
+        (employee) => employee.username === username &&
             Number(employee.password) === Number(password)
     );
 
@@ -19,15 +19,15 @@ export const login = (employees, email, password) => {
 };
 
 export function LoginScreen() {
-    const [email, setEmail] = useState('');
+    const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const history = useHistory();
 
     const employees = uploadEmployees();
 
-    const handleLogin = (email, password) => {
+    const handleLogin = (username, password) => {
         try {
-            const user = login(employees, email, password);
+            const user = login(employees, username, password);
             setUser(user);
 
         } catch(err) {
@@ -37,7 +37,7 @@ export function LoginScreen() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        handleLogin(email, password);
+        handleLogin(username, password);
 
         history.push('/home')
     };
@@ -51,7 +51,7 @@ export function LoginScreen() {
                             <div>
                                 <label className='labelLogin'>
                                     Логин:
-                                    <input className='inputLogin' placeholder='///' type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
+                                    <input className='inputLogin' placeholder='///' type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
                                 </label>
                             </div>
                             <div>
