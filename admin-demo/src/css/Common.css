@@ -1,0 +1,56 @@
+.create-path-button{
+    float: right;
+    height: fit-content;
+    width: fit-content;
+    margin-right: 6%;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-size: 30;
+    color: rgb(14, 163, 101);
+    border-color: rgb(14, 163, 101);
+}
+
+.create-question-button{
+    float: right;
+    height: fit-content;
+    width: fit-content;
+    margin-right: 10px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    font-size: 30;
+    color: rgb(14, 163, 101);
+    border-color: rgb(14, 163, 101);
+}
+
+.create-user-button{
+    float: right;
+    height: fit-content;
+    width: fit-content;
+    font-size: 30;
+    color: rgb(14, 163, 101);
+    border-color: rgb(14, 163, 101);
+}
+
+.udv-save-button{
+    float: right;
+    height: fit-content;
+    width: fit-content;
+    font-size: 24;
+    background-color: rgb(0, 210, 157);
+    text-transform: none;
+}
+.save-tasks-button{
+    float: left;
+    height: fit-content;
+    width: fit-content;
+    font-size: 24;
+    background-color: rgb(0, 210, 157);
+    text-transform: none;
+    font-family: Golos, Helvetica, Arial, sans-serif;
+}
+
+.udv-app-bar{
+    color: rgb(0, 210, 157);
+    position: sticky;
+}
+ 
