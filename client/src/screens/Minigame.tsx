@@ -49,9 +49,9 @@ const Game = () => {
                             <Container>
                                 {answers && answers.map((option, order) =>
                                     <div className="quiz-option-item" key={option['id']}>
-                                        <span>{order + 1}. {option['title']}</span>
-                                        <input className="quiz-option-item-input" type="radio" value={option['title']}
-                                               onChange={e => {setSelectedAnswer(e.target.value)}} name="answer" />
+                                    <input className="quiz-option-item-input" type="radio" value={option['title']}
+                                           onChange={e => {setSelectedAnswer(e.target.value)}} name="answer" />
+                                        <label htmlFor=""><span>{order + 1}. {option['title']}</span></label>
                                     </div>
                                 )}
                             </Container>

@@ -45,14 +45,14 @@ export function LoginScreen() {
                                 <label className='labelLogin'>
                                     Логин:
                                     <input className='inputLogin' placeholder='///' type="text" {...register("username", { required: true, pattern: /^[A-Za-z0-9]+$/i })} />
-                                    {errors.username && <p class="error-message">*Это поле обязательно для заполнения</p>}
+                                    {errors.username && <p className="error-message">*Это поле обязательно для заполнения</p>}
                                 </label>
                             </div>
                             <div>
                                 <label className='labelLogin'>
                                     Пароль:
                                     <input className='inputLogin' placeholder='///' type="password" {...register("password", { required: true })} />
-                                    {errors.password && <p class="error-message">**Это поле обязательно для заполнения</p>}
+                                    {errors.password && <p className="error-message">**Это поле обязательно для заполнения</p>}
                                 </label>
                             </div>
                             <div>
