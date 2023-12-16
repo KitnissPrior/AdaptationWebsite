@@ -153,3 +153,15 @@
     border: 1px solid #000000;
     border-radius: 40px;
 }
+
+.send-task-button:hover {
+    background: none;
+    border: 1px solid #00D29D;
+    color: #00D29D;
+}
+
+.send-task-button:active,
+.send-task-button:visited {
+    outline: 1px solid #00D29D;
+    color: #00D29D;
+}
