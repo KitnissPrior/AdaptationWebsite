@@ -4,7 +4,6 @@
 }
 
 :root {
-  font-family: Golos, Helvetica, Arial, sans-serif;
   font-weight: 400;
 
   color-scheme: light dark;
@@ -23,12 +22,13 @@ a {
   color: #646cff;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #535bf2;
 }
 
 body {
-  font-family: Golos;
+  font-family: Golos, Helvetica, Arial, sans-serif;
 }
 
 h1 {
@@ -92,7 +92,7 @@ button:focus-visible {
 
 .headerMenuItem {
   margin-left: 47px;
-  font-family: Golos;
+  font-family: Golos, Helvetica, Arial, sans-serif;
   font-size: 24px;
   font-weight: 400;
   color: white;
@@ -101,4 +101,22 @@ button:focus-visible {
 .headerMenuItem:hover {
   color: rgba(255, 255, 255, 0.80);
   border-bottom: 2px solid rgba(255, 255, 255, 0.80);
+}
+
+.back-button {
+  position: center;
+  width: 5%;
+  /*margin: top right bottom left*/
+  margin: 0 auto 46px 125px;
+  cursor: pointer;
+
+
+  background-image: url('./images/profile-back-idle.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.back-button:hover{
+  background-image: url('./images/profile-back-hover.svg');
 }

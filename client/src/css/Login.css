@@ -81,3 +81,8 @@ body .helloLoginContainer{
     border: none;
     color: #00D29D;
 }
+
+.error-message {
+    font-size: 14px;
+    color: red;
+}

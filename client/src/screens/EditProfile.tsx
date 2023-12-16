@@ -39,11 +39,10 @@ const EditProfileScreen = () => {
         <div className="editProfilleBodyContainer">
             <div className="editProfileContainer">
                 <div className="editProfileHeader">
-                    <div className='logoLink'>
-                        {/* сделайте тут ссылку на главное меню */}
-                    </div>
+                    <a className='homeLogo' href={'/home'}/>
+                    <a className='back-button' href={'/home/myprofile'}/>
                     <div>
-                        <h1 className='editProfileTitle'>Мои данные</h1>
+                        <h1 className='editProfileTitle'>Изменить данные</h1>
                         <h2 className='editProfileSubtitle'>// кто я такой</h2>
                     </div>
                 </div>
@@ -57,19 +56,19 @@ const EditProfileScreen = () => {
                         <label>
                             Фамилия
                             <input className="info-input" type="text" name="lastName"
-                                value={user.name} onChange={handleInputChange} required/>
+                                value={user.surname} onChange={handleInputChange} required/>
                         </label>
                     </div>
                     <div className="input-row">
                         <label>
                             Отчество
                             <input className="info-input" type="text" name="middleName"
-                                value={form.middleName} onChange={handleInputChange}/>
+                                value={user.patronymic} onChange={handleInputChange}/>
                         </label>
                         <label>
                             Дата рождения
                             <input className="info-input" type="date" name="birthDate"
-                                value={form.birthDate} onChange={handleInputChange}/>
+                                value={user.birthDate} onChange={handleInputChange}/>
                         </label>
                     </div>
                     <div className="input-row">
@@ -79,9 +78,9 @@ const EditProfileScreen = () => {
                                 value={user.phone} onChange={handleInputChange}/>
                         </label>
                         <label>
-                            Ссылка на телеграмм
+                            Телеграмм
                             <input className="info-input" type="text" name="telegramLink"
-                                value={form.telegramLink} onChange={handleInputChange}/>
+                                value={user.telegram} onChange={handleInputChange}/>
                         </label>
                     </div>
                     <div className="input-row">

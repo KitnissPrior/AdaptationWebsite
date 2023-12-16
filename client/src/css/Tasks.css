@@ -32,3 +32,136 @@
     color: #9D9D9D;
     font-weight: 400;
 }
+
+/* Контейнеры с задачами */
+
+.no-tasks-title {
+    position: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.box-title {
+    /*margin: top right bottom left*/
+    margin: -30px auto 20px auto ;
+    position: center;
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.tasks-set {
+    /*padding: top right bottom left*/
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+
+
+    /*margin: top right bottom left*/
+    /*margin: 0 500px 50px auto ;*/
+}
+
+.tasks-set-body {
+    margin: 60px 0 0;
+    width: 40%;
+    height: 100%;
+    padding: 4em 2em;   /* размер и ширина */
+    border: 1px solid #7E7E7E;
+    border-radius: 40px;
+
+    /*overflow-y: auto;*/
+    max-height: 700px;
+    background-color: #24002c;
+}
+
+.collapse-items {
+    border: 1px solid #7E7E7E;
+    border-radius: 20px;
+
+    overflow-y: auto;   /* прокрутка контента */
+    max-height: 500px;
+}
+
+.collapse-items::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #00D29D;
+}
+
+.collapse-items::-webkit-scrollbar {
+    width: 10px;
+}
+
+.collapse-items::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0);
+    border-radius: 5px;
+    background-color: #24002c;
+}
+
+
+.task-collapse-header {
+    display: flex;
+    white-space: nowrap;
+    justify-content: space-between;
+}
+
+.ant-collapse-header-text {
+    width: 70px;
+    /*font-size: 18px;*/
+    /*font-weight: 400;*/
+    /*line-height: 24px;*/
+}
+
+.ant-collapse-header-text,
+.ant-collapse-expand-icon {
+    color: #FFFFFF;
+}
+
+.dl-late {
+    color: red;
+}
+
+.dl-null {
+    overflow: hidden;
+}
+
+.task-collapse-body {
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 400;
+
+    display: flex;
+    box-sizing: border-box;
+    white-space: break-spaces;
+    justify-content: center;
+}
+
+.task-description {
+    display: block;
+    text-align: left;
+    width: 300px;
+    margin-left: 50px;
+}
+
+.send-task-button {
+    display: flex;
+    /*margin: top right bottom left*/
+    margin: 17px auto 5px auto;
+
+    background-color: transparent;
+    color: #000000;
+    border: 1px solid #000000;
+    border-radius: 40px;
+}
+
+.send-task-button:hover {
+    background: none;
+    border: 1px solid #00D29D;
+    color: #00D29D;
+}
+
+.send-task-button:active,
+.send-task-button:visited {
+    outline: 1px solid #00D29D;
+    color: #00D29D;
+}

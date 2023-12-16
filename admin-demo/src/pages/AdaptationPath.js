@@ -1,20 +1,22 @@
 import React, {useState} from 'react';
-import { Card, Col, Row, Table , Modal, Button} from 'antd';
+import { Card, Col, Table , Modal, Button} from 'antd';
 import { TextField, SimpleForm, Create, Edit, List, required, Labeled, DateField,
-  ReferenceField, Datagrid, EditButton, TextInput, DateInput, minValue, maxLength,
+  ReferenceField,  TextInput, DateInput, minValue, maxLength,
   ReferenceInput, AutocompleteInput, SimpleFormIterator, ArrayInput, 
   FunctionField, SaveButton, BooleanInput, useNotify, FormDataConsumer, WithListContext,
-  useRedirect } from 'react-admin';
+  useRedirect, } from 'react-admin';
 import { Box, Grid  } from '@mui/material';
 import nextId from "react-id-generator";
-import { Columns } from './TasksTable';
-import { TASK_STATUS } from './TasksTable';
-import { useForm } from 'react-hook-form';
+import { Columns } from '../inner-components/TasksTable';
+import { TASK_STATUS } from '../inner-components/TasksTable';
+import { UdvSaveToolBar } from '../inner-components/Buttons';
+import { UdvDarkCyan } from '../css/Colors';
 import '../App.css';
+import '../css/Adaptation.css';
+import '../css/Common.css';
 
 const getCurrentDate = () => {
     const date = new Date();
-    console.log(date);
     return `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`;
 };
 
@@ -25,45 +27,6 @@ const newTaskDefaultValues = () => (
     canEmployeeAccept: false,
   });
 
-/*export const PathCards = () => (
-    <List title="Адаптационные траектории">
-      <Datagrid>
-      <Col span={8}>
-        <Card title={<ReferenceField source="userId"
-          label="Сотрудник" reference="employees" link={false}/>} 
-          bordered={true}>
-          <ReferenceField source="userId" label="Сотрудник" reference="employees" link={false}>
-            <TextField source="job"/>
-          </ReferenceField>
-          <ReferenceField source="userId" label="Сотрудник" reference="employees" link={false}>
-            <div>{'На адаптации с '}
-              <DateField source="startDate"/>
-            </div>
-          </ReferenceField>
-        </Card>
-        </Col>
-        <EditButton label="" sx={{ width: 1/3}}/>
-        </Datagrid >
-    </List>
-    <Card  className="my-card" 
-                    onClick={()=>console.log(item.tasks)} key={item.id} 
-                    title={
-                    <ReferenceField record={item} source="userId" label="Сотрудник" reference="employees" link={false}>
-                      <TextField source="name"/>
-                    </ReferenceField>} 
-                      bordered={true}>
-                      <ReferenceField record={item} source="userId" label="Сотрудник" reference="employees" link={false}>
-                        <TextField source="job"/>
-                      </ReferenceField>
-                      <ReferenceField record={item} source="userId" label="Сотрудник" reference="employees" link={false}>
-                        <div>{'На адаптации с '}
-                          <DateField source="startDate"/>
-                        </div>
-                      </ReferenceField>
-                      <EditButton record={item} label="Открыть" sx={{ height: 1/6}}/>
-                    </Card>
-  );*/
-
 const CustomCard = ({ record }) => {
   const redirect = useRedirect();
 
@@ -72,11 +35,15 @@ const CustomCard = ({ record }) => {
   };
 
   return (
-    <Card  className="my-card" 
+    <Card className="my-card" 
         onClick={handleCardClick} key={record.id} 
         title={
           <ReferenceField record={record} source="userId" label="Сотрудник" reference="employees" link={false}>
-            <TextField source="name"/>
+            <FunctionField render={user => (
+                    <p style={{fontSize:14, fontWeight:'bold'}}>
+                      {user.surname} {user.name} {user.patronymic? user.patronymic: ''}</p>
+                )}
+                />
           </ReferenceField>} 
         bordered={true}>
       <ReferenceField record={record} source="userId" label="Сотрудник" reference="employees" link={false}>
@@ -91,12 +58,18 @@ const CustomCard = ({ record }) => {
 }
 
 export const PathCards = () => {
-  
-  
+  const redirect = useRedirect();
+
+  const handleCreateClick = () => {
+    redirect(`/adaptationPaths/create`);
+  };
+
   return (
-    <List title="Адаптационные траектории" sortable={false}>
+    <>
+    <List actions={false} title="Адаптационные траектории" sortable={false} pagination={false}>
+      <Button className='create-path-button' onClick={handleCreateClick}>Добавить траекторию</Button>
       <WithListContext render={({ data }) => (
-            <Grid container spacing={10} sx={{ padding: 10 }}>
+            <Grid container className="card-container">
                 {data?.map(item => (
                   <Col span={8}>
                   <CustomCard record={item}/>
@@ -105,12 +78,14 @@ export const PathCards = () => {
             </Grid>
         )} />
   </List>
+    </>
+    
   );
 }
 
 export const CreatePath = () => (
   <Create title="Создать траекторию">
-      <SimpleForm>
+      <SimpleForm toolbar={<UdvSaveToolBar/>}>
         <Labeled title="ФИО сотрудника">
           <ReferenceInput source="userId" reference="employees" label="Имя сотрудника">
             <AutocompleteInput label="Имя сотрудника" validate={[required()]}/>
@@ -167,7 +142,13 @@ export const EditPath = () => {
         setIsModalOpen(false);
       };
       return (
-        <SaveButton type="button" label="Сохранить" redirect={false}/>
+        <SaveButton className="save-tasks-button" type="button" label="Сохранить" redirect={false} icon={<></>}
+          sx={{
+            backgroundColor: 'white', 
+            color: UdvDarkCyan, 
+            borderColor: UdvDarkCyan,
+            textTransform: 'none', 
+            fontFamily: 'Golos, Helvetica, Arial, sans-serif',}}/>
       );
   };
 
@@ -181,7 +162,7 @@ export const EditPath = () => {
 
   return (
   <Edit title="Индивидуальная траектория адаптации">
-    <SimpleForm>
+    <SimpleForm toolbar={<UdvSaveToolBar/>}>
       <Edit title=" " redirect={false}>
         <Modal width={'60%'} title="Редактирование задач" open={isModalOpen} onOk={handleModalClose} onCancel={handleModalClose}
           okText="Ок"
@@ -226,13 +207,16 @@ export const EditPath = () => {
           <PostSaveButton/>
         </Modal>
       </Edit>
-      <Box display="flex">
+      <Box display="flex" width={'100%'}>
         <div>
-          <div>
+          <div style={{float: "left"}}>
             <Labeled title="ФИО сотрудника">
-            <ReferenceField source="userId" reference="employees" label="ФИО">
-                <TextField source="name"/>
-            </ReferenceField>
+            <ReferenceField source="userId" label="Сотрудник" reference="employees" link={false}>
+              <FunctionField render={user => (
+                    `${user.surname} ${user.name} ${user.patronymic? user.patronymic: ''}`
+                )}
+                />
+              </ReferenceField>
             </Labeled>
           </div>
           <div>
@@ -259,10 +243,11 @@ export const EditPath = () => {
         </div>
         <div style={{ marginLeft: '10%', float:'right' }}>
           <div style={{ float:'right' }}>
-            <Button type="primary" onClick={showModal}>Редактировать задачи</Button>
+            <Button type="primary" style={{color: UdvDarkCyan, 
+                backgroundColor: 'white', borderColor: UdvDarkCyan}} onClick={showModal}>Редактировать задачи</Button>
           </div>
           <h3 style={{ textAlign: 'center' }}>Список задач</h3>
-          <FunctionField render={record => {
+          <FunctionField style={{ float:'right' }} render={record => {
             return <div><Table dataSource={record.tasks} columns={Columns} pagination={false}/></div>
             }} />
           
