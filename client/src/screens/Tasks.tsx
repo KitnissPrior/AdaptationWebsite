@@ -106,7 +106,7 @@ const TasksList: React.FC = () => {
         const drawTasksBody = (task) => {
             return (
                 <div className="task-collapse-body">
-                    <p class="task-description-header">Описание: </p>
+                    <p className="task-description-header">Описание: </p>
                     <p className="task-description">
                         {task['body']}
                     </p>
