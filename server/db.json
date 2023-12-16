@@ -337,6 +337,22 @@
           "deadline": "2023-12-03",
           "status": 2,
           "canEmployeeAccept": false
+        },
+        {
+          "id": 3,
+          "title": "Купить стрелялку",
+          "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "deadline": "2023-12-16",
+          "status": 2,
+          "canEmployeeAccept": false
+        },
+        {
+          "id": 4,
+          "title": "Протестировать пиццу",
+          "body": "Не знаю, что это должно значить",
+          "deadline": "2023-12-17",
+          "status": 2,
+          "canEmployeeAccept": false
         }
       ],
       "userId": "4",
