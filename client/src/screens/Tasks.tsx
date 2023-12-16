@@ -120,8 +120,8 @@ const TasksList: React.FC = () => {
                     <h1 className="box-title">Задачи на день</h1>
                     <Collapse className="collapse-items" defaultActiveKey={openPanel1} onChange={(key) => setOpenPanel1(key)}
                               expandIconPosition="right">
-                        {todayAndTomorrowTasks && todayAndTomorrowTasks.map((task) =>
-                            <Collapse.Panel header={drawTasksHeader(task)} key={task["id"]}>
+                        {todayAndTomorrowTasks && todayAndTomorrowTasks.map((task, id) =>
+                            <Collapse.Panel header={drawTasksHeader(task)} key={id + 1}>
                                 <div>{drawTasksBody(task)}</div>
                                 <TaskButton/>
                             </Collapse.Panel>
@@ -134,8 +134,8 @@ const TasksList: React.FC = () => {
                     <div className="collapse-items">
                         <Collapse className="collapse-items" defaultActiveKey={openPanel2} onChange={(key) => setOpenPanel2(key)}
                                   expandIconPosition="right">
-                            {userTasks && userTasks.map((task) =>
-                                <Collapse.Panel header={drawTasksHeader(task, 'PERIOD')} key={task["id"]}>
+                            {userTasks && userTasks.map((task, id) =>
+                                <Collapse.Panel header={drawTasksHeader(task, 'PERIOD')} key={id + 1}>
                                     <div>{drawTasksBody(task)}</div>
                                     <TaskButton/>
                                 </Collapse.Panel>
