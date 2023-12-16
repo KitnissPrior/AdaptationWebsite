@@ -7,6 +7,14 @@ import '../css/Minigame.css'
 function randomNumberBetween(min: number, max: number): number {
     return Math.random() * (max - min) + min;
 }
+
+const throwDices = () => {
+    return (
+        <div>
+
+        </div>
+    );
+}
    
 const Game = () => {
     const [selectedAnswer, setSelectedAnswer] = useState('');
@@ -35,21 +43,23 @@ const Game = () => {
             {isQuestionVisible?
                 <div className='pane-container'>
                     {/*Здесь формулировка вопроса*/}
-                    <p>{questions?.question}</p>
+                    <div className="quiz-question"><strong>{questions?.question}</strong></div>
                         {/*Здесь контейнер, который автоиматически выстраивает список ответов на выбор*/}
-                        <Container>
-                            {answers && answers.map((option) =>
-                                <div key={option['id']}>
-                                    <input type="radio" value={option['title']} onChange={e => {
-                                        setSelectedAnswer(e.target.value)}} name="answer" />
-                                    {option['title']}
-                                </div>
-                            )}
-                        </Container>
+                        <div className='quiz-option-list'>
+                            <Container>
+                                {answers && answers.map((option, order) =>
+                                    <div className="quiz-option-item" key={option['id']}>
+                                        <span>{order + 1}. {option['title']}</span>
+                                        <input className="quiz-option-item-input" type="radio" value={option['title']}
+                                               onChange={e => {setSelectedAnswer(e.target.value)}} name="answer" />
+                                    </div>
+                                )}
+                            </Container>
+                        </div>
                     {/*Кнопка "Проверить ответ"*/}
-                    <Button onClick={handleCheckAnswerButtonClick}>Проверить ответ</Button>
+                    <Button className="quiz-button-check" onClick={handleCheckAnswerButtonClick}>Проверить ответ</Button>
                     {/*В зависимости от ответа выводит результат*/}
-                    <div>{answerStatus}</div>
+                    <div className="quiz-answer-status">{answerStatus}</div>
                 </div>
                 // Этот заголовок выводится в случае, если нет вопросов или они не прогрузились
             : <h3>Вопросы закончились. Приходи в другой раз!</h3>}
@@ -59,10 +69,11 @@ const Game = () => {
 
 const MinigameScreen = () => {
     return (
-        <div>
-            <h1>Мини-игра</h1>
-            <p>Как играть?</p>
-            <Game/>
+        <div className="body-box">
+            <div className="body-box-container">
+                <div className="quiz-header"><u>Как играть?</u></div>
+                <Game/>
+            </div>
         </div>
     );
 };

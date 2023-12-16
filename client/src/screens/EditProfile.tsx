@@ -56,19 +56,19 @@ const EditProfileScreen = () => {
                         <label>
                             Фамилия
                             <input className="info-input" type="text" name="lastName"
-                                value={user.name} onChange={handleInputChange} required/>
+                                value={user.surname} onChange={handleInputChange} required/>
                         </label>
                     </div>
                     <div className="input-row">
                         <label>
                             Отчество
                             <input className="info-input" type="text" name="middleName"
-                                value={form.middleName} onChange={handleInputChange}/>
+                                value={user.patronymic} onChange={handleInputChange}/>
                         </label>
                         <label>
                             Дата рождения
                             <input className="info-input" type="date" name="birthDate"
-                                value={form.birthDate} onChange={handleInputChange}/>
+                                value={user.birthDate} onChange={handleInputChange}/>
                         </label>
                     </div>
                     <div className="input-row">
@@ -78,9 +78,9 @@ const EditProfileScreen = () => {
                                 value={user.phone} onChange={handleInputChange}/>
                         </label>
                         <label>
-                            Ссылка на телеграмм
+                            Телеграмм
                             <input className="info-input" type="text" name="telegramLink"
-                                value={form.telegramLink} onChange={handleInputChange}/>
+                                value={user.telegram} onChange={handleInputChange}/>
                         </label>
                     </div>
                     <div className="input-row">

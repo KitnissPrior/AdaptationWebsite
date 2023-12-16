@@ -45,3 +45,93 @@
 
 /* Дальше должны идти селекторы чисто для мини-игры */
 
+.body-box {
+    color: black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.body-box-container {
+    background-color: white;
+    background-image: url('../images/pane-marks.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 100%;
+
+    border: 1px solid #000000;
+    border-radius: 30px;
+    height: 70vh;
+    width: 60vw;
+
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 29px;
+}
+
+.quiz-header {
+    position: relative;
+    top: 75px;
+    right: 375px;
+}
+
+.quiz-question {
+    position: relative;
+    top: 250px;
+    right: 236px;
+
+}
+
+.quiz-option-list {
+    font-size: 28px;
+    position: fixed;
+    padding: 10em 5em;
+    text-align: left;
+}
+
+.quiz-option-item {
+    margin-bottom: 35px;
+    display: flex;
+}
+
+.quiz-option-item-input {
+    margin-right: auto;
+
+}
+
+.quiz-button-check {
+    font-size: 28px;
+    background: none;
+    border: 1px solid #00D29D;
+    border-radius: 8px;
+    color: #00D29D;
+    cursor: pointer;
+    width: 264px;
+    height: 70px;
+
+    margin: 415px auto 0 600px;
+
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+.quiz-button-check:hover {
+    background: #00D29D;
+    border: 1px solid #00D29D;
+    color: #FFFFFF;
+    outline: none;
+}
+
+.quiz-button-check:focus {
+    outline: 1px solid #00D29D;
+}
+
+.quiz-button-check:active,
+.quiz-button-check:visited {
+    outline: 1px solid #00D29D;
+}
+
+.quiz-answer-status {
+
+}
