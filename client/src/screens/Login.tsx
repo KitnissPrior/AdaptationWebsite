@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import FormContainer from "../components/FormContainer";
 import { uploadEmployees } from '../data/fetching';
 import { setUser } from '../data/storage';
+import { useForm } from "react-hook-form";
 import '../css/Login.css';
 
 export const login = (employees, username, password) => {
@@ -14,50 +15,44 @@ export const login = (employees, username, password) => {
     if (user) {
         return user;
     } else {
-        throw new Error('Invalid username or password');
+        throw new Error('Неверный логи или пароль.');
     }
 };
 
 export function LoginScreen() {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+    const { register, handleSubmit, formState: { errors } } = useForm();
     const history = useHistory();
 
     const employees = uploadEmployees();
 
-    const handleLogin = (username, password) => {
+    const onSubmit = (data) => {
         try {
-            const user = login(employees, username, password);
+            const user = login(employees, data.username, data.password);
             setUser(user);
-
+            history.push('/home');
         } catch(err) {
             console.log(err)
         }
     }
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        handleLogin(username, password);
-
-        history.push('/home')
-    };
 
     return (
         <body className='helloLoginContainer'>
             <div className='loginContainer'>
                 <div className='logoLogin'></div>
                     <FormContainer>
-                        <form onSubmit={handleSubmit}>
+                        <form onSubmit={handleSubmit(onSubmit)}>
                             <div>
                                 <label className='labelLogin'>
                                     Логин:
-                                    <input className='inputLogin' placeholder='///' type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+                                    <input className='inputLogin' placeholder='///' type="text" {...register("username", { required: true, pattern: /^[A-Za-z0-9]+$/i })} />
+                                    {errors.username && <p class="error-message">*Это поле обязательно для заполнения</p>}
                                 </label>
                             </div>
                             <div>
                                 <label className='labelLogin'>
                                     Пароль:
-                                    <input className='inputLogin' placeholder='///' type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                                    <input className='inputLogin' placeholder='///' type="password" {...register("password", { required: true })} />
+                                    {errors.password && <p class="error-message">**Это поле обязательно для заполнения</p>}
                                 </label>
                             </div>
                             <div>
