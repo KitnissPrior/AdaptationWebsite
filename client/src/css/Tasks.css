@@ -10,13 +10,16 @@
 }
 
 .tasksContainer {
-    max-width: 1280px;
+    max-width: 1200px;
+    padding: 0 1.2%;
+    box-sizing: border-box;
     margin: auto;
 }
 
 .tasksHeader {
     display: flex;
     justify-content: space-between;
+    max-width: 1200px;
 }
 
 .tasksTitle {
@@ -43,8 +46,7 @@
 }
 
 .box-title {
-    /*margin: top right bottom left*/
-    margin: -30px auto 20px auto ;
+    margin-bottom: 30px;
     position: center;
     font-size: 32px;
     font-weight: 400;
@@ -66,12 +68,12 @@
     margin: 60px 0 0;
     width: 40%;
     height: 100%;
-    padding: 4em 2em;   /* размер и ширина */
+    padding: 2em 2em;   /* размер и ширина */
     border: 1px solid #7E7E7E;
     border-radius: 40px;
 
     /*overflow-y: auto;*/
-    max-height: 700px;
+    max-height: fit-content;
     background-color: #24002c;
 }
 
@@ -79,7 +81,7 @@
     border-radius: 20px;
 
     overflow-y: auto;   /* прокрутка контента */
-    max-height: 500px;
+    max-height: fit-content;
 }
 
 .collapse-items::-webkit-scrollbar-thumb {
@@ -112,9 +114,6 @@
 
 .ant-collapse-header-text {
     width: 70px;
-    /*font-size: 18px;*/
-    /*font-weight: 400;*/
-    /*line-height: 24px;*/
 }
 
 .ant-collapse-header-text,
@@ -169,4 +168,8 @@
 .send-task-button:visited {
     outline: 1px solid #00D29D;
     color: #00D29D;
+}
+
+.tasksBody {
+    margin-bottom: 20px;
 }

@@ -13,36 +13,21 @@
     display: none;
 }
 
-.profileContainer {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1280px;
-    margin: auto;
-}
-
 .profile-container {
-    max-width: 1280px;
+    max-width: 1200px;
+    box-sizing: border-box;
+    padding: 0 1.2%;
     margin: auto;
-}
-
-.logoLink {
-    display: block;
-    width: 240px;
-    height: 48px;
-  
-    background-image: url('../images/logoUDVgroup_white.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
 }
 
 .profileHeader {
     display: flex;
     justify-content: space-between;
+    max-width: 1200px;
 }
 
 .profileTitle {
-    font-size: 64px;
+    font-size: 4em;
     font-weight: 500;
     line-height: 1;
 }
@@ -56,16 +41,14 @@
 }
 
 .profileMain {
-    display: inline-flex;
+    display: flex;
     justify-content: space-between;
+    flex-direction: row-reverse;
     margin-top: 104px;
-    max-width: 1280px;
-    position: relative;
-    left: 25%
 }
 
 .profileButton {
-    width: 250%;
+    width: 350px;
     margin-bottom: 31px;
     font-size: 20px;
     background: none;

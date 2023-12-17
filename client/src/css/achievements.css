@@ -1,0 +1,9 @@
+.achievementsBodyContainer {
+    box-sizing: border-box;
+    height: 100vh;
+    padding: 60px 0 0;
+    background-image: url(../images/achievBackground.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}

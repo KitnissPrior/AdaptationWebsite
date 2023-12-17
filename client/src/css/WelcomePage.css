@@ -1,9 +1,6 @@
 .welcomeBodyContainer {
-    width: 100vw;
-    height: 100vh;
-    box-sizing: border-box;
     padding: 60px 0 0;
-    background-image: url(../images/TasksBackground.png);
+    background-image: url(../images/welcomePageBackground.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center; 
@@ -17,11 +14,56 @@
     align-items: baseline;
 }
 
+.info-container-column {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
 .info-item {
-    width: 360px;
+    width: 310px;
     height: auto;
 
-    margin-top: 50px;
+    margin-top: 40px;
+    padding: 20px;
     border: 1px solid #00D29D;
     border-radius: 1em;
+
+    text-align: left;
+
+    background-color: #060007;
+}
+
+.info-item-list {
+    list-style-position: inside;
+    list-style-type: disc;
+    color: #A5A5A5;
+}
+
+.info-item-list-title {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 25px;
+    color: #fff;
+}
+
+.info-item-list li {
+    margin-bottom: 10px;
+}
+
+.info-item-list-link {
+    display: block;
+    width: fit-content;
+    margin-top: 20px;
+    padding: 8px 30px;
+    border: 1px solid #00D29D;
+    border-radius: 8px;
+    color: #00D29D;
+
+    transition: .2s linear;
+}
+
+.info-item-list-link:hover {
+    border: 1px solid #fff;
+    color: #fff;
 }
