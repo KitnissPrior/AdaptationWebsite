@@ -14,9 +14,9 @@ const dataProvider = simpleRestProvider('http://localhost:3000');
 function App() {
   return (
       <Admin dataProvider={dataProvider} layout={MenuLayout}>
-        <Resource name="employees" list={UserList} create = {CreateUser} edit={EditUser}
-          recordRepresentation={(user) => user.name}/>
-        <Resource name="adaptationPaths" list={PathCards} create={CreatePath} edit={EditPath}/>
+        <Resource name="employees" list={UserList} create = {CreateUser} edit={EditUser}/>
+        <Resource name="adaptationPaths" list={PathCards} create={CreatePath} edit={EditPath} 
+          recordRepresentation={(user) => `${user.surname} ${user.name} ${user.patronymic? user.patronymic: ''}`}/>
         <Resource name="questions" list={QuestionsList} create={CreateQuestion} edit={EditQuestion}/>
       </Admin>
     );

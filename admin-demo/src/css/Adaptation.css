@@ -1,8 +1,9 @@
 .my-card {
     width: 55vh; 
-    height: 30vh;
+    height: 31vh;
     transition: border 0.3s ease;
     border-color: rgba(50, 58, 56, 0.637); 
+    padding-top: 0px;
   }
   
 .my-card:hover {

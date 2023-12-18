@@ -326,7 +326,7 @@
           "id": 1,
           "title": "Сделать макет главного меню",
           "body": "Макет должен быть кликабельный",
-          "deadline": "2023-12-03",
+          "deadline": "2023-12-18",
           "status": 3,
           "canEmployeeAccept": false
         },
@@ -334,7 +334,7 @@
           "id": 2,
           "title": "Сходить на работу",
           "body": "Можно пешком",
-          "deadline": "2023-12-03",
+          "deadline": "2023-12-19",
           "status": 2,
           "canEmployeeAccept": false
         },
@@ -350,7 +350,7 @@
           "id": 4,
           "title": "Протестировать пиццу",
           "body": "Не знаю, что это должно значить",
-          "deadline": "2023-12-17",
+          "deadline": null,
           "status": 2,
           "canEmployeeAccept": false
         }
@@ -419,6 +419,11 @@
       ],
       "userId": "id6",
       "id": 15
+    },
+    {
+      "tasks": [],
+      "userId": "5",
+      "id": 16
     }
   ],
   "questions": [

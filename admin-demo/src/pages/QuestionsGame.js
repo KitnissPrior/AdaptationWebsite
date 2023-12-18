@@ -78,7 +78,7 @@ export const EditQuestion = () => {
                 <TextInput multiline source="question" label=" "/>
                 <div style={{fontSize: 16}}>Ответы:</div>
                 <Box display="flex" width={'100%'}>                
-                    <FunctionField style={{ width: '40%'}} render={record =>{ 
+                    <FunctionField style={{ width: '40%', accentColor: UdvCyan}} render={record =>{ 
                         return <RadioButtonGroupInput
                             row = {false} 
                             label=" "
@@ -86,9 +86,6 @@ export const EditQuestion = () => {
                             choices={record.answers.map(answer => ({id: answer.id, label: answer.title}))}
                             optionText="label"
                             optionValue="label"
-                            sx={{
-                                accentColor: UdvCyan
-                               }}
                         />
                     }}/>
                 </Box>

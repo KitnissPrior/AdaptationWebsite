@@ -47,12 +47,13 @@ const CustomCard = ({ record }) => {
                 />
           </ReferenceField>} 
         bordered={true}>
-      <ReferenceField record={record} source="userId" label="Сотрудник" reference="employees" link={false}>
-        <TextField source="job" sx={{marginTop:'0px', marginBottom: '0px' }}/>
+      <ReferenceField record={record} source="userId" label="Сотрудник" reference="employees" link={false}
+        sx={{marginTop:'-10px', marginBottom: '0px' }}>
+        <TextField source="job"/>
       </ReferenceField>
       <ReferenceField record={record} source="userId" label="Сотрудник" reference="employees" link={false}
         sx={{ marginBottom:'0px' }}>
-        <div sx={{ marginTop:'15px' }}>{'Начало адаптационного периода:'}</div>
+        <div style={{ marginTop:'15px' }}>{'Начало адаптационного периода:'}</div>
         <DateField source="startDate" sx={{ marginTop:'15px' }}/>
       </ReferenceField>
     </Card>
@@ -95,7 +96,8 @@ export const CreatePath = () => (
         <h2>Создание траектории</h2>
         <Labeled title="ФИО сотрудника">
           <ReferenceInput source="userId" reference="employees" label="Имя сотрудника">
-            <AutocompleteInput label="Имя сотрудника" validate={[required()]}/>
+            <AutocompleteInput label="Имя сотрудника" validate={[required()]} 
+            render={(user) => `${user.surname} ${user.name} ${user.patronymic? user.patronymic: ''}`}/>
           </ReferenceInput>
         </Labeled>
 
