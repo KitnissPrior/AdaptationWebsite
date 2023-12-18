@@ -4,9 +4,8 @@ import { Container } from 'react-bootstrap';
 import { Button } from 'antd';
 import '../css/Minigame.css'
 
-function randomNumberBetween(min: number, max: number): number {
-    return Math.random() * (max - min) + min;
-}
+const randomNumber = (min: number, max: number) => (
+    Math.floor(Math.random() * (max - min + 1)) + min);
 
 const throwDices = () => {
     return (
@@ -14,6 +13,14 @@ const throwDices = () => {
 
         </div>
     );
+}
+
+const getRandomQuestion = () => {
+    //выгружаем вопросы
+    const questions = uploadQuestions();
+    //достаем из массива случайный вопрос
+    const question = questions[randomNumber(0, questions.length - 1)];
+    return question;
 }
    
 const Game = () => {
@@ -23,16 +30,15 @@ const Game = () => {
     // Это чтобы убирать блок с вопросами, когда сотрудник уже ответил на вопрос
     const [isQuestionVisible, setQuestionVisible] = useState(true);
 
-    const questions = uploadQuestions().find(quest => quest.id == 1);
-    const answers = questions?.answers;
-    console.log(answers);
+    const question = uploadQuestions().find(quest => quest.id == 'id2');
+    const answers = question?.answers;
 
     // Подвзяать каким-то образом isCorrect из БД
     const handleCheckAnswerButtonClick = () => {
-        if(selectedAnswer == questions?.correctAnswer)
-            setAnswerStatus('Правильно! Получи 1 u-coin');
+        if(selectedAnswer == question?.correctAnswer)
+            setAnswerStatus('Правильно! Получи 1 u-coin: http://ussc-store.ru/');
         else
-            setAnswerStatus(`Неверно. Правильный ответ: ${questions?.correctAnswer}`);
+            setAnswerStatus(`Неверно :(`);
 
         //setQuestionVisible(false);
     };
@@ -43,7 +49,7 @@ const Game = () => {
             {isQuestionVisible?
                 <div className='pane-container'>
                     {/*Здесь формулировка вопроса*/}
-                    <div className="quiz-question"><strong>{questions?.question}</strong></div>
+                    <div className="quiz-question"><strong>{question?.question}</strong></div>
                         {/*Здесь контейнер, который автоиматически выстраивает список ответов на выбор*/}
                         <div className='quiz-option-list'>
                             <Container>

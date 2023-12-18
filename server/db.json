@@ -7,11 +7,11 @@
       "patronymic": "Алексеевич",
       "username": "lene4ka",
       "birthDate": "2003-08-24",
-      "telegram": "@mega_teamlead",
+      "telegram": "@mega_teamlead1",
       "office": "22",
       "email": "leonid@gmail.com",
       "phone": 4402672,
-      "job": "Data Scientist",
+      "job": "Тимлид",
       "startDate": "2023-10-30",
       "project": "Проект",
       "team": "Исследовательский центр",
@@ -34,7 +34,7 @@
       "job": "Аналитик",
       "startDate": "2023-11-16",
       "project": "Игра про зомби",
-      "team": "eplat4m",
+      "team": "ePlat4m",
       "password": 12345,
       "achievements": [],
       "tasksCount": 4,
@@ -54,7 +54,7 @@
       "job": "Фронтендер",
       "startDate": "2023-11-16",
       "project": "Сайт для адаптации",
-      "team": "eplat4m",
+      "team": "ePlat4m",
       "password": 12345,
       "achievements": [],
       "tasksCount": 0,
@@ -86,7 +86,7 @@
       "name": "Елена",
       "patronymic": "Константиновна",
       "birthDate": "2003-03-21",
-      "telegram": "@aziraphale_fell",
+      "telegram": "@aziraphale_fel",
       "office": "504",
       "username": "akselka",
       "email": "severe_girl@gmail.com",
@@ -94,7 +94,7 @@
       "job": "Бэкендер",
       "startDate": "2023-11-16",
       "project": "Сайт для адаптации",
-      "team": "eplat4m",
+      "team": "ePlat4m",
       "password": 12345,
       "achievements": [],
       "tasksCount": 4,
@@ -174,7 +174,7 @@
       "job": "Тимлид",
       "startDate": "2023-11-16",
       "project": "Музыка",
-      "team": "Датапк",
+      "team": "DATAPK",
       "password": 12345,
       "achievements": [],
       "tasksCount": 4,
@@ -185,7 +185,7 @@
       "name": "Вадим",
       "username": "vadim",
       "job": "Devops",
-      "team": "Датапк",
+      "team": "DATAPK",
       "project": "Сайт для адаптации",
       "email": "vadim@gmail.com",
       "startDate": "2023-10-13",
@@ -250,7 +250,7 @@
           "body": "С комментариями в коде",
           "deadline": "2023-12-17",
           "status": 0,
-          "canEmployeeAccept": true
+          "canEmployeeAccept": false
         }
       ],
       "userId": "1",
@@ -326,7 +326,7 @@
           "id": 1,
           "title": "Сделать макет главного меню",
           "body": "Макет должен быть кликабельный",
-          "deadline": "2023-12-03",
+          "deadline": "2023-12-18",
           "status": 3,
           "canEmployeeAccept": false
         },
@@ -334,7 +334,7 @@
           "id": 2,
           "title": "Сходить на работу",
           "body": "Можно пешком",
-          "deadline": "2023-12-03",
+          "deadline": "2023-12-19",
           "status": 2,
           "canEmployeeAccept": false
         },
@@ -350,7 +350,7 @@
           "id": 4,
           "title": "Протестировать пиццу",
           "body": "Не знаю, что это должно значить",
-          "deadline": "2023-12-17",
+          "deadline": null,
           "status": 2,
           "canEmployeeAccept": false
         }
@@ -419,6 +419,30 @@
       ],
       "userId": "id6",
       "id": 15
+    },
+    {
+      "tasks": [
+        {
+          "title": "задача",
+          "body": "олддрвы",
+          "deadline": "2023-12-29",
+          "canEmployeeAccept": true
+        }
+      ],
+      "userId": "id2",
+      "id": 16
+    },
+    {
+      "tasks": [
+        {
+          "title": "задача",
+          "body": "описание",
+          "deadline": null,
+          "canEmployeeAccept": false
+        }
+      ],
+      "userId": "4",
+      "id": 17
     }
   ],
   "questions": [
@@ -443,7 +467,7 @@
           "title": "Человек"
         }
       ],
-      "correctAnswer": "Человек"
+      "correctAnswer": "Анна Астафьева"
     },
     {
       "id": "id2",
@@ -473,38 +497,60 @@
       "answers": [
         {
           "id": 1,
-          "title": "Да"
+          "title": "UDV Соло, UDV ePlat4m"
         },
         {
           "id": 2,
-          "title": "Нет"
+          "title": "UDV Forever, UDV Компас"
+        },
+        {
+          "title": "UDV Flash, UDV HelloWorld"
         }
       ],
-      "question": "Обучает ли компания UDV Group своих сотрудников?",
-      "correctAnswer": "Да"
+      "question": "Какие продукты есть в UDV Group?",
+      "correctAnswer": "UDV Соло, UDV ePlat4m"
     },
     {
       "id": "id8",
       "answers": [
         {
           "id": 1,
-          "title": "С повидлом"
-        },
-        {
-          "id": 2,
-          "title": "С творогом"
+          "title": "ни с чем"
         },
         {
           "id": 3,
-          "title": "Корпоративный транспорт, занятия по английскому, компенсация занятий спортом"
+          "title": "Компенсация занятий по английскому языку, массаж по льготной цене"
         },
         {
           "id": 4,
-          "title": "Бесплатные онигири из жизньмарта"
+          "title": "ДМС, компенсация занятий спортом"
         }
       ],
-      "question": "Какие плюшки предоставляет своим сотрудникам UDV Group?",
-      "correctAnswer": "Корпоративный транспорт, занятия по английскому, компенсация занятий спортом"
+      "question": "Какие плюшки доступны тебе во время адаптационного периода?",
+      "correctAnswer": "Компенсация занятий по английскому языку, массаж по льготной цене"
+    },
+    {
+      "id": "id9",
+      "answers": [
+        {
+          "id": 1,
+          "title": "taxi@ussc.ru"
+        },
+        {
+          "id": 3,
+          "title": "taxy@ussc.ru"
+        },
+        {
+          "id": 4,
+          "title": "taxxi@udv.ru"
+        },
+        {
+          "id": 5,
+          "title": "В нашей компании нет корпоративного такси"
+        }
+      ],
+      "question": "Чтобы заказать корпоративное такси, на какую почту нужно отправить заявку?",
+      "correctAnswer": "taxi@ussc.ru"
     }
   ]
 }

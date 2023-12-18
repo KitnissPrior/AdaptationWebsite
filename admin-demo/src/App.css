@@ -44,3 +44,8 @@
 .menu-item.active {
   color: rgb(27, 25, 25); /* Цвет элемента при его неактивности */
 }
+
+.ant-btn:hover {
+  color: rgb(0,0,0);
+  border: 0;
+}

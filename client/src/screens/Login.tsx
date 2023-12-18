@@ -15,7 +15,7 @@ export const login = (employees, username, password) => {
     if (user) {
         return user;
     } else {
-        throw new Error('Неверный логи или пароль.');
+        throw new Error('Неверный логин или пароль.');
     }
 };
 
@@ -45,14 +45,14 @@ export function LoginScreen() {
                                 <label className='labelLogin'>
                                     Логин:
                                     <input className='inputLogin' placeholder='///' type="text" {...register("username", { required: true, pattern: /^[A-Za-z0-9]+$/i })} />
-                                    {errors.username && <p className="error-message">*Это поле обязательно для заполнения</p>}
+                                    {errors.username && <p className="error-message">*Ошибка при вводе логина</p>}
                                 </label>
                             </div>
                             <div>
                                 <label className='labelLogin'>
                                     Пароль:
                                     <input className='inputLogin' placeholder='///' type="password" {...register("password", { required: true })} />
-                                    {errors.password && <p className="error-message">**Это поле обязательно для заполнения</p>}
+                                    {errors.password && <p className="error-message">**Ошибка при вводе пароля</p>}
                                 </label>
                             </div>
                             <div>

@@ -1,6 +1,5 @@
-import { Toolbar, SaveButton, EditButton } from 'react-admin';
+import { Toolbar, SaveButton } from 'react-admin';
 import { UdvCyan, UdvDarkCyan } from '../css/Colors';
-import { UdvEditIcon } from './Icons';
 import '../css/Common.css'
 
 export const UdvSaveToolBar = () => (
@@ -11,16 +10,12 @@ export const UdvSaveToolBar = () => (
                 backgroundColor: 'white',
                 borderColor: UdvDarkCyan,
                 textTransform: 'none', 
-                fontFamily: 'Golos, Helvetica, Arial, sans-serif',}}
+                fontFamily: 'Golos, Helvetica, Arial, sans-serif',
+                ':hover': {
+                    color: 'rgb(255,255,255)',
+                    backgroundColor: UdvCyan,
+                  },
+            }}
             icon={<></>}/>
     </Toolbar>
 );
-
-export const UdvEditButton = (props) => (
-    <EditButton {...props} label="" icon={<UdvEditIcon/>} 
-        sx={{
-            color: UdvDarkCyan,
-            backgroundColor: 'white', 
-            textTransform: 'none',
-            fontFamily: 'Golos, Helvetica, Arial, sans-serif',
-        }}/>);

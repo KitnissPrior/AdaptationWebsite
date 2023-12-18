@@ -1,34 +1,45 @@
-.create-path-button{
+/*.create-question-button{
     float: right;
     height: fit-content;
     width: fit-content;
-    margin-right: 6%;
-    margin-top: 20px;
+    margin-right: 0%;
+    margin-left: 56%;
+    margin-top: 0px;
     margin-bottom: 5px;
     font-size: 30;
     color: rgb(14, 163, 101);
     border-color: rgb(14, 163, 101);
 }
 
-.create-question-button{
+.create-question-button:hover{
+    border: 0;
+}*/
+
+/*.create-user-button{
     float: right;
     height: fit-content;
     width: fit-content;
-    margin-right: 10px;
-    margin-top: 20px;
-    margin-bottom: 0px;
     font-size: 30;
     color: rgb(14, 163, 101);
     border-color: rgb(14, 163, 101);
+    text-transform: none;
+    font-family: Golos, Helvetica, Arial, sans-serif;
 }
 
-.create-user-button{
+.create-user-button:hover{
+    background-color: rgb(0, 210, 157);
+    color: rgb(0,0,0);
+    border: 0;
+}*/
+
+.tool-bar-users{
     float: right;
     height: fit-content;
     width: fit-content;
-    font-size: 30;
-    color: rgb(14, 163, 101);
-    border-color: rgb(14, 163, 101);
+    margin-right: 0%;
+    margin-left: 63%;
+    margin-top: 0px;
+    margin-bottom: 5px;
 }
 
 .udv-save-button{
@@ -39,6 +50,13 @@
     background-color: rgb(0, 210, 157);
     text-transform: none;
 }
+.udv-save-button:hover{
+    background-color: rgb(0, 210, 157);
+    background-color: rgba(103, 107, 106, 0.438);
+    color: black;
+    border: 0;
+}
+
 .save-tasks-button{
     float: left;
     height: fit-content;
@@ -49,8 +67,36 @@
     font-family: Golos, Helvetica, Arial, sans-serif;
 }
 
+.save-tasks-button:hover{
+    background-color: rgb(0, 210, 157);
+    background-color: rgb(10, 121, 75);
+    color: black;
+    border: 0;
+}
+
 .udv-app-bar{
     color: rgb(0, 210, 157);
     position: sticky;
 }
- 
+
+.page-header{
+    margin-top: '0px';
+    float: 'left';
+    margin-bottom: '0px';
+    margin-left: '20px';
+    padding: '0px';
+}
+
+.page-header-box{
+    display: flex;
+    width: 100%; 
+    margin-bottom: 20px;
+    margin-top: 30px; 
+    padding: 0px;
+}
+
+.employee-profile-title{
+    font-weight: bold;
+    margin-top: 0px; 
+    margin-bottom: 5px;
+}

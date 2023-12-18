@@ -5,9 +5,10 @@ import { Collapse } from "antd";
 import { Container } from 'react-bootstrap';
 import {useHistory} from "react-router-dom";
 import MinigameScreen from "./Minigame";
+import { getFormattedDate } from '../data/date';
 import '../css/Tasks.css';
 
-
+   
 const TaskButton = React.memo((props) => {
     const [buttonText, setButtonText] = useState('Отправить на проверку');
 
@@ -65,32 +66,42 @@ const TasksList: React.FC = () => {
                 && (dateDeadline.getDate() < tomorrow.getDate())) {
                 return (
                     <div className="dl-late">
-                        Дедлайн: Просроченно
+                        Дедлайн: Просрочено
                     </div>
                 );
             }
-            else if (dateDeadline.getDate() == null) {
+            else if (deadline == null) {
                 return (
                     <div className="dl-null">
-                        Дедлайн: Не указано
+                        Дедлайн: До конца АП
                     </div>
                 );
             }
-            else {
+            /*else {
                 return (
                     <div className="dl-later">
-                        Дедлайн: {deadline}
+                        Дедлайн: {getFormattedDate(deadline)}
                     </div>
                 );
-            }
+            }*/
         };
 
         const drawTasksHeader = (task, key: string = '') => {
             if (key == 'PERIOD') {
+                if (task['deadline'] == null) {
+                    return (
+                        <div className="task-collapse-header">
+                            <div>{task["title"]}</div>
+                            <div>До конца периода</div>
+                        </div>
+                        
+                    );
+                }
+                const formattedDate = getFormattedDate(task['deadline']);
                 return (
                     <div className="task-collapse-header">
                         <div>{task["title"]}</div>
-                        <div> Дедлайн: {task['deadline']}</div>
+                        <div> До {formattedDate}</div>
                     </div>
                 );
             } else {
@@ -113,38 +124,48 @@ const TasksList: React.FC = () => {
                 </div>
             );
         };
+        const TodayTasksBlock = todayAndTomorrowTasks. length === 0? <></> : (
+            <div className="tasks-set-body">
+                <h1 className="box-title">Задачи на день</h1>
+                        
+                <Collapse className="collapse-items" defaultActiveKey={openPanel1} onChange={(key) => setOpenPanel1(key)}
+                    expandIconPosition="right">
+                    {todayAndTomorrowTasks && todayAndTomorrowTasks.map((task, id) =>
+                    <Collapse.Panel header={drawTasksHeader(task)} key={id + 1}>
+                        <div className='tasksBody'>{drawTasksBody(task)}</div>
+                        <TaskButton/>
+                    </Collapse.Panel>
+                    )}
+                </Collapse>
+            </div>
+        );
 
-        return (
-            <div className="tasks-set">
-                <div className="tasks-set-body">
-                    <h1 className="box-title">Задачи на день</h1>
-                    <Collapse className="collapse-items" defaultActiveKey={openPanel1} onChange={(key) => setOpenPanel1(key)}
-                              expandIconPosition="right">
-                        {todayAndTomorrowTasks && todayAndTomorrowTasks.map((task, id) =>
-                            <Collapse.Panel header={drawTasksHeader(task)} key={id + 1}>
+        const PeriodTasksBlock = (
+            <div className="tasks-set-body">
+                <h1 className="box-title">Задачи на весь период</h1>
+                <div className="collapse-items">
+                    <Collapse className="collapse-items" defaultActiveKey={openPanel2} onChange={(key) => setOpenPanel2(key)}
+                            expandIconPosition="right">
+                        {userTasks && userTasks.map((task, id) =>
+                            <Collapse.Panel header={drawTasksHeader(task, 'PERIOD')} key={id + 1}>
                                 <div className='tasksBody'>{drawTasksBody(task)}</div>
                                 <TaskButton/>
                             </Collapse.Panel>
                         )}
                     </Collapse>
                 </div>
+            </div>);
 
-                <div className="tasks-set-body">
-                    <h1 className="box-title">Задачи на весь период</h1>
-                    <div className="collapse-items">
-                        <Collapse className="collapse-items" defaultActiveKey={openPanel2} onChange={(key) => setOpenPanel2(key)}
-                                  expandIconPosition="right">
-                            {userTasks && userTasks.map((task, id) =>
-                                <Collapse.Panel header={drawTasksHeader(task, 'PERIOD')} key={id + 1}>
-                                    <div className='tasksBody'>{drawTasksBody(task)}</div>
-                                    <TaskButton/>
-                                </Collapse.Panel>
-                            )}
-                        </Collapse>
-                    </div>
-                </div>
-            </div>
-        );
+        const tasksBlock = todayAndTomorrowTasks. length === 0? 
+            (<div className='tasks-set-period'>
+                {PeriodTasksBlock}
+            </div>) :
+            (<div className="tasks-set">
+                {TodayTasksBlock}
+                {PeriodTasksBlock}
+            </div>);
+
+        return tasksBlock;
     }
     catch {
         return (

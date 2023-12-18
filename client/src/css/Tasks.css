@@ -64,6 +64,10 @@
     /*margin: 0 500px 50px auto ;*/
 }
 
+.tasks-set-period{
+    width: 100%;
+    margin-left: 25%;
+}
 .tasks-set-body {
     margin: 60px 0 0;
     width: 40%;
