@@ -10,11 +10,12 @@ import nextId from "react-id-generator";
 import { Columns } from '../inner-components/TasksTable';
 import { TASK_STATUS } from '../inner-components/TasksTable';
 import { UdvSaveToolBar } from '../inner-components/Buttons';
-import { UdvCyan, UdvDarkCyan } from '../css/Colors';
+import { UdvCyan, UdvDarkCyan, DarkDarkCyan } from '../css/Colors';
+import { UdvLogoIcon } from '../inner-components/Icons';
 import '../App.css';
 import '../css/Adaptation.css';
 import '../css/Common.css';
-import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt';
+
 
 const getCurrentDate = () => {
     const date = new Date();
@@ -69,11 +70,29 @@ export const PathCards = () => {
 
   return (
     <>
-    <List actions={false} title="udv|group" sortable={false} pagination={false}>
+    <List actions={false} title={<UdvLogoIcon/>} sortable={false} pagination={false}>
       <Box display="flex" width={'100%'} style={{ marginBottom: '20px', marginTop: '30px', padding: '0px'}}>
         <h2 style={{ marginTop: '0px', float:'left', marginBottom: '0px', marginLeft: '20px', padding: '0px' }}
           >Адаптационные траектории</h2>
-        <Button className='create-path-button' onClick={handleCreateClick}>Добавить траекторию</Button>
+        <Button 
+          style={{
+            float: 'right',
+            height: 'fit-content',
+            width: 'fit-content',
+            fontSize: '30',
+            marginRight: '6%',
+            marginLeft: '46%',
+            color: UdvDarkCyan,
+            marginTop: '0px',
+            marginBottom: '5px',
+            borderColor: UdvDarkCyan,
+            textTransform: 'none',
+            fontFamily:'Golos, Helvetica, Arial, sans-serif',
+            ':hover': {
+                border: '0',
+            }
+        }}
+         onClick={handleCreateClick}>Добавить траекторию</Button>
       </Box>
       <WithListContext render={({ data }) => (
             <Grid container className="card-container">
@@ -91,17 +110,16 @@ export const PathCards = () => {
 }
 
 export const CreatePath = () => (
-  <Create title="udv|group" icon={<SentimentSatisfiedAltIcon/>}>
+  <Create title={<UdvLogoIcon/>}>
       <SimpleForm toolbar={<UdvSaveToolBar/>}>
-        <h2>Создание траектории</h2>
+      <h3 style={{ marginTop: '10px', float:'left', marginBottom: '5px' }}>Создание траектории</h3>
         <Labeled title="ФИО сотрудника">
-          <ReferenceInput source="userId" reference="employees" label="Имя сотрудника">
-            <AutocompleteInput label="Имя сотрудника" validate={[required()]} 
-            render={(user) => `${user.surname} ${user.name} ${user.patronymic? user.patronymic: ''}`}/>
+          <ReferenceInput source="userId" reference="employees" label=" ">
+            <AutocompleteInput label="Имя сотрудника" validate={[required()]} />
           </ReferenceInput>
         </Labeled>
-
-        <ArrayInput source="tasks" label="Список задач">
+        <h4 style={{ marginBottom: '-2px', marginTop: '-5px' }}>Список задач:</h4>
+        <ArrayInput source="tasks" label=" ">
           <SimpleFormIterator defaultValues={newTaskDefaultValues}>
             <TextInput source="title" label='Название' 
               validate={[required(), maxLength(127,'Максимальная длина названия 127 символов')]}/>
@@ -173,7 +191,7 @@ export const EditPath = () => {
   };
 
   return (
-  <Edit title="udv|group" icon={<SentimentSatisfiedAltIcon/>}>
+  <Edit title={<UdvLogoIcon/>}>
     <SimpleForm toolbar={<UdvSaveToolBar/>}>
       <Edit title=" " redirect={false}>
         <Modal 

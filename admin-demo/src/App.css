@@ -46,13 +46,6 @@
 }
 
 .ant-btn:hover {
-  background-color: rgb(0, 210, 157);
-  color: rgb(0,0,0);
-  border: 0;
-}
-
-.button-create:hover{
-  background-color: rgb(0, 210, 157);
   color: rgb(0,0,0);
   border: 0;
 }

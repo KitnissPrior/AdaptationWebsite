@@ -12,8 +12,8 @@ export const UdvSaveToolBar = () => (
                 textTransform: 'none', 
                 fontFamily: 'Golos, Helvetica, Arial, sans-serif',
                 ':hover': {
+                    color: 'rgb(255,255,255)',
                     backgroundColor: UdvCyan,
-                    color: 'black',
                   },
             }}
             icon={<></>}/>
