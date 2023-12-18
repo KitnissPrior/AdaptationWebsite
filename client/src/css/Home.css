@@ -10,18 +10,19 @@
 }
 
 .homeTitles {
-    max-width: 1280px;
+    max-width: 1200px;
     margin: auto;
     margin-top: 230px;
+    padding:  0 1.2%;
     text-align: left;
 }
 
 .homeTitle {
-    font-size: 54px;
+    font-size: 3.4em;
     font-weight: 500;
 }
 
 .homeTitle2 {
-    font-size: 54px;
+    font-size: 3.4em;
     font-weight: 500;
 }

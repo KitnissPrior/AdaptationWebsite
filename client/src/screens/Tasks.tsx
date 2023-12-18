@@ -122,7 +122,7 @@ const TasksList: React.FC = () => {
                               expandIconPosition="right">
                         {todayAndTomorrowTasks && todayAndTomorrowTasks.map((task, id) =>
                             <Collapse.Panel header={drawTasksHeader(task)} key={id + 1}>
-                                <div>{drawTasksBody(task)}</div>
+                                <div className='tasksBody'>{drawTasksBody(task)}</div>
                                 <TaskButton/>
                             </Collapse.Panel>
                         )}
@@ -136,7 +136,7 @@ const TasksList: React.FC = () => {
                                   expandIconPosition="right">
                             {userTasks && userTasks.map((task, id) =>
                                 <Collapse.Panel header={drawTasksHeader(task, 'PERIOD')} key={id + 1}>
-                                    <div>{drawTasksBody(task)}</div>
+                                    <div className='tasksBody'>{drawTasksBody(task)}</div>
                                     <TaskButton/>
                                 </Collapse.Panel>
                             )}
@@ -175,7 +175,7 @@ const TasksScreen = () => {
                 </div>
 
                 <div className={`pane-body ${isPaneOpen ? 'open' : ''}`}>
-                    <div>
+                    <div className='tasksMinigame'>
                         <MinigameScreen/>
                     </div>
                     <button className='pane-button' onClick={togglePane}>

@@ -35,12 +35,15 @@
     cursor: pointer;
     font-size: 20px;
 
-    background: url("../images/pane-arrow.png") no-repeat 125px center;
+    background: url("../images/pane-arrow.png");
+    background-size: 29px;
+    background-repeat: no-repeat;
+    background-position: right;
     transform: rotate(270deg);
 
     width: 9%;
     left: 93.5%;
-    bottom: 46.5%;
+    bottom: 46%;
 }
 
 /* Дальше должны идти селекторы чисто для мини-игры */
@@ -55,6 +58,7 @@
 }
 
 .body-box-container {
+    position: relative;
     background-color: white;
     background-image: url('../images/pane-marks.png');
     background-repeat: no-repeat;
@@ -74,38 +78,63 @@
 .quiz-header {
     position: relative;
     top: 75px;
-    right: 375px;
+    right: 410px;
+    font-size: 24px;
 }
 
 .quiz-question {
     position: relative;
-    top: 250px;
-    right: 236px;
+    top: 190px;
+    right: 255px;
 
 }
 
 .quiz-option-list {
-    font-size: 28px;
+    font-size: 20px;
     position: fixed;
-    padding: 10em 5em;
+    padding: 11em 5em;
     text-align: left;
 }
 
 .quiz-option-item {
-    margin-bottom: 35px;
+    margin-bottom: 25px;
     display: flex;
 }
 
 .quiz-option-item-input {
-    margin-right: auto;
+    opacity: 0;
+}
 
+.quiz-option-item-input+label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+}
+
+.quiz-option-item-input+label::before {
+    content: '';
+    width: 1em;
+    height: 1em;
+    border: 1px solid #adb5bd;
+    border-radius: 0.25em;
+    margin-right: 10px;
+    margin-left: -20px;
+    background-size: 70% 70%;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.quiz-option-item-input:checked+label::before {
+    border-color: #00D29D;
+    background-color: #00D29D;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
 }
 
 .quiz-button-check {
     font-size: 28px;
     background: none;
     border: 1px solid #00D29D;
-    border-radius: 8px;
+    border-radius: 50px;
     color: #00D29D;
     cursor: pointer;
     width: 264px;
@@ -118,9 +147,9 @@
 
 .quiz-button-check:hover {
     background: #00D29D;
-    border: 1px solid #00D29D;
-    color: #FFFFFF;
-    outline: none;
+    border: 1px solid #00D29D !important;
+    color: #FFFFFF !important;
+    outline: none !important;
 }
 
 .quiz-button-check:focus {
@@ -133,5 +162,9 @@
 }
 
 .quiz-answer-status {
-
+    text-align: left;
+    margin-left: 92px;
+    margin-top: -35px;
+    font-size: 24px;
+    text-decoration: underline;
 }

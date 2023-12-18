@@ -39,7 +39,7 @@
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #868686;
-    border-radius: 4px;
+    border-radius: 50px;
     display: flex;
     background: none;
 }
@@ -55,6 +55,7 @@
 .editProfileForm {
     width: 1000px;
     margin-top: 76px;
+    text-align: left;
 }
 
 .description-label {
@@ -79,6 +80,7 @@
     margin-top: 10px;
     border: none;
     background-color: #00D29D;
+    border-radius: 50px;
     color: white;
     cursor: pointer;
 }

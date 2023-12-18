@@ -4,7 +4,7 @@ html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, address, img, ol, ul, li, f
     border: 0;
 }
 
-body .helloBodyContainer {
+.helloBodyContainer {
     width: 100vw;
     height: 100vh;
     background-image: url(../images/backgroundHello.png);
@@ -59,7 +59,7 @@ body .helloBodyContainer {
     height: 60px;
 
     background-color: #00D29D;
-    border-radius: 20px;
+    border-radius: 50px;
 
     font-size: 24px;
     line-height: 1;
