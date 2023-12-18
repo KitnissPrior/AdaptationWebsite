@@ -9,6 +9,7 @@ import { UdvSaveToolBar } from '../inner-components/Buttons';
 import { UdvEditIcon, UdvLogoIcon } from '../inner-components/Icons';
 import { UdvCyan, UdvDarkCyan } from '../css/Colors';
 import nextId from "react-id-generator";
+import { requiredMessage } from '../inner-components/Messages';
 import '../css/Common.css';
 import '../App.css';
 
@@ -62,17 +63,17 @@ export const EditQuestion = () => {
         };
         return (
             <SaveButton type="button" label="Сохранить" redirect={false} icon={<></>}
-                sx={{
-                    color: UdvDarkCyan, 
-                    backgroundColor: 'white', 
-                    borderColor: UdvDarkCyan, 
-                    border: '3px',
-                    textTransform: 'none', 
-                    fontFamily: 'Golos, Helvetica, Arial, sans-serif',
-                    ':hover': {
-                        border: '0'
-                      },
-                }} />
+            sx={{
+                backgroundColor: 'white', 
+                color: UdvDarkCyan, 
+                borderColor: UdvDarkCyan,
+                textTransform: 'none', 
+                fontFamily: 'Golos, Helvetica, Arial, sans-serif',
+                ':hover': {
+                  backgroundColor: UdvCyan,
+                  color: 'black',
+                },
+              }} />
         );
     };
 
@@ -139,7 +140,7 @@ export const EditQuestion = () => {
                     <ArrayInput source="answers" label="" validate={[maxLength(5, 'Максимальное количество ответов — 5')]}>
                         <SimpleFormIterator defaultValues={newQuestionDefaultValues}>
                             <TextInput source="title" label='Ответ' fullWidth
-                                validate={[required(), maxLength(127,'Максимальная длина ответа 127 символов')]}/>
+                                validate={[required(requiredMessage), maxLength(127,'Максимальная длина ответа 127 символов')]}/>
                         </SimpleFormIterator>
                     </ArrayInput>
                     <PostSaveButton/>
@@ -155,12 +156,12 @@ export const CreateQuestion = () => {
         <Create title={<UdvLogoIcon/>}>
             <h3 style={{ marginLeft: '20px', marginBottom: '-10px', marginTop: '20px' }}>Новый вопрос</h3>
             <SimpleForm defaultValues={newIdValues} toolbar={<UdvSaveToolBar/>}>
-                <TextInput source="question" label="Вопрос" multiline validate={[required()]}/>
+                <TextInput source="question" label="Вопрос" multiline validate={[required(requiredMessage)]}/>
                 <h4 style={{ marginBottom: '-2px', marginTop: '5px' }}>Ответы:</h4>
                 <ArrayInput source="answers" label=" ">
                     <SimpleFormIterator defaultValues={newQuestionDefaultValues}>
                         <TextInput source="title" label='Ответ' 
-                            validate={[required(), maxLength(127,'Максимальная длина ответа 127 символов')]}/>
+                            validate={[required(requiredMessage), maxLength(127,'Максимальная длина ответа 127 символов')]}/>
                     </SimpleFormIterator>
                 </ArrayInput>
             </SimpleForm>

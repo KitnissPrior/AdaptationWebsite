@@ -7,11 +7,11 @@
       "patronymic": "Алексеевич",
       "username": "lene4ka",
       "birthDate": "2003-08-24",
-      "telegram": "@mega_teamlead",
+      "telegram": "@mega_teamlead1",
       "office": "22",
       "email": "leonid@gmail.com",
       "phone": 4402672,
-      "job": "Data Scientist",
+      "job": "Тимлид",
       "startDate": "2023-10-30",
       "project": "Проект",
       "team": "Исследовательский центр",
@@ -86,7 +86,7 @@
       "name": "Елена",
       "patronymic": "Константиновна",
       "birthDate": "2003-03-21",
-      "telegram": "@aziraphale_fell",
+      "telegram": "@aziraphale_fel",
       "office": "504",
       "username": "akselka",
       "email": "severe_girl@gmail.com",
@@ -278,7 +278,7 @@
           "body": "Составить прогноз по росту цен на товары",
           "deadline": "2024-01-05",
           "status": 0,
-          "canEmployeeAccept": true
+          "canEmployeeAccept": false
         }
       ],
       "userId": "2",
@@ -419,6 +419,30 @@
       ],
       "userId": "id6",
       "id": 15
+    },
+    {
+      "tasks": [
+        {
+          "title": "задача",
+          "body": "олддрвы",
+          "deadline": "2023-12-29",
+          "canEmployeeAccept": true
+        }
+      ],
+      "userId": "id2",
+      "id": 16
+    },
+    {
+      "tasks": [
+        {
+          "title": "задача",
+          "body": "описание",
+          "deadline": null,
+          "canEmployeeAccept": false
+        }
+      ],
+      "userId": "4",
+      "id": 17
     }
   ],
   "questions": [
@@ -491,7 +515,7 @@
       "answers": [
         {
           "id": 1,
-          "title": "С повидлом и творогом"
+          "title": "ни с чем"
         },
         {
           "id": 3,

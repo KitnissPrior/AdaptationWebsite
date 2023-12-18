@@ -12,6 +12,7 @@ import { TASK_STATUS } from '../inner-components/TasksTable';
 import { UdvSaveToolBar } from '../inner-components/Buttons';
 import { UdvCyan, UdvDarkCyan, DarkDarkCyan } from '../css/Colors';
 import { UdvLogoIcon } from '../inner-components/Icons';
+import { requiredMessage } from '../inner-components/Messages';
 import '../App.css';
 import '../css/Adaptation.css';
 import '../css/Common.css';
@@ -115,14 +116,14 @@ export const CreatePath = () => (
       <h3 style={{ marginTop: '10px', float:'left', marginBottom: '5px' }}>Создание траектории</h3>
         <Labeled title="ФИО сотрудника">
           <ReferenceInput source="userId" reference="employees" label=" ">
-            <AutocompleteInput label="Имя сотрудника" validate={[required()]} />
+            <AutocompleteInput label="Имя сотрудника" validate={[required(requiredMessage)]} />
           </ReferenceInput>
         </Labeled>
         <h4 style={{ marginBottom: '-2px', marginTop: '-5px' }}>Список задач:</h4>
         <ArrayInput source="tasks" label=" ">
           <SimpleFormIterator defaultValues={newTaskDefaultValues}>
             <TextInput source="title" label='Название' 
-              validate={[required(), maxLength(127,'Максимальная длина названия 127 символов')]}/>
+              validate={[required(requiredMessage), maxLength(127,'Максимальная длина названия 127 символов')]}/>
             <TextInput multiline source="body" label='Описание' 
               validate={[maxLength(255,'Максимальная длина описания 255 символов')]}/>
             <DateInput source="deadline" label='Срок сдачи' 
@@ -227,7 +228,7 @@ export const EditPath = () => {
                     </FormDataConsumer>
                 
                 <TextInput source="title" label='Название' fullWidth
-                  validate={[required(), maxLength(127,'Максимальная длина названия 127 символов')]}/>
+                  validate={[required(requiredMessage), maxLength(127,'Максимальная длина названия 127 символов')]}/>
                 <TextInput source="body" label='Описание' fullWidth
                   validate={[maxLength(255,'Максимальная длина описания 255 символов')]}/>
                 <DateInput source="deadline" label='Срок сдачи'/>

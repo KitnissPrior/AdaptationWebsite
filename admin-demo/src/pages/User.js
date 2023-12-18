@@ -8,7 +8,7 @@ import { UdvSaveToolBar } from '../inner-components/Buttons';
 import { UdvEditIcon, UdvLogoIcon } from '../inner-components/Icons';
 import '../App.css';
 import '../css/Common.css';
-import { UdvCyan, UdvDarkCyan } from '../css/Colors';
+import { requiredMessage } from '../inner-components/Messages';
 
 const newUserDefaultValues = () => ({ id: nextId() });
 
@@ -47,25 +47,25 @@ export const EditUser = () => {
             <SimpleForm toolbar={<UdvSaveToolBar/>}> 
                 <div className='employee-profile-title'>Личные данные</div>
                 <Box display="flex" width={'100%'} style={{gap: "10px"}}> 
-                    <TextInput source="surname" label="Фамилия" validate={[required()]}/>
-                    <TextInput source="name" label="Имя" validate={[required()]}/>
+                    <TextInput source="surname" label="Фамилия" validate={[required(requiredMessage)]}/>
+                    <TextInput source="name" label="Имя" validate={[required(requiredMessage)]}/>
                     <TextInput source="patronymic" label="Отчество"/>
                 </Box>
                 <DateInput source="dateBirth" label="Дата рождения"/>
                 <div className='employee-profile-title'>Рабочие данные</div>
                 <Box display="flex" width={'100%'} style={{gap: "10px"}}> 
-                    <TextInput source="job" label="Должность" validate={[required()]}/>
-                    <TextInput source="team" label="Команда" validate={[required()]}/>
-                    <TextInput source="project" label="Название проекта" validate={[required()]}/>
+                    <TextInput source="job" label="Должность" validate={[required(requiredMessage)]}/>
+                    <TextInput source="team" label="Команда" validate={[required(requiredMessage)]}/>
+                    <TextInput source="project" label="Название проекта" validate={[required(requiredMessage)]}/>
                 </Box>
                 <Box display="flex" width={'100%'} style={{gap: "10px"}}> 
                     <TextInput source="office" label="Номер кабинета"/>
-                    <DateInput source="startDate" label="Дата начала АП" validate={[required()]}/>
+                    <DateInput source="startDate" label="Дата начала АП" validate={[required(requiredMessage)]}/>
                 </Box>
                 <div className='employee-profile-title'>Контактные данные</div>
                 <Box display="flex" width={'100%'} style={{gap: "10px"}}> 
-                    <TextInput source="email" label="Почта" validate={[required(), email()]}/>
-                    <TextInput source="phone" label="Номер телефона" validate={[number()]}/>
+                    <TextInput source="email" label="Почта" validate={[required(requiredMessage), email('Неверная почта')]}/>
+                    <TextInput source="phone" label="Номер телефона" validate={[number('Номер телефона должен состоять из цифр')]}/>
                 </Box>
                 <TextInput source="telegram" label="Телеграм"/> 
             </SimpleForm>
@@ -80,25 +80,25 @@ export const CreateUser = () => {
             <SimpleForm defaultValues={newUserDefaultValues} toolbar={<UdvSaveToolBar/>}>
             <div className='employee-profile-title'>Личные данные</div>
                 <Box display="flex" width={'100%'} style={{gap: "10px"}}> 
-                    <TextInput source="surname" label="Фамилия" validate={[required()]}/>
-                    <TextInput source="name" label="Имя" validate={[required()]}/>
+                    <TextInput source="surname" label="Фамилия" validate={[required(requiredMessage)]}/>
+                    <TextInput source="name" label="Имя" validate={[required(requiredMessage)]}/>
                     <TextInput source="patronymic" label="Отчество"/>
                 </Box>
                 <DateInput source="dateBirth" label="Дата рождения"/>
                 <div className='employee-profile-title'>Рабочие данные</div>
                 <Box display="flex" width={'100%'} style={{gap: "10px"}}> 
-                    <TextInput source="job" label="Должность" validate={[required()]}/>
-                    <TextInput source="team" label="Команда" validate={[required()]}/>
-                    <TextInput source="project" label="Название проекта" validate={[required()]}/>
+                    <TextInput source="job" label="Должность" validate={[required(requiredMessage)]}/>
+                    <TextInput source="team" label="Команда" validate={[required(requiredMessage)]}/>
+                    <TextInput source="project" label="Название проекта" validate={[required(requiredMessage)]}/>
                 </Box>
                 <Box display="flex" width={'100%'} style={{gap: "10px"}}> 
                     <TextInput source="office" label="Номер кабинета"/>
-                    <DateInput source="startDate" label="Дата начала АП" validate={[required()]}/>
+                    <DateInput source="startDate" label="Дата начала АП" validate={[required(requiredMessage)]}/>
                 </Box>
                 <div className='employee-profile-title'>Контактные данные</div>
                 <Box display="flex" width={'100%'} style={{gap: "10px"}}> 
-                    <TextInput source="email" label="Почта" validate={[required(), email()]}/>
-                    <TextInput source="phone" label="Номер телефона" validate={[number()]}/>
+                    <TextInput source="email" label="Почта" validate={[required(requiredMessage), email('Неверная почта')]}/>
+                    <TextInput source="phone" label="Номер телефона" validate={[number('Номер телефона должен состоять из цифр')]}/>
                 </Box>
                 <TextInput source="telegram" label="Телеграм"/> 
             </SimpleForm>
