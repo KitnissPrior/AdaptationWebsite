@@ -6,11 +6,11 @@ import { UdvDatagrid } from '../datagrids/UdvDatagrid';
 import { Button, Modal } from 'antd';
 import { Box } from '@mui/material';
 import { UdvSaveToolBar } from '../inner-components/Buttons';
-import { UdvEditButton } from '../inner-components/Buttons';
 import { UdvEditIcon } from '../inner-components/Icons';
 import { UdvCyan, UdvDarkCyan } from '../css/Colors';
 import nextId from "react-id-generator";
 import '../css/Common.css';
+import '../App.css';
 
 const newIdValues = () => ({ id: nextId()});
 const newQuestionDefaultValues = () => ({ id: nextId()});
@@ -50,7 +50,12 @@ export const EditQuestion = () => {
                     borderColor: UdvDarkCyan, 
                     border: '3px',
                     textTransform: 'none', 
-                    fontFamily: 'Golos, Helvetica, Arial, sans-serif',}} />
+                    fontFamily: 'Golos, Helvetica, Arial, sans-serif',
+                    ':hover': {
+                        backgroundColor: UdvCyan,
+                        color: 'black',
+                      },
+                }} />
         );
     };
 
@@ -81,6 +86,9 @@ export const EditQuestion = () => {
                             choices={record.answers.map(answer => ({id: answer.id, label: answer.title}))}
                             optionText="label"
                             optionValue="label"
+                            sx={{
+                                accentColor: UdvCyan
+                               }}
                         />
                     }}/>
                 </Box>
@@ -90,7 +98,11 @@ export const EditQuestion = () => {
                         color: UdvDarkCyan, 
                         backgroundColor: 'white', 
                         borderColor: UdvDarkCyan,
-                        marginTop: "10px"
+                        marginTop: "10px",
+                        ':hover': {
+                            backgroundColor: UdvCyan,
+                            color: 'black',
+                          },
                     }}
                     >Редактировать ответы</Button>
                 <Edit title=" " redirect={false}>

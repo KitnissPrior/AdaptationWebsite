@@ -10,10 +10,11 @@ import nextId from "react-id-generator";
 import { Columns } from '../inner-components/TasksTable';
 import { TASK_STATUS } from '../inner-components/TasksTable';
 import { UdvSaveToolBar } from '../inner-components/Buttons';
-import { UdvDarkCyan } from '../css/Colors';
+import { UdvCyan, UdvDarkCyan } from '../css/Colors';
 import '../App.css';
 import '../css/Adaptation.css';
 import '../css/Common.css';
+import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt';
 
 const getCurrentDate = () => {
     const date = new Date();
@@ -47,11 +48,12 @@ const CustomCard = ({ record }) => {
           </ReferenceField>} 
         bordered={true}>
       <ReferenceField record={record} source="userId" label="Сотрудник" reference="employees" link={false}>
-        <TextField source="job"/>
+        <TextField source="job" sx={{marginTop:'0px', marginBottom: '0px' }}/>
       </ReferenceField>
-      <ReferenceField record={record} source="userId" label="Сотрудник" reference="employees" link={false}>
-      <div>{'Начало адаптационного периода:'}</div>
-      <DateField source="startDate"/>
+      <ReferenceField record={record} source="userId" label="Сотрудник" reference="employees" link={false}
+        sx={{ marginBottom:'0px' }}>
+        <div sx={{ marginTop:'15px' }}>{'Начало адаптационного периода:'}</div>
+        <DateField source="startDate" sx={{ marginTop:'15px' }}/>
       </ReferenceField>
     </Card>
   );
@@ -66,13 +68,17 @@ export const PathCards = () => {
 
   return (
     <>
-    <List actions={false} title="Адаптационные траектории" sortable={false} pagination={false}>
-      <Button className='create-path-button' onClick={handleCreateClick}>Добавить траекторию</Button>
+    <List actions={false} title="udv|group" sortable={false} pagination={false}>
+      <Box display="flex" width={'100%'} style={{ marginBottom: '20px', marginTop: '30px', padding: '0px'}}>
+        <h2 style={{ marginTop: '0px', float:'left', marginBottom: '0px', marginLeft: '20px', padding: '0px' }}
+          >Адаптационные траектории</h2>
+        <Button className='create-path-button' onClick={handleCreateClick}>Добавить траекторию</Button>
+      </Box>
       <WithListContext render={({ data }) => (
             <Grid container className="card-container">
                 {data?.map(item => (
                   <Col span={8}>
-                  <CustomCard record={item}/>
+                  <CustomCard record={item} key={item.id}/>
                   </Col>
                 ))}
             </Grid>
@@ -84,8 +90,9 @@ export const PathCards = () => {
 }
 
 export const CreatePath = () => (
-  <Create title="Создать траекторию">
+  <Create title="udv|group" icon={<SentimentSatisfiedAltIcon/>}>
       <SimpleForm toolbar={<UdvSaveToolBar/>}>
+        <h2>Создание траектории</h2>
         <Labeled title="ФИО сотрудника">
           <ReferenceInput source="userId" reference="employees" label="Имя сотрудника">
             <AutocompleteInput label="Имя сотрудника" validate={[required()]}/>
@@ -111,8 +118,6 @@ export const CreatePath = () => (
 
 export const EditPath = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  //const { register, handleSubmit, setValue, getValues } = useForm();
-  //const values = getValues();
 
   const ChangeTaskStatusButton = ({ record }) => {
     //console.log(record);
@@ -148,7 +153,12 @@ export const EditPath = () => {
             color: UdvDarkCyan, 
             borderColor: UdvDarkCyan,
             textTransform: 'none', 
-            fontFamily: 'Golos, Helvetica, Arial, sans-serif',}}/>
+            fontFamily: 'Golos, Helvetica, Arial, sans-serif',
+            ':hover': {
+              backgroundColor: UdvCyan,
+              color: 'black',
+            },
+          }}/>
       );
   };
 
@@ -161,12 +171,27 @@ export const EditPath = () => {
   };
 
   return (
-  <Edit title="Индивидуальная траектория адаптации">
+  <Edit title="udv|group" icon={<SentimentSatisfiedAltIcon/>}>
     <SimpleForm toolbar={<UdvSaveToolBar/>}>
       <Edit title=" " redirect={false}>
-        <Modal width={'60%'} title="Редактирование задач" open={isModalOpen} onOk={handleModalClose} onCancel={handleModalClose}
+        <Modal 
+          width={'60%'} 
+          title="Редактирование задач" 
+          open={isModalOpen} 
+          onOk={handleModalClose} 
+          onCancel={handleModalClose}
           okText="Ок"
-          cancelText="Закрыть">
+          cancelText="Закрыть"
+          okButtonProps=
+          {{ style: {
+             backgroundColor: UdvCyan, 
+            } 
+          }} 
+          cancelButtonProps=
+          {{ style: { 
+            backgroundColor: 'white', 
+            color: UdvDarkCyan,  }
+          }}>
             <ArrayInput source="tasks" label=" ">
               <SimpleFormIterator defaultValues={newTaskDefaultValues} getItemLabel={index => `${index + 1}.`}>
                 <FormDataConsumer>
@@ -207,9 +232,16 @@ export const EditPath = () => {
           <PostSaveButton/>
         </Modal>
       </Edit>
+      <Box display="flex" width={'100%'} style={{ marginBottom: '0px', marginTop: '-10px'}}>
+        <h3 style={{ marginTop: '0px', float:'left', marginBottom: '0px' }}>Индивидуальная траектория</h3>
+        <div style={{ marginLeft: '57%', float:'right', marginBottom: '0px' }}>
+          <Button type="primary" style={{color: UdvDarkCyan, 
+            backgroundColor: 'white', borderColor: UdvDarkCyan}} onClick={showModal}>Редактировать задачи</Button>
+        </div>
+      </Box>
       <Box display="flex" width={'100%'}>
         <div>
-          <div style={{float: "left"}}>
+          <div style={{float: "left", marginTop: "30px"}}>
             <Labeled title="ФИО сотрудника">
             <ReferenceField source="userId" label="Сотрудник" reference="employees" link={false}>
               <FunctionField render={user => (
@@ -242,11 +274,7 @@ export const EditPath = () => {
           </div>
         </div>
         <div style={{ marginLeft: '10%', float:'right' }}>
-          <div style={{ float:'right' }}>
-            <Button type="primary" style={{color: UdvDarkCyan, 
-                backgroundColor: 'white', borderColor: UdvDarkCyan}} onClick={showModal}>Редактировать задачи</Button>
-          </div>
-          <h3 style={{ textAlign: 'center' }}>Список задач</h3>
+          <h3 style={{ marginTop: '0px', marginBottom: '10px', textAlign: 'center', zIndex: 2 }}>Список задач</h3>
           <FunctionField style={{ float:'right' }} render={record => {
             return <div><Table dataSource={record.tasks} columns={Columns} pagination={false}/></div>
             }} />

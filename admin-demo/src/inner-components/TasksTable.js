@@ -38,7 +38,7 @@ export const Columns = [
         dataIndex: 'status',
         key: 'status',
         render: (value) => {
-          if (value === null) return TASK_STATUS[0];
+          if (value == null ) return TASK_STATUS[0];
           //const status = value? TASK_STATUS[value] : TASK_STATUS[0]
           return (<span>{TASK_STATUS[value] }</span>)},
         width: '20%',

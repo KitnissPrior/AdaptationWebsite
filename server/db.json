@@ -34,7 +34,7 @@
       "job": "Аналитик",
       "startDate": "2023-11-16",
       "project": "Игра про зомби",
-      "team": "eplat4m",
+      "team": "ePlat4m",
       "password": 12345,
       "achievements": [],
       "tasksCount": 4,
@@ -54,7 +54,7 @@
       "job": "Фронтендер",
       "startDate": "2023-11-16",
       "project": "Сайт для адаптации",
-      "team": "eplat4m",
+      "team": "ePlat4m",
       "password": 12345,
       "achievements": [],
       "tasksCount": 0,
@@ -94,7 +94,7 @@
       "job": "Бэкендер",
       "startDate": "2023-11-16",
       "project": "Сайт для адаптации",
-      "team": "eplat4m",
+      "team": "ePlat4m",
       "password": 12345,
       "achievements": [],
       "tasksCount": 4,
@@ -174,7 +174,7 @@
       "job": "Тимлид",
       "startDate": "2023-11-16",
       "project": "Музыка",
-      "team": "Датапк",
+      "team": "DATAPK",
       "password": 12345,
       "achievements": [],
       "tasksCount": 4,
@@ -185,7 +185,7 @@
       "name": "Вадим",
       "username": "vadim",
       "job": "Devops",
-      "team": "Датапк",
+      "team": "DATAPK",
       "project": "Сайт для адаптации",
       "email": "vadim@gmail.com",
       "startDate": "2023-10-13",
@@ -250,7 +250,7 @@
           "body": "С комментариями в коде",
           "deadline": "2023-12-17",
           "status": 0,
-          "canEmployeeAccept": true
+          "canEmployeeAccept": false
         }
       ],
       "userId": "1",
@@ -278,7 +278,7 @@
           "body": "Составить прогноз по росту цен на товары",
           "deadline": "2024-01-05",
           "status": 0,
-          "canEmployeeAccept": false
+          "canEmployeeAccept": true
         }
       ],
       "userId": "2",
@@ -443,7 +443,7 @@
           "title": "Человек"
         }
       ],
-      "correctAnswer": "Человек"
+      "correctAnswer": "Анна Астафьева"
     },
     {
       "id": "id2",
@@ -473,38 +473,60 @@
       "answers": [
         {
           "id": 1,
-          "title": "Да"
+          "title": "UDV Соло, UDV ePlat4m"
         },
         {
           "id": 2,
-          "title": "Нет"
+          "title": "UDV Forever, UDV Компас"
+        },
+        {
+          "title": "UDV Flash, UDV HelloWorld"
         }
       ],
-      "question": "Обучает ли компания UDV Group своих сотрудников?",
-      "correctAnswer": "Да"
+      "question": "Какие продукты есть в UDV Group?",
+      "correctAnswer": "UDV Соло, UDV ePlat4m"
     },
     {
       "id": "id8",
       "answers": [
         {
           "id": 1,
-          "title": "С повидлом"
-        },
-        {
-          "id": 2,
-          "title": "С творогом"
+          "title": "С повидлом и творогом"
         },
         {
           "id": 3,
-          "title": "Корпоративный транспорт, занятия по английскому, компенсация занятий спортом"
+          "title": "Компенсация занятий по английскому языку, массаж по льготной цене"
         },
         {
           "id": 4,
-          "title": "Бесплатные онигири из жизньмарта"
+          "title": "ДМС, компенсация занятий спортом"
         }
       ],
-      "question": "Какие плюшки предоставляет своим сотрудникам UDV Group?",
-      "correctAnswer": "Корпоративный транспорт, занятия по английскому, компенсация занятий спортом"
+      "question": "Какие плюшки доступны тебе во время адаптационного периода?",
+      "correctAnswer": "Компенсация занятий по английскому языку, массаж по льготной цене"
+    },
+    {
+      "id": "id9",
+      "answers": [
+        {
+          "id": 1,
+          "title": "taxi@ussc.ru"
+        },
+        {
+          "id": 3,
+          "title": "taxy@ussc.ru"
+        },
+        {
+          "id": 4,
+          "title": "taxxi@udv.ru"
+        },
+        {
+          "id": 5,
+          "title": "В нашей компании нет корпоративного такси"
+        }
+      ],
+      "question": "Чтобы заказать корпоративное такси, на какую почту нужно отправить заявку?",
+      "correctAnswer": "taxi@ussc.ru"
     }
   ]
 }

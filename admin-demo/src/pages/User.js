@@ -7,6 +7,9 @@ import nextId from "react-id-generator";
 import { TopBarUsersActions } from '../inner-components/ToolBarUsers';
 import { UdvSaveToolBar } from '../inner-components/Buttons';
 import { UdvEditIcon } from '../inner-components/Icons';
+import '../App.css';
+import '../css/Common.css';
+import { UdvCyan } from '../css/Colors';
 
 const newUserDefaultValues = () => ({ id: nextId() });
 
