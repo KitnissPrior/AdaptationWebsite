@@ -10,7 +10,7 @@ import '../App.css';
 import '../css/Common.css';
 import { requiredMessage } from '../inner-components/Messages';
 
-const newUserDefaultValues = () => ({ id: nextId() });
+const newUserDefaultValues = () => ({ id: nextId(), username: `user${nextId()}`, password: 12345 });
 
 export const UserList = () => {
     return (
