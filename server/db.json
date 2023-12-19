@@ -182,15 +182,45 @@
     },
     {
       "id": "id6",
-      "name": "Вадим",
+      "name": "Борис",
       "username": "vadim",
       "job": "Devops",
       "team": "DATAPK",
       "project": "Сайт для адаптации",
-      "email": "vadim@gmail.com",
+      "email": "boris@gmail.com",
       "startDate": "2023-10-13",
-      "surname": "Самойлов",
-      "phone": "89128344865"
+      "surname": "Ключников",
+      "phone": "89128344865",
+      "patronymic": "Алексеевич"
+    },
+    {
+      "id": "id7",
+      "username": "userid8",
+      "password": 12345,
+      "surname": "Ларина",
+      "name": "Ирина",
+      "patronymic": "Валерьевна",
+      "job": "Бэкенд-разработчик",
+      "team": "SOAR",
+      "project": "Сайт для адаптации",
+      "startDate": "2023-12-07",
+      "email": "larina@gmail.com",
+      "phone": "892273"
+    },
+    {
+      "id": "id21",
+      "username": "userid22",
+      "password": 12345,
+      "surname": "Петров",
+      "name": "Петр",
+      "patronymic": "Петрович",
+      "dateBirth": "2023-11-29",
+      "job": "работник",
+      "team": "Датапк",
+      "project": "Сайт для адаптации",
+      "startDate": "2023-12-06",
+      "email": "elisprior@mail.ru",
+      "phone": "8798079"
     }
   ],
   "adaptationPaths": [
@@ -259,10 +289,17 @@
     {
       "tasks": [
         {
+          "title": "ОТЧЕТ",
+          "body": "Договориться о встрече",
+          "deadline": "2023-12-21",
+          "status": 0,
+          "canEmployeeAccept": false
+        },
+        {
           "id": 1,
-          "title": "Составить диаграмму",
+          "title": "документация",
           "body": "Отправить в тг куратору",
-          "deadline": "2023-11-16",
+          "deadline": "2023-12-23",
           "status": 3,
           "canEmployeeAccept": true
         },
@@ -274,10 +311,10 @@
           "canEmployeeAccept": false
         },
         {
-          "title": "Прогноз по росту цен",
-          "body": "Составить прогноз по росту цен на товары",
-          "deadline": "2024-01-05",
-          "status": 0,
+          "title": "Составить бэклог",
+          "body": "минимум на 50 пунктов",
+          "deadline": "2023-12-23",
+          "status": null,
           "canEmployeeAccept": false
         }
       ],
@@ -324,9 +361,9 @@
       "tasks": [
         {
           "id": 1,
-          "title": "Сделать макет главного меню",
+          "title": "Сверстать макет главной страницы",
           "body": "Макет должен быть кликабельный",
-          "deadline": "2023-12-18",
+          "deadline": "2023-12-22",
           "status": 3,
           "canEmployeeAccept": false
         },
@@ -334,7 +371,7 @@
           "id": 2,
           "title": "Сходить на работу",
           "body": "Можно пешком",
-          "deadline": "2023-12-19",
+          "deadline": "2023-12-21",
           "status": 2,
           "canEmployeeAccept": false
         },
@@ -424,24 +461,42 @@
       "tasks": [
         {
           "title": "задача",
-          "body": "олддрвы",
-          "deadline": "2023-12-29",
+          "body": "fgdfgd",
+          "deadline": "2023-12-19",
           "canEmployeeAccept": true
+        },
+        {
+          "title": "Сходить на работу",
+          "body": "dfgdfgds",
+          "deadline": "2023-12-22",
+          "canEmployeeAccept": false
         }
       ],
-      "userId": "id2",
+      "userId": "id7",
       "id": 16
     },
     {
       "tasks": [
         {
           "title": "задача",
-          "body": "описание",
+          "body": "вапвыапырп",
+          "deadline": "2023-12-23",
+          "canEmployeeAccept": false
+        },
+        {
+          "title": "Сходить на работу",
+          "body": "Lorem ipsu",
           "deadline": null,
+          "canEmployeeAccept": false
+        },
+        {
+          "title": "Задача3",
+          "body": null,
+          "deadline": "2023-12-19",
           "canEmployeeAccept": false
         }
       ],
-      "userId": "4",
+      "userId": "id21",
       "id": 17
     }
   ],
@@ -515,7 +570,7 @@
       "answers": [
         {
           "id": 1,
-          "title": "ни с чем"
+          "title": "незнаю"
         },
         {
           "id": 3,
@@ -526,8 +581,8 @@
           "title": "ДМС, компенсация занятий спортом"
         }
       ],
-      "question": "Какие плюшки доступны тебе во время адаптационного периода?",
-      "correctAnswer": "Компенсация занятий по английскому языку, массаж по льготной цене"
+      "question": "Какие плюшки доступны тебе во время адаптационного периода?,,,",
+      "correctAnswer": "незнаю"
     },
     {
       "id": "id9",
