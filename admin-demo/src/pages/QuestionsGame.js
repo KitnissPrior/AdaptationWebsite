@@ -9,7 +9,7 @@ import { UdvSaveToolBar } from '../inner-components/Buttons';
 import { UdvEditIcon, UdvLogoIcon } from '../inner-components/Icons';
 import { UdvCyan, UdvDarkCyan } from '../css/Colors';
 import nextId from "react-id-generator";
-import { requiredMessage, elementUpdatedMessage } from '../inner-components/Messages';
+import { requiredMessage, elementUpdatedMessage, questionCreatedMessage } from '../inner-components/Messages';
 import '../css/Common.css';
 import '../App.css';
 
@@ -53,6 +53,8 @@ export const QuestionsList = () => {
 };
 
 export const EditQuestion = () => {
+    const notify = useNotify();
+    const redirect = useRedirect();
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const PostSaveButton = () => {
@@ -64,7 +66,6 @@ export const EditQuestion = () => {
         };
         return (
             <SaveButton type="button" label="Сохранить" redirect={false} icon={<></>}
-                mutationOptions={{onSuccess}}
             sx={{
                 backgroundColor: 'white', 
                 color: UdvDarkCyan, 
@@ -89,6 +90,11 @@ export const EditQuestion = () => {
     
     const handleCancel = () => {
         setIsModalOpen(false);
+    };
+
+    const onSuccess = data => {
+        notify(elementUpdatedMessage);
+        //redirect('/questions')
     };
 
     return (
@@ -123,6 +129,7 @@ export const EditQuestion = () => {
                     }}
                     >Редактировать ответы</Button>
                 <Edit title=" " redirect={false}>
+
                 <Modal title="Редактирование ответов" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}
                     width={'40%'} 
                     okText="Ок"
@@ -154,6 +161,7 @@ export const EditQuestion = () => {
 };
 
 export const CreateQuestion = () => {
+
     return (
         <Create title={<UdvLogoIcon/>}>
             <h3 style={{ marginLeft: '20px', marginBottom: '-10px', marginTop: '20px' }}>Новый вопрос</h3>

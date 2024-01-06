@@ -1,18 +1,18 @@
 import React, {useState} from 'react';
 import { Card, Col, Table , Modal, Button} from 'antd';
 import { TextField, SimpleForm, Create, Edit, List, required, Labeled, DateField,
-  ReferenceField,  TextInput, DateInput, minValue, maxLength, Toolbar, DeleteButton,
+  ReferenceField,  TextInput, DateInput, minValue, maxLength,
   ReferenceInput, AutocompleteInput, SimpleFormIterator, ArrayInput, 
   FunctionField, SaveButton, BooleanInput, useNotify, FormDataConsumer, WithListContext,
-  useRedirect, useRefresh} from 'react-admin';
+  useRedirect, useRefresh, useDataProvider} from 'react-admin';
 import { Box, Grid  } from '@mui/material';
 import nextId from "react-id-generator";
 import { Columns } from '../inner-components/TasksTable';
 import { TASK_STATUS } from '../inner-components/TasksTable';
-import { UdvSaveToolBar, SaveCardToolBar } from '../inner-components/Buttons';
+import { UdvSaveToolBar, EditPathToolBar } from '../inner-components/Buttons';
 import { UdvCyan, UdvDarkCyan, DarkDarkCyan } from '../css/Colors';
-import { UdvLogoIcon } from '../inner-components/Icons';
-import { requiredMessage, elementUpdatedMessage, adaptationOverMessage } from '../inner-components/Messages';
+import { UdvLogoIcon, UdvBoolInputIcon } from '../inner-components/Icons';
+import { requiredMessage, elementUpdatedMessage, pathCreatedMessage} from '../inner-components/Messages';
 import '../App.css';
 import '../css/Adaptation.css';
 import '../css/Common.css';
@@ -112,14 +112,16 @@ export const PathCards = () => {
 
 export const CreatePath = () => {
   const notify = useNotify();
+  const redirect = useRedirect();
 
-  const onSuccess = data => {
-    notify(elementUpdatedMessage);
+  const onSuccess = (data) => {
+    notify(pathCreatedMessage);
+    redirect(`/adaptationPaths/${data.id}`)
   };
 
   return (
-    <Create title={<UdvLogoIcon/>} undoable={false}>
-        <SimpleForm toolbar={<SaveCardToolBar/>}>
+    <Create title={<UdvLogoIcon/>} mutationOptions={{ onSuccess }}>
+        <SimpleForm toolbar={<UdvSaveToolBar/>}>
         <h3 style={{ marginTop: '10px', float:'left', marginBottom: '5px' }}>Создание траектории</h3>
           <Labeled title="ФИО сотрудника">
             <ReferenceInput source="userId" reference="employees" label=" ">
@@ -128,14 +130,17 @@ export const CreatePath = () => {
           </Labeled>
           <h4 style={{ marginBottom: '-2px', marginTop: '-5px' }}>Список задач:</h4>
           <ArrayInput source="tasks" label=" ">
-            <SimpleFormIterator defaultValues={newTaskDefaultValues}>
+            <SimpleFormIterator className="udv-simple-form-iterator" defaultValues={newTaskDefaultValues}>
               <TextInput source="title" label='Название' 
                 validate={[required(requiredMessage), maxLength(127,'Максимальная длина названия 127 символов')]}/>
               <TextInput multiline source="body" label='Описание' 
                 validate={[maxLength(255,'Максимальная длина описания 255 символов')]}/>
               <DateInput source="deadline" label='Срок сдачи' 
                 validate={[ minValue(getCurrentDate(),'Дедлайн должен быть не раньше текущей даты')]}/>
-              <BooleanInput source="canEmployeeAccept" label="Сотрудник может принять задачу самостоятельно"/>
+                {/*
+              <BooleanInput source="canEmployeeAccept" label="Сотрудник может принять задачу самостоятельно"
+                icon={<UdvBoolInputIcon/>}
+  options={{ checkedIcon: <UdvBoolInputIcon/> }}/>*/}
             </SimpleFormIterator>
           </ArrayInput>
         </SimpleForm>
@@ -171,15 +176,22 @@ export const EditPath = () => {
 
   const PostSaveButton = () => {
       const notify = useNotify();
+      const dataProvider = useDataProvider();
 
-      const onSuccess = data => {
-          notify(elementUpdatedMessage);
-          setIsModalOpen(false);
-      };
+      const onSuccess = async (data) => {
+        try {
+            await dataProvider.getList(`${data.tasks}`);
+            //redirect('/posts');
+            notify(elementUpdatedMessage);
+            setIsModalOpen(false);
+        } catch (error) {
+            notify('Выполнить сохранение не удалось', 'warning');
+        }
+    };
 
       return (
         <SaveButton className="save-tasks-button" type="button" label="Сохранить" redirect={false} icon={<></>}
-          mutationOptions={ {onSuccess}}
+
           sx={{
             backgroundColor: 'white', 
             color: UdvDarkCyan, 
@@ -203,17 +215,15 @@ export const EditPath = () => {
   };
 
   const notify = useNotify();
-   const refresh = useRefresh();
 
    const onSuccess = (data) => {
        notify(elementUpdatedMessage);
-       refresh();
    };
 
   return (
-  <Edit title={<UdvLogoIcon/>} undoable={false}>
-    <SimpleForm toolbar={<SaveCardToolBar/>} undoable={false}>
-      <Edit title=" " redirect={false} >
+  <Edit title={<UdvLogoIcon/>}>
+    <SimpleForm toolbar={false}>
+      <Edit title=" " redirect={false}>
         <Modal 
           width={'60%'} 
           title="Редактирование задач" 
@@ -251,7 +261,7 @@ export const EditPath = () => {
                 <TextInput source="body" label='Описание' fullWidth
                   validate={[maxLength(255,'Максимальная длина описания 255 символов')]}/>
                 <DateInput source="deadline" label='Срок сдачи'/>
-                <BooleanInput source="canEmployeeAccept" label="Сотрудник может принять задачу самостоятельно"/> 
+                {/*<BooleanInput source="canEmployeeAccept" label="Сотрудник может принять задачу самостоятельно"/> *}
               {/* 
               <FunctionField render={record => <TextField source="status"/>}/>
               <FunctionField source="id" render={record => {

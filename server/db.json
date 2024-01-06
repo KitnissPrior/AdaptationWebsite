@@ -221,6 +221,46 @@
       "startDate": "2023-12-06",
       "email": "elisprior@mail.ru",
       "phone": "8798079"
+    },
+    {
+      "id": "id5",
+      "username": "userid6",
+      "password": 12345,
+      "surname": "Смирнов",
+      "name": "Михаил",
+      "patronymic": "Олегович",
+      "job": "Разработчик телеграм-ботов",
+      "team": "SOAR",
+      "project": "Бот \"Котя\"",
+      "startDate": "2024-01-24",
+      "email": "voldemort_killer@gmail.com"
+    },
+    {
+      "id": "id13",
+      "username": "userid14",
+      "password": 12345,
+      "surname": "Балицкий",
+      "name": "Богдан",
+      "patronymic": "Викторович",
+      "job": "Бог",
+      "team": "Тыжи",
+      "project": "Бот \"Котя\"",
+      "startDate": "2024-01-01",
+      "email": "voldemort_killer@gmail.com",
+      "phone": "888"
+    },
+    {
+      "id": "id17",
+      "username": "userid18",
+      "password": 12345,
+      "surname": "Петров",
+      "name": "Петр",
+      "patronymic": "Петрович",
+      "job": "Аналитик",
+      "team": "eplat4m",
+      "project": "WebsiteUDV",
+      "startDate": "2024-01-11",
+      "email": "anton@gmail.com"
     }
   ],
   "adaptationPaths": [
@@ -237,7 +277,7 @@
         {
           "id": 2,
           "title": "Выложить БД на хостинг",
-          "body": "как можно скорее",
+          "body": "На бесплатный, желательно",
           "deadline": "2023-12-22",
           "status": 3,
           "canEmployeeAccept": false
@@ -316,6 +356,13 @@
           "deadline": "2023-12-23",
           "status": null,
           "canEmployeeAccept": false
+        },
+        {
+          "title": "gh",
+          "body": "dddddddddddddd",
+          "deadline": null,
+          "status": null,
+          "canEmployeeAccept": null
         }
       ],
       "userId": "2",
@@ -327,7 +374,7 @@
           "id": 1,
           "title": "Сходить в \"Ритц\"",
           "body": "Попить чаю с тортом",
-          "deadline": null,
+          "deadline": "2024-01-26",
           "status": 0,
           "canEmployeeAccept": true
         }
@@ -401,7 +448,7 @@
           "id": 1,
           "title": "Написать отчет",
           "body": "Объем работы 2-4 страницы",
-          "deadline": "2023-11-26",
+          "deadline": "2024-01-06",
           "status": 1,
           "canEmployeeAccept": false
         }
@@ -470,6 +517,12 @@
           "body": "dfgdfgds",
           "deadline": "2023-12-22",
           "canEmployeeAccept": false
+        },
+        {
+          "title": "ывафыва",
+          "body": null,
+          "deadline": null,
+          "canEmployeeAccept": null
         }
       ],
       "userId": "id7",
@@ -502,14 +555,83 @@
     {
       "tasks": [
         {
-          "title": "вв",
-          "body": "вв",
+          "title": "Распределить роли в команде",
+          "body": "Команда на 100 человек",
           "deadline": null,
-          "canEmployeeAccept": false
+          "canEmployeeAccept": true
         }
       ],
       "userId": "id2",
       "id": 18
+    },
+    {
+      "tasks": [
+        {
+          "title": "Войти в личный кабинет",
+          "body": null,
+          "deadline": null
+        },
+        {
+          "title": "покушать",
+          "body": null,
+          "deadline": null
+        }
+      ],
+      "userId": "id2",
+      "id": 19
+    },
+    {
+      "tasks": [
+        {
+          "title": "Найти древнейшую душу",
+          "body": null,
+          "deadline": null
+        },
+        {
+          "title": "Починить холодильник",
+          "body": null,
+          "deadline": null
+        },
+        {
+          "title": "Убить дьявола",
+          "body": null,
+          "deadline": null
+        }
+      ],
+      "userId": "id5",
+      "id": 21
+    },
+    {
+      "tasks": [
+        {
+          "title": "sdfgsdfgsdfg",
+          "body": "sdfgsdfgf",
+          "deadline": null
+        },
+        {
+          "title": "Написать отчет",
+          "body": "ghdfjdgn",
+          "deadline": null
+        }
+      ],
+      "userId": "id13",
+      "id": 22
+    },
+    {
+      "tasks": [
+        {
+          "title": "задача",
+          "body": "ыапвапы",
+          "deadline": null
+        },
+        {
+          "title": "Сходить на работу",
+          "body": "кофе попить",
+          "deadline": null
+        }
+      ],
+      "userId": "id17",
+      "id": 23
     }
   ],
   "questions": [
@@ -534,7 +656,7 @@
           "title": "Человечек"
         }
       ],
-      "correctAnswer": "Человечек"
+      "correctAnswer": "Анна Астафьева"
     },
     {
       "id": "id2",
@@ -582,7 +704,7 @@
       "answers": [
         {
           "id": 1,
-          "title": "незнаю"
+          "title": "С повидлом и творогом"
         },
         {
           "id": 3,
@@ -617,7 +739,7 @@
         }
       ],
       "question": "Чтобы заказать корпоративное такси, на какую почту нужно отправить заявку?",
-      "correctAnswer": "taxi@ussc.ru"
+      "correctAnswer": "В нашей компании нет корпоративного такси"
     }
   ]
 }

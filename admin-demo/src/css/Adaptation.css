@@ -43,3 +43,7 @@
   color: rgb(0,0,0);
   border: 0;
  }
+
+ .udv-simple-form-iterator .ra-input-add-button {
+  color: rgb(14, 163, 101); 
+}
