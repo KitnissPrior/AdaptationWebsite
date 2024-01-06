@@ -1,5 +1,6 @@
 import { List, TextField, EmailField, FunctionField, EditButton, Create, Edit, SimpleForm, 
-    TextInput, required, number, email, DateInput, DateField, useRedirect, Button } from 'react-admin';
+    TextInput, required, number, email, DateInput, DateField, useRedirect, useNotify,
+    useTranslate } from 'react-admin';
 import { UdvDatagrid } from '../datagrids/UdvDatagrid';
 import { Box } from '@mui/material';
 import nextId from "react-id-generator";
@@ -8,7 +9,7 @@ import { UdvSaveToolBar } from '../inner-components/Buttons';
 import { UdvEditIcon, UdvLogoIcon } from '../inner-components/Icons';
 import '../App.css';
 import '../css/Common.css';
-import { requiredMessage } from '../inner-components/Messages';
+import { requiredMessage, employeeCreatedMessage } from '../inner-components/Messages';
 
 const newUserDefaultValues = () => ({ id: nextId(), username: `user${nextId()}`, password: 12345 });
 
@@ -41,10 +42,11 @@ export const UserList = () => {
 };
 
 export const EditUser = () => {
+
     return (
         <Edit title={<UdvLogoIcon/>}>
             <h3 style={{ marginLeft: '15px', marginBottom: '0px' }}>Информация о сотруднике</h3>
-            <SimpleForm toolbar={<UdvSaveToolBar/>}> 
+            <SimpleForm toolbar={<UdvSaveToolBar/>} requiredMessage={'Форма невалидна'}> 
                 <div className='employee-profile-title'>Личные данные</div>
                 <Box display="flex" width={'100%'} style={{gap: "10px"}}> 
                     <TextInput source="surname" label="Фамилия" validate={[required(requiredMessage)]}/>
@@ -74,8 +76,16 @@ export const EditUser = () => {
 };
 
 export const CreateUser = () => {
+    const notify = useNotify();
+    const redirect = useRedirect();
+
+    const onSuccess = data => {
+        notify(employeeCreatedMessage);
+        redirect('/employees');
+    };
+
     return (
-        <Create title={<UdvLogoIcon/>}>
+        <Create title={<UdvLogoIcon/>} mutationOptions={{onSuccess}}>
             <h3 style={{ marginLeft: '15px', marginBottom: '0px' }}>Добавление нового сотрудника</h3>
             <SimpleForm defaultValues={newUserDefaultValues} toolbar={<UdvSaveToolBar/>}>
             <div className='employee-profile-title'>Личные данные</div>

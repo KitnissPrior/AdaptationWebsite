@@ -1,10 +1,12 @@
-import { Toolbar, SaveButton } from 'react-admin';
+import { Toolbar, SaveButton, useNotify, useRedirect, DeleteButton, Button, useDelete } from 'react-admin';
 import { UdvCyan, UdvDarkCyan } from '../css/Colors';
+import { elementUpdatedMessage, adaptationOverMessage } from './Messages';
 import '../css/Common.css'
 
-export const UdvSaveToolBar = () => (
-    <Toolbar>
-        <SaveButton className='udv-save-button' label="Сохранить" 
+
+const SaveElementButton = (props) => {
+    return(
+        <SaveButton className='udv-save-button' label="Сохранить"
             sx={{
                 color: UdvDarkCyan, 
                 backgroundColor: 'white',
@@ -16,6 +18,16 @@ export const UdvSaveToolBar = () => (
                     backgroundColor: UdvCyan,
                   },
             }}
-            icon={<></>}/>
+            icon={<></>} {...props}/>
+    );
+}
+
+export const UdvSaveToolBar = () => {
+    return(
+    <Toolbar>
+        <SaveElementButton/>
     </Toolbar>
-);
+    );
+};
+
+export const EditPathToolBar = (props) => <Toolbar {...props} />;
