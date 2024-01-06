@@ -9,7 +9,7 @@ import { UdvSaveToolBar } from '../inner-components/Buttons';
 import { UdvEditIcon, UdvLogoIcon } from '../inner-components/Icons';
 import { UdvCyan, UdvDarkCyan } from '../css/Colors';
 import nextId from "react-id-generator";
-import { requiredMessage } from '../inner-components/Messages';
+import { requiredMessage, elementUpdatedMessage } from '../inner-components/Messages';
 import '../css/Common.css';
 import '../App.css';
 
@@ -57,12 +57,14 @@ export const EditQuestion = () => {
 
     const PostSaveButton = () => {
         const notify = useNotify();
+
         const onSuccess = data => {
-            notify(`Post "${data.title}" saved!`);
+            notify(elementUpdatedMessage);
             setIsModalOpen(false);
         };
         return (
             <SaveButton type="button" label="Сохранить" redirect={false} icon={<></>}
+                mutationOptions={{onSuccess}}
             sx={{
                 backgroundColor: 'white', 
                 color: UdvDarkCyan, 
