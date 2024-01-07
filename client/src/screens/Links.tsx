@@ -2,7 +2,6 @@ import { Nav } from "react-bootstrap";
 import React from "react";
 import "../css/Links.css"
 
-
 const LinksScreen = () => {
     return (
         <div className="links-body-container">
