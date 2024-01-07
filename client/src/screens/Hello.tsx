@@ -18,17 +18,17 @@ const ButtonPageRedirect: React.FC = () => {
 
 const HelloScreen = () => {
     return (
-      <body className='helloBodyContainer'>
-        <div className='helloContainer'>
-          <div className='logoHello'></div>
-          <h1 className="helloTitle">Привет!</h1>
-          <Container>
-            <div className='subtitleHello'>
-              Хочешь начать свое путешествие по udv-тельной галактике?
+        <body className='helloBodyContainer'>
+            <div className='helloContainer'>
+                <div className='logoHello'></div>
+                    <h1 className="helloTitle">Привет!</h1>
+                    <Container>
+                        <div className='subtitleHello'>
+                          Хочешь начать свое путешествие по udv-тельной галактике?
+                        </div>
+                        <ButtonPageRedirect/>
+                    </Container>
             </div>
-            <ButtonPageRedirect/>
-          </Container>
-        </div>
       </body>
     )
 }
