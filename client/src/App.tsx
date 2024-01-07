@@ -10,12 +10,10 @@ import WelcomePageScreen from './screens/WelcomePage';
 import TasksScreen from './screens/Tasks';
 import AchievementsScreen from './screens/Achievements';
 import LinksScreen from './screens/Links';
-import Footer from "./components/Footer";
 import MinigameScreen from "./screens/Minigame";
 
 
 function App() {
-    
     return (
         <>
         <Router>

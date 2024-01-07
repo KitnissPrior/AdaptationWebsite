@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useHistory } from "react-router-dom";
 import FormContainer from "../components/FormContainer";
 import { uploadEmployees } from '../data/fetching';

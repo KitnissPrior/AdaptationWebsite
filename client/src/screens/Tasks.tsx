@@ -1,9 +1,8 @@
 import { uploadPaths } from '../data/fetching';
 import { getUser } from '../data/storage';
-import React, {useCallback, useEffect, useState} from 'react';
+import React, { useState } from 'react';
 import { Collapse } from "antd";
 import { Container } from 'react-bootstrap';
-import {useHistory} from "react-router-dom";
 import MinigameScreen from "./Minigame";
 import { getFormattedDate } from '../data/date';
 import '../css/Tasks.css';
@@ -77,13 +76,6 @@ const TasksList: React.FC = () => {
                     </div>
                 );
             }
-            /*else {
-                return (
-                    <div className="dl-later">
-                        Дедлайн: {getFormattedDate(deadline)}
-                    </div>
-                );
-            }*/
         };
 
         const drawTasksHeader = (task, key: string = '') => {

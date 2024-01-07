@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import '../css/EditProfile.css';
 import {getUser} from "../data/storage";
 
-
-// Это для тех полей ввода
-// Вообще надо, чтобы это напрямую с данными юзера взаимодействовало
 interface ProfileForm {
     firstName: string;
     lastName: string;
@@ -30,9 +27,6 @@ const EditProfileScreen = () => {
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-
-        // Здесь быть коду на обработку данных формы,
-        // например, отправка их на сервер
     };
 
     return (
