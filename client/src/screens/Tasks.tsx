@@ -1,13 +1,29 @@
 import { uploadPaths } from '../data/fetching';
 import { getUser } from '../data/storage';
-import React, { useState } from 'react';
+import React, { useState, ChangeEvent } from 'react';
 import { Collapse } from "antd";
 import { Container } from 'react-bootstrap';
 import MinigameScreen from "./Minigame";
 import { getFormattedDate } from '../data/date';
 import '../css/Tasks.css';
 
-   
+const UploadFile = () => {
+    const [file, setFile] = useState<File>();
+
+    const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
+        if (e.target.files) {
+            setFile(e.target.files[0]);
+        }
+    };
+
+    return (
+        <div>
+            <input type="file" onChange={handleFileChange} />
+            <div>{file && `${file.name} - ${file.type}`}</div>
+        </div>
+    );
+};
+
 const TaskButton = React.memo((props) => {
     const [buttonText, setButtonText] = useState('Отправить на проверку');
 
@@ -125,6 +141,7 @@ const TasksList: React.FC = () => {
                     {todayAndTomorrowTasks && todayAndTomorrowTasks.map((task, id) =>
                     <Collapse.Panel header={drawTasksHeader(task)} key={id + 1}>
                         <div className='tasksBody'>{drawTasksBody(task)}</div>
+                        <UploadFile/>
                         <TaskButton/>
                     </Collapse.Panel>
                     )}
@@ -141,6 +158,7 @@ const TasksList: React.FC = () => {
                         {userTasks && userTasks.map((task, id) =>
                             <Collapse.Panel header={drawTasksHeader(task, 'PERIOD')} key={id + 1}>
                                 <div className='tasksBody'>{drawTasksBody(task)}</div>
+                                <UploadFile/>
                                 <TaskButton/>
                             </Collapse.Panel>
                         )}
