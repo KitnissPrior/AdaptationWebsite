@@ -295,7 +295,7 @@
         },
         {
           "id": 6,
-          "title": "Посетить лекцию Обабкова",
+          "title": "Посетить лекцию Ильи Николаевича",
           "body": "РТФ - чемпион! РТФ - чемпион! РТФ - чемпион! РТФ - чемпион! РТФ - чемпион!",
           "deadline": "2023-12-09",
           "status": 0,
@@ -316,40 +316,33 @@
     {
       "tasks": [
         {
-          "title": "Встреча с заказчиком",
-          "body": "Договориться о встрече",
-          "deadline": "2023-12-21",
-          "status": 0,
-          "canEmployeeAccept": false
-        },
-        {
           "id": 1,
-          "title": "документация",
-          "body": "Отправить в тг куратору",
+          "title": "Организовать встречу с заказчиком",
+          "body": "Собрать требования к продукту, спросить о проблеме и все зафиксировать в отдельном документе.",
           "deadline": "2023-12-23",
           "status": 3,
           "canEmployeeAccept": true
         },
         {
           "title": "Написать отчет",
-          "body": "Объем 40 страниц, 14 кегль Times New Roman",
+          "body": "Объем 40 страниц, 14 кегль Times New Roman. Отправить в виде docx или pdf.",
           "deadline": null,
           "status": 1,
           "canEmployeeAccept": false
         },
         {
           "title": "Составить бэклог",
-          "body": "минимум на 50 пунктов",
+          "body": "Минимум на 50 пунктов. Отправить в виде docx или pdf.",
           "deadline": "2023-12-23",
           "status": null,
           "canEmployeeAccept": false
         },
         {
-          "title": "gh",
-          "body": "dddddddddddddd",
-          "deadline": null,
-          "status": null,
-          "canEmployeeAccept": null
+          "title": "Подготовиться к защите",
+          "body": "Подготовить текст для презентации и доклада. Время выступления 5 мин.",
+          "deadline": "2023-12-21",
+          "status": 0,
+          "canEmployeeAccept": false
         }
       ],
       "userId": "2",
@@ -359,8 +352,8 @@
       "tasks": [
         {
           "id": 1,
-          "title": "Сходить в \"Ритц\"",
-          "body": "Попить чаю с тортом",
+          "title": "Задача 1",
+          "body": "Результат выполнения сохранить в pdf и отправить",
           "deadline": "2024-01-26",
           "status": 0,
           "canEmployeeAccept": true
@@ -373,15 +366,15 @@
       "tasks": [
         {
           "id": 1,
-          "title": "Задача1",
-          "body": "Lorem ipsum",
+          "title": "Задача 1",
+          "body": "Результат выполнения сохранить в pdf и отправить",
           "deadline": "2023-11-16",
           "status": 1,
           "canEmployeeAccept": false
         },
         {
           "id": 2,
-          "title": "Задача2",
+          "title": "Задача 2",
           "body": "Сверстать главную страницу",
           "deadline": null,
           "status": 0,
@@ -411,16 +404,16 @@
         },
         {
           "id": 3,
-          "title": "Купить стрелялку",
-          "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "title": "Проверить ТЗ на соответствие требованиям",
+          "body": "Исправленное ТЗ отправить в формате docx.",
           "deadline": "2023-12-16",
           "status": 2,
           "canEmployeeAccept": false
         },
         {
           "id": 4,
-          "title": "Протестировать пиццу",
-          "body": "Не знаю, что это должно значить",
+          "title": "Составить тест-кейсы",
+          "body": "Сохранить в формате pdf и отправить (не менее 50 штук)",
           "deadline": null,
           "status": 2,
           "canEmployeeAccept": false
@@ -465,13 +458,13 @@
       "tasks": [
         {
           "title": "Составить тест-кейсы",
-          "body": "штук 5-10",
+          "body": "Штук 5-10. Сохранить в формате pdf и отправить",
           "deadline": "2023-12-23",
           "canEmployeeAccept": false
         },
         {
           "title": "Написать автотесты",
-          "body": "Процент покрытия кода минимум 70%",
+          "body": "Процент покрытия кода минимум 70%.",
           "deadline": null,
           "canEmployeeAccept": false
         }
@@ -482,8 +475,8 @@
     {
       "tasks": [
         {
-          "title": "Сходить в \"Ритц\"",
-          "body": null,
+          "title": "Собрать требования с заказчика",
+          "body": "Файл с требованиями приложить сюда",
           "deadline": "2023-12-30",
           "canEmployeeAccept": false
         }
@@ -494,14 +487,14 @@
     {
       "tasks": [
         {
-          "title": "задача",
-          "body": "fgdfgd",
+          "title": "Провести пользовательское исследование",
+          "body": "В отчете написать гипотезы, цели и результаты. Отчет прикрепить",
           "deadline": "2023-12-19",
           "canEmployeeAccept": true
         },
         {
-          "title": "Сходить на работу",
-          "body": "dfgdfgds",
+          "title": "Составить майнд-мап",
+          "body": "Файл с выполненной задачей отправить куратору",
           "deadline": "2023-12-22",
           "canEmployeeAccept": false
         },
@@ -518,14 +511,14 @@
     {
       "tasks": [
         {
-          "title": "задача",
-          "body": "вапвыапырп",
+          "title": "Задача 1",
+          "body": "Файл с выполненной задачей приложить. Посмотрю в течении недели",
           "deadline": "2023-12-23",
           "canEmployeeAccept": false
         },
         {
-          "title": "Сходить на работу",
-          "body": "Lorem ipsu",
+          "title": "Составить бэклог",
+          "body": "Файл с выполненной задачей отправить куратору",
           "deadline": null,
           "canEmployeeAccept": false
         },
@@ -554,23 +547,7 @@
     {
       "tasks": [
         {
-          "title": "Войти в личный кабинет",
-          "body": null,
-          "deadline": null
-        },
-        {
-          "title": "покушать",
-          "body": null,
-          "deadline": null
-        }
-      ],
-      "userId": "id2",
-      "id": 19
-    },
-    {
-      "tasks": [
-        {
-          "title": "Найти древнейшую душу",
+          "title": "Написать бота",
           "body": null,
           "deadline": null
         },
@@ -580,7 +557,7 @@
           "deadline": null
         },
         {
-          "title": "Убить дьявола",
+          "title": "Сделать бэкенд для бота",
           "body": null,
           "deadline": null
         }
@@ -591,34 +568,18 @@
     {
       "tasks": [
         {
-          "title": "sdfgsdfgsdfg",
-          "body": "sdfgsdfgf",
+          "title": "Задача1",
+          "body": "Файл с выполненной задачей отправить куратору",
           "deadline": null
         },
         {
           "title": "Написать отчет",
-          "body": "ghdfjdgn",
+          "body": "Описание проекта, личный вклад, результаты проекта, рефлексия и выводы",
           "deadline": null
         }
       ],
       "userId": "id13",
       "id": 22
-    },
-    {
-      "tasks": [
-        {
-          "title": "задача",
-          "body": "ыапвапы",
-          "deadline": null
-        },
-        {
-          "title": "Сходить на работу",
-          "body": "кофе попить",
-          "deadline": null
-        }
-      ],
-      "userId": "id17",
-      "id": 23
     }
   ],
   "questions": [
