@@ -205,7 +205,9 @@
       "project": "Сайт для адаптации",
       "startDate": "2023-12-07",
       "email": "larina@gmail.com",
-      "phone": "892273"
+      "phone": "892273",
+      "dateBirth": "2003-07-17",
+      "office": "44"
     },
     {
       "id": "id21",
@@ -244,10 +246,12 @@
       "patronymic": "Викторович",
       "job": "Дизайнер",
       "team": "Исследовательский центр",
-      "project": "Бот \"Котя\"",
+      "project": "Сайт для адаптации",
       "startDate": "2024-01-01",
       "email": "voldemort_killer@gmail.com",
-      "phone": "888"
+      "phone": "888",
+      "office": "23",
+      "telegram": "@bogdan_168"
     }
   ],
   "adaptationPaths": [
