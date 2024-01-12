@@ -46,7 +46,7 @@ export const EditUser = () => {
     return (
         <Edit title={<UdvLogoIcon/>}>
             <h3 style={{ marginLeft: '15px', marginBottom: '0px' }}>Информация о сотруднике</h3>
-            <SimpleForm toolbar={<UdvSaveToolBar/>} requiredMessage={'Форма невалидна'}> 
+            <SimpleForm toolbar={<UdvSaveToolBar/>}> 
                 <div className='employee-profile-title'>Личные данные</div>
                 <Box display="flex" width={'100%'} style={{gap: "10px"}}> 
                     <TextInput source="surname" label="Фамилия" validate={[required(requiredMessage)]}/>

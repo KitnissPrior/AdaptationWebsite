@@ -81,6 +81,39 @@
     background-color: #24002c;
 }
 
+ .file-upload-container {
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+    padding-left: 0%; 
+  }
+
+  .file-upload-button{
+    align-items: center;
+    /*display: inline-block;*/
+    padding: 7px 20px 7px 20px;
+    border: 2px solid #000000;
+    border-radius: 20px;
+    background-color: #FFFFFF;
+    cursor: pointer;
+    width: 100%;
+    margin-left: 30px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #000000;
+  }
+  
+  .file-upload-input {
+    display: inline-block;
+    visibility:hidden;
+  }
+  
+  .file-upload-text {
+    margin-top: 0px;
+    color: #24002c;
+    font-size: 20;
+  }
+
 .collapse-items {
     border-radius: 20px;
 
@@ -155,11 +188,11 @@
     display: flex;
     /*margin: top right bottom left*/
     margin: 17px auto 5px auto;
-
     background-color: transparent;
     color: #000000;
     border: 1px solid #000000;
     border-radius: 40px;
+    font-weight: bold;
 }
 
 .send-task-button:hover {

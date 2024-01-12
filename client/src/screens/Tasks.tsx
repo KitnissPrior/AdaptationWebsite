@@ -17,10 +17,18 @@ const UploadFile = () => {
     };
 
     return (
-        <div>
-            <input type="file" onChange={handleFileChange} />
-            <div>{file && `${file.name} - ${file.type}`}</div>
+        <>
+        <input id="file-upload" className="file-upload-input"
+            type="file" onChange={handleFileChange}/>
+        <div className='file-upload-container'>
+         {file && <div className="file-upload-text">{file.name}</div>}
+            <div>
+                <label htmlFor="file-upload" className="file-upload-button">
+                    Прикрепить файл
+                </label>
+            </div>     
         </div>
+        </>
     );
 };
 
