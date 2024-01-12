@@ -242,25 +242,12 @@
       "surname": "Балицкий",
       "name": "Богдан",
       "patronymic": "Викторович",
-      "job": "Бог",
-      "team": "Тыжи",
+      "job": "Дизайнер",
+      "team": "Исследовательский центр",
       "project": "Бот \"Котя\"",
       "startDate": "2024-01-01",
       "email": "voldemort_killer@gmail.com",
       "phone": "888"
-    },
-    {
-      "id": "id17",
-      "username": "userid18",
-      "password": 12345,
-      "surname": "Петров",
-      "name": "Петр",
-      "patronymic": "Петрович",
-      "job": "Аналитик",
-      "team": "eplat4m",
-      "project": "WebsiteUDV",
-      "startDate": "2024-01-11",
-      "email": "anton@gmail.com"
     }
   ],
   "adaptationPaths": [
