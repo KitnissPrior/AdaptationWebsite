@@ -135,8 +135,7 @@ export const CreatePath = () => {
                 validate={[required(requiredMessage), maxLength(127,'Максимальная длина названия 127 символов')]}/>
               <TextInput multiline source="body" label='Описание' 
                 validate={[maxLength(255,'Максимальная длина описания 255 символов')]}/>
-              <DateInput source="deadline" label='Срок сдачи' 
-                validate={[ minValue(getCurrentDate(),'Дедлайн должен быть не раньше текущей даты')]}/>
+              <DateInput source="deadline" label='Срок сдачи'/>
                 {/*
               <BooleanInput source="canEmployeeAccept" label="Сотрудник может принять задачу самостоятельно"
                 icon={<UdvBoolInputIcon/>}
