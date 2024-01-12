@@ -12,7 +12,7 @@
       "email": "leonid@gmail.com",
       "phone": 4402672,
       "job": "Тимлид",
-      "startDate": "2023-10-30",
+      "startDate": "2024-01-01",
       "project": "Проект",
       "team": "Исследовательский центр",
       "password": 12345,
@@ -321,55 +321,6 @@
       "tasks": [
         {
           "id": 1,
-          "title": "Организовать встречу с заказчиком",
-          "body": "Собрать требования к продукту, спросить о проблеме и все зафиксировать в отдельном документе.",
-          "deadline": "2023-12-23",
-          "status": 3,
-          "canEmployeeAccept": true
-        },
-        {
-          "title": "Написать отчет",
-          "body": "Объем 40 страниц, 14 кегль Times New Roman. Отправить в виде docx или pdf.",
-          "deadline": null,
-          "status": 1,
-          "canEmployeeAccept": false
-        },
-        {
-          "title": "Составить бэклог",
-          "body": "Минимум на 50 пунктов. Отправить в виде docx или pdf.",
-          "deadline": "2023-12-23",
-          "status": null,
-          "canEmployeeAccept": false
-        },
-        {
-          "title": "Подготовиться к защите",
-          "body": "Подготовить текст для презентации и доклада. Время выступления 5 мин.",
-          "deadline": "2023-12-21",
-          "status": 0,
-          "canEmployeeAccept": false
-        }
-      ],
-      "userId": "2",
-      "id": 7
-    },
-    {
-      "tasks": [
-        {
-          "id": 1,
-          "title": "Задача 1",
-          "body": "Результат выполнения сохранить в pdf и отправить",
-          "deadline": "2024-01-26",
-          "status": 0,
-          "canEmployeeAccept": true
-        }
-      ],
-      "userId": "7",
-      "id": 8
-    },
-    {
-      "tasks": [
-        {
-          "id": 1,
           "title": "Задача 1",
           "body": "Результат выполнения сохранить в pdf и отправить",
           "deadline": "2023-11-16",
@@ -487,6 +438,20 @@
       ],
       "userId": "id6",
       "id": 15
+    },
+    {
+      "tasks": [
+        {
+          "id": 1,
+          "title": "Задача 1",
+          "body": "Результат выполнения сохранить в pdf и отправить",
+          "deadline": "2024-01-26",
+          "status": 0,
+          "canEmployeeAccept": true
+        }
+      ],
+      "userId": "7",
+      "id": 8
     },
     {
       "tasks": [
