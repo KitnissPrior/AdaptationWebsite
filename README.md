@@ -1,7 +1,7 @@
-<h1>AdaptationWebsite</h1>
-<h3>Веб-приложение для адаптации новых сотрудников компании UDV Group.</h3>
-
-Создано командой LegendaryTeam по заказу UDV Group
+<h1>Adaptation Website</h1>
+Веб-приложение для адаптации новых сотрудников компании UDV Group.
+<br/>
+Создано командой LegendaryTeam
 <h2>Как запускать проект</h2>
 <ol>
   <li>В папке server откройте терминал и введите npm run server, чтобы запустить сервер</li>
